@@ -1,0 +1,4889 @@
+{
+ "source": "Aspor (2).xlsx — sheet \"Sheet1 (2)\"",
+ "note": "DEMO seed. SKUs with colour suffix are PROVISIONAL and must be confirmed. No prices imported.",
+ "products": [
+  {
+   "sku": "AIR1-WHITE",
+   "row": 5,
+   "category": "power-banks",
+   "modelNumber": "Air1",
+   "nameEn": "Ultra-thin Magnetic Charger",
+   "nameKa": "ASPOR Air1 Ultra-thin Magnetic Charger",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "Capacity",
+     "value": "5000mAh/19.25Wh"
+    },
+    {
+     "label": "USB-C input",
+     "value": "5V-3A/9V-2A"
+    },
+    {
+     "label": "USB-C output",
+     "value": "5V-3A / 9V-2.22A/12V-1.67A"
+    },
+    {
+     "label": "Wireless Charging Output",
+     "value": "5W/7.5W/ 10W/ 15W"
+    }
+   ],
+   "images": [
+    "seed/images/r5-product.webp",
+    "seed/images/r5-package.webp"
+   ]
+  },
+  {
+   "sku": "A388-BLACK",
+   "row": 6,
+   "category": "power-banks",
+   "modelNumber": "A388",
+   "nameEn": "15W Magnetic Power Bank",
+   "nameKa": "ASPOR A388 15W Magnetic Power Bank",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "Capaticy",
+     "value": "5000mAh/18.5Wh"
+    },
+    {
+     "label": "USB-C1/2 Input",
+     "value": "5V-3A/9V-2A"
+    },
+    {
+     "label": "USB-C2 Output",
+     "value": "5V-3A/9V-2.22A/12V-1.67A (PD20W)"
+    },
+    {
+     "label": "Wireless Charging Output",
+     "value": "5W/7.5W/10W/15W"
+    }
+   ],
+   "images": [
+    "seed/images/r6-product.webp",
+    "seed/images/r6-package.webp"
+   ]
+  },
+  {
+   "sku": "A389-BLACK",
+   "row": 7,
+   "category": "power-banks",
+   "modelNumber": "A389",
+   "nameEn": "15W Magnetic Power Bank",
+   "nameKa": "ASPOR A389 15W Magnetic Power Bank",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "Capaticy",
+     "value": "10000mAh/37Wh"
+    },
+    {
+     "label": "USB-C1/2 Input",
+     "value": "5V-3A/9V-2A"
+    },
+    {
+     "label": "USB-C2 Output",
+     "value": "5V-3A/9V-2.22A/12V-1.67A (PD20W)"
+    },
+    {
+     "label": "Wireless Charging Output",
+     "value": "5W/7.5W/10W/15W"
+    }
+   ],
+   "images": [
+    "seed/images/r7-product.webp",
+    "seed/images/r7-package.webp"
+   ]
+  },
+  {
+   "sku": "A367-GRAY",
+   "row": 8,
+   "category": "power-banks",
+   "modelNumber": "A367",
+   "nameEn": "6IN1 Functional Magnetic Power Bank",
+   "nameKa": "ASPOR A367 6IN1 Functional Magnetic Power Bank",
+   "color": "ნაცრისფერი",
+   "colorEn": "gray",
+   "specs": [
+    {
+     "label": "Capacity",
+     "value": "10000mAh/ 38.5Wh"
+    },
+    {
+     "label": "USB-C Input",
+     "value": "5V=2.8A/ 9V=2A/ 12V=1.5A"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "5V=3A/ 9V=2.22A/ 12V=1.67A/ 10V=2.25A"
+    },
+    {
+     "label": "USB-C Cable Output",
+     "value": "5V=3A/ 9V=2.22A/ 12V=1.67A/0V=2.25A（22.5W Max)"
+    },
+    {
+     "label": "Wireless Charging Output",
+     "value": "5W/ 7.5W/ 10W/ 15W"
+    }
+   ],
+   "images": [
+    "seed/images/r8-product.webp",
+    "seed/images/r8-package.webp"
+   ]
+  },
+  {
+   "sku": "A302-BLACK",
+   "row": 9,
+   "category": "power-banks",
+   "modelNumber": "A302",
+   "nameEn": "LED Lighting Power Bank",
+   "nameKa": "ASPOR A302 LED Lighting Power Bank",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "Battery Capacity",
+     "value": "20000mAh /74Wh"
+    },
+    {
+     "label": "USB-C Input",
+     "value": "5V=3A/9V=2A/12V=1.5A"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "5V=3A/9V=2.22A/10V=2.25A/12V=1.67A (22.5W Max)"
+    },
+    {
+     "label": "USB-A1 Output",
+     "value": "5V=3A/9V=2A/10V=2.25A/12V=1.5A (22.5W Max)"
+    },
+    {
+     "label": "USB-A2 Output",
+     "value": "5V-2A"
+    },
+    {
+     "label": "Micro Input",
+     "value": "5V=2A/9V= 2A/12V=1.5A"
+    },
+    {
+     "label": "USB-C Cable Output",
+     "value": "5V= 3A/9V=.2.22A/10V=2. 25A/12V=1.67A (22.5W Max)"
+    },
+    {
+     "label": "iPh Cable Output",
+     "value": "5V=2.4A"
+    },
+    {
+     "label": "Micro Cable Output",
+     "value": "5V= 2A"
+    },
+    {
+     "label": "USB-A Cable Input",
+     "value": "5V=2A"
+    }
+   ],
+   "images": [
+    "seed/images/r9-product.webp",
+    "seed/images/r9-package.webp"
+   ]
+  },
+  {
+   "sku": "A378-GRAY",
+   "row": 10,
+   "category": "power-banks",
+   "modelNumber": "A378",
+   "nameEn": "Built-in 2 Fast Cables Power Bank",
+   "nameKa": "ASPOR A378 Built-in 2 Fast Cables Power Bank",
+   "color": "ნაცრისფერი",
+   "colorEn": "gray",
+   "specs": [
+    {
+     "label": "Battery Capacity",
+     "value": "10000mAh /38.5Wh"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "5V-3A/9V-2.22A/V-2.25A/12V-1.67A (22.5W Max)"
+    },
+    {
+     "label": "USB-C Input",
+     "value": "5V-3A/9V-2A/12V-1.5A"
+    },
+    {
+     "label": "USB-C Cable Input",
+     "value": "5V-3A/9V-2A /12V-1.5A"
+    },
+    {
+     "label": "USB-C Cable Output",
+     "value": "5V-3A/9V-2.22A/10V-2.25A/12V-1.67A (22.5W Max)"
+    },
+    {
+     "label": "iPh Cable Output",
+     "value": "5V/2.4A"
+    },
+    {
+     "label": "Total Output",
+     "value": "5V/3A"
+    },
+    {
+     "label": "სერტიფიკაცია",
+     "value": "CCC"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Got CCC Certification"
+    }
+   ],
+   "images": [
+    "seed/images/r10-product.webp",
+    "seed/images/r10-package.webp"
+   ]
+  },
+  {
+   "sku": "A313-BLACK",
+   "row": 11,
+   "category": "power-banks",
+   "modelNumber": "A313",
+   "nameEn": "PD+QC  Fast Charging Power Bank",
+   "nameKa": "ASPOR A313 PD+QC  Fast Charging Power Bank",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "Capacity",
+     "value": "10000mAh/37Wh"
+    },
+    {
+     "label": "USB-C Input",
+     "value": "5V-3A/9V-2A/ 12V-1.5A"
+    },
+    {
+     "label": "USB-C1 Output",
+     "value": "5V-3A/ 9V-2.22A/ 10V-2.25A/12V-1.67A (22.5W Max)"
+    },
+    {
+     "label": "USB-C2 Output",
+     "value": "5V-3A/ 9V-2.22A/ 10V-2.25A/12V-1.67A (22.5W Max)"
+    },
+    {
+     "label": "USB-A Output",
+     "value": "5V-3A/ 9V-2.22A/10V-2.25A/ 12V-1.67A (22.5W Max)"
+    },
+    {
+     "label": "Wireless Output",
+     "value": "15W"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Built-in USB-C Fast Cable"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Mobile Phone Holder"
+    }
+   ],
+   "images": [
+    "seed/images/r11-product.webp",
+    "seed/images/r11-package.webp"
+   ]
+  },
+  {
+   "sku": "A313-WHITE",
+   "row": 11,
+   "category": "power-banks",
+   "modelNumber": "A313",
+   "nameEn": "PD+QC  Fast Charging Power Bank",
+   "nameKa": "ASPOR A313 PD+QC  Fast Charging Power Bank",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "Capacity",
+     "value": "10000mAh/37Wh"
+    },
+    {
+     "label": "USB-C Input",
+     "value": "5V-3A/9V-2A/ 12V-1.5A"
+    },
+    {
+     "label": "USB-C1 Output",
+     "value": "5V-3A/ 9V-2.22A/ 10V-2.25A/12V-1.67A (22.5W Max)"
+    },
+    {
+     "label": "USB-C2 Output",
+     "value": "5V-3A/ 9V-2.22A/ 10V-2.25A/12V-1.67A (22.5W Max)"
+    },
+    {
+     "label": "USB-A Output",
+     "value": "5V-3A/ 9V-2.22A/10V-2.25A/ 12V-1.67A (22.5W Max)"
+    },
+    {
+     "label": "Wireless Output",
+     "value": "15W"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Built-in USB-C Fast Cable"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Mobile Phone Holder"
+    }
+   ],
+   "images": [
+    "seed/images/r11-product.webp",
+    "seed/images/r11-package.webp"
+   ]
+  },
+  {
+   "sku": "A386-BLACK",
+   "row": 12,
+   "category": "power-banks",
+   "modelNumber": "A386",
+   "nameEn": "Magnetic Power Bank",
+   "nameKa": "ASPOR A386 Magnetic Power Bank",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "Capacity",
+     "value": "20000mAh/74Wh"
+    },
+    {
+     "label": "USB-C1Input",
+     "value": "5V=3A/9V=2A/12V=1.5A"
+    },
+    {
+     "label": "USB-C1Output",
+     "value": "5V=3A/9V=2.22A/10V=2.25A/12V=1.67A (22.5W Max)"
+    },
+    {
+     "label": "USB-C2 Cable Input",
+     "value": "5V=3A/9V=2A/12V=1.5A"
+    },
+    {
+     "label": "USB-C2 Cable Output",
+     "value": "5V=3A/9V=2.22A/10V=2.25A/12V=1.67A (22.5W Max)"
+    },
+    {
+     "label": "USB-AOutput",
+     "value": "5V=3A/9V=2A/10V-2.25A/12V-1.5A (22.5W Max)"
+    },
+    {
+     "label": "Wireless Output",
+     "value": "15W"
+    }
+   ],
+   "images": [
+    "seed/images/r12-product.webp",
+    "seed/images/r12-package.webp"
+   ]
+  },
+  {
+   "sku": "A386-WHITE",
+   "row": 12,
+   "category": "power-banks",
+   "modelNumber": "A386",
+   "nameEn": "Magnetic Power Bank",
+   "nameKa": "ASPOR A386 Magnetic Power Bank",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "Capacity",
+     "value": "20000mAh/74Wh"
+    },
+    {
+     "label": "USB-C1Input",
+     "value": "5V=3A/9V=2A/12V=1.5A"
+    },
+    {
+     "label": "USB-C1Output",
+     "value": "5V=3A/9V=2.22A/10V=2.25A/12V=1.67A (22.5W Max)"
+    },
+    {
+     "label": "USB-C2 Cable Input",
+     "value": "5V=3A/9V=2A/12V=1.5A"
+    },
+    {
+     "label": "USB-C2 Cable Output",
+     "value": "5V=3A/9V=2.22A/10V=2.25A/12V=1.67A (22.5W Max)"
+    },
+    {
+     "label": "USB-AOutput",
+     "value": "5V=3A/9V=2A/10V-2.25A/12V-1.5A (22.5W Max)"
+    },
+    {
+     "label": "Wireless Output",
+     "value": "15W"
+    }
+   ],
+   "images": [
+    "seed/images/r12-product.webp",
+    "seed/images/r12-package.webp"
+   ]
+  },
+  {
+   "sku": "A870-EU-WHITE",
+   "row": 13,
+   "category": "chargers",
+   "modelNumber": "A870 EU",
+   "nameEn": "30W GaN Mini Charger (EU PIN)",
+   "nameKa": "ASPOR A870 EU 30W GaN Mini Charger (EU PIN)",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "Input",
+     "value": "AC 100-240V 50/60Hz, 0.7A"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "5V-3A/ 9V-2.77A/ 12V-2.5A (30W Max)"
+    },
+    {
+     "label": "USB-A Output",
+     "value": "5V-3A/ 9V-2A/ 12V-1.5A (18W Max)"
+    }
+   ],
+   "images": [
+    "seed/images/r13-product.webp",
+    "seed/images/r13-package.webp"
+   ]
+  },
+  {
+   "sku": "A870-EU-TYPE-C-TO-TYPE-C-WHITE",
+   "row": 14,
+   "category": "chargers",
+   "modelNumber": "A870 EU (Type-C to Type-C)",
+   "nameEn": "30W GaN Mini Charger (EU PIN)",
+   "nameKa": "ASPOR A870 EU 30W GaN Mini Charger (EU PIN)",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C to Type-C"
+    },
+    {
+     "label": "Input",
+     "value": "AC 100-240V 50/60Hz, 0.7A"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "5V-3A/ 9V-2.77A/ 12V-2.5A (30W Max)"
+    },
+    {
+     "label": "USB-A Output",
+     "value": "5V-3A/ 9V-2A/ 12V-1.5A (18W Max)"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "+Type-C to Type-C Cable"
+    }
+   ],
+   "images": [
+    "seed/images/r14-product.webp",
+    "seed/images/r14-package.webp"
+   ]
+  },
+  {
+   "sku": "A852-EU-GRAY",
+   "row": 15,
+   "category": "chargers",
+   "modelNumber": "A852 EU",
+   "nameEn": "45W GaN Mini Charger (EU PIN)",
+   "nameKa": "ASPOR A852 EU 45W GaN Mini Charger (EU PIN)",
+   "color": "ნაცრისფერი",
+   "colorEn": "gray",
+   "specs": [
+    {
+     "label": "Input",
+     "value": "AC 100-240V 50/60Hz, 0.8A Max"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "5V-3A/ 9V-3A/ 12V-3A/ 15V-3A/ 20V-2.25A (45W Max)"
+    },
+    {
+     "label": "USB-A Output",
+     "value": "5V-3A/ 9V-2A/ 12V-1.5A  (18W Max)"
+    },
+    {
+     "label": "USB-A + USB-C Output",
+     "value": "5V-3A"
+    }
+   ],
+   "images": [
+    "seed/images/r15-product.webp",
+    "seed/images/r15-package.webp"
+   ]
+  },
+  {
+   "sku": "A852-EU-TYPE-C-TO-TYPE-C-GRAY",
+   "row": 16,
+   "category": "chargers",
+   "modelNumber": "A852 EU (Type-C to Type-C)",
+   "nameEn": "45W GaN Mini Charger (EU PIN)",
+   "nameKa": "ASPOR A852 EU 45W GaN Mini Charger (EU PIN)",
+   "color": "ნაცრისფერი",
+   "colorEn": "gray",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C to Type-C"
+    },
+    {
+     "label": "Input",
+     "value": "AC 100-240V 50/60Hz, 0.8A Max"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "5V-3A/ 9V-3A/ 12V-3A/ 15V-3A/ 20V-2.25A (45W Max)"
+    },
+    {
+     "label": "USB-A Output",
+     "value": "5V-3A/ 9V-2A/ 12V-1.5A  (18W Max)"
+    },
+    {
+     "label": "USB-A + USB-C Output",
+     "value": "5V-3A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "+Type-C to Type-C Cable"
+    }
+   ],
+   "images": [
+    "seed/images/r16-product.webp",
+    "seed/images/r16-package.webp"
+   ]
+  },
+  {
+   "sku": "A853-EU-WHITE",
+   "row": 17,
+   "category": "chargers",
+   "modelNumber": "A853 EU",
+   "nameEn": "45W GaN Charger with TFT Display",
+   "nameKa": "ASPOR A853 EU 45W GaN Charger with TFT Display",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "Input",
+     "value": "AC 110-240V 50/60Hz, 0.7A"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "5V-3A/ 9V-3A/ 12V-3A/ 15V-2.5A/ 20V-2.25A (45W Max)"
+    }
+   ],
+   "images": [
+    "seed/images/r17-product.webp",
+    "seed/images/r17-package.webp"
+   ]
+  },
+  {
+   "sku": "A853-EU-TYPE-C-TO-TYPE-C-WHITE",
+   "row": 18,
+   "category": "chargers",
+   "modelNumber": "A853 EU (Type-C to Type-C)",
+   "nameEn": "45W GaN Charger with TFT Display",
+   "nameKa": "ASPOR A853 EU 45W GaN Charger with TFT Display",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C to Type-C"
+    },
+    {
+     "label": "Input",
+     "value": "AC 110-240V 50/60Hz, 0.7A"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "5V-3A/ 9V-3A/ 12V-3A/ 15V-2.5A/ 20V-2.25A (45W Max)"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "+Type-C to Type-C Cable"
+    }
+   ],
+   "images": [
+    "seed/images/r18-product.webp",
+    "seed/images/r18-package.webp"
+   ]
+  },
+  {
+   "sku": "A871-EU-WHITE",
+   "row": 19,
+   "category": "chargers",
+   "modelNumber": "A871 EU",
+   "nameEn": "45W Fast Charger",
+   "nameKa": "ASPOR A871 EU 45W Fast Charger",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "Input",
+     "value": "AC 200-240V 50/60Hz, 1A"
+    },
+    {
+     "label": "USB-C1/20utput",
+     "value": "5V=3A/9V= 2A/12V=3A/20V=2.25A (45W Max)"
+    },
+    {
+     "label": "USB-C1+USB-C2 Output",
+     "value": "5V=3A"
+    }
+   ],
+   "images": [
+    "seed/images/r19-product.webp",
+    "seed/images/r19-package.webp"
+   ]
+  },
+  {
+   "sku": "A871-EU-TYPE-C-TO-TYPE-C-WHITE",
+   "row": 20,
+   "category": "chargers",
+   "modelNumber": "A871 EU (Type-C to Type-C)",
+   "nameEn": "45W Fast Charger",
+   "nameKa": "ASPOR A871 EU 45W Fast Charger",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C to Type-C"
+    },
+    {
+     "label": "Input",
+     "value": "AC 200-240V 50/60Hz, 1A"
+    },
+    {
+     "label": "USB-C1/20utput",
+     "value": "5V=3A/9V= 2A/12V=3A/20V=2.25A (45W Max)"
+    },
+    {
+     "label": "USB-C1+USB-C2 Output",
+     "value": "5V=3A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "+Type-C to Type-C Cable"
+    }
+   ],
+   "images": [
+    "seed/images/r20-product.webp",
+    "seed/images/r20-package.webp"
+   ]
+  },
+  {
+   "sku": "A836-EU-WHITE",
+   "row": 21,
+   "category": "chargers",
+   "modelNumber": "A836 EU",
+   "nameEn": "40W AVS USB-C Power Adapter",
+   "nameKa": "ASPOR A836 EU 40W AVS USB-C Power Adapter",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "Input",
+     "value": "AC 100~240V 50/60Hz, 0.6A"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "AVS 5V-3A/9V-3A/12V-3A/15V-2.5A/20V-2A (40W)"
+    }
+   ],
+   "images": [
+    "seed/images/r21-product.webp",
+    "seed/images/r21-package.webp"
+   ]
+  },
+  {
+   "sku": "A883-EU-WHITE",
+   "row": 22,
+   "category": "chargers",
+   "modelNumber": "A883 EU",
+   "nameEn": "GaN 65W Fast Charger",
+   "nameKa": "ASPOR A883 EU GaN 65W Fast Charger",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "Input",
+     "value": "AC 100~240V 50/60Hz 1.5A"
+    },
+    {
+     "label": "USB-C1/C2 Output",
+     "value": "DC 5V-3A/9V-3A/12V-3A/15V-3A/20V-3.25A (65W Max)"
+    },
+    {
+     "label": "USB-C1",
+     "value": "AVS 9-20V-3A"
+    },
+    {
+     "label": "USB-A Output",
+     "value": "DC 5V-3A/9V-3A/12V-2.5A/20V-1.5A"
+    },
+    {
+     "label": "USB-C1+USB-C2 Output",
+     "value": "45W+18W (63W Max)"
+    },
+    {
+     "label": "USB-C1+USB-A Output",
+     "value": "45W+18W (63W Max)"
+    },
+    {
+     "label": "USB-C2+USB-A Output",
+     "value": "15W"
+    },
+    {
+     "label": "USB-C1+USB-C2 +USB-A Output",
+     "value": "45W+15w (60W Max)"
+    }
+   ],
+   "images": [
+    "seed/images/r22-product.webp",
+    "seed/images/r22-package.webp"
+   ]
+  },
+  {
+   "sku": "A883-EU-BLACK",
+   "row": 22,
+   "category": "chargers",
+   "modelNumber": "A883 EU",
+   "nameEn": "GaN 65W Fast Charger",
+   "nameKa": "ASPOR A883 EU GaN 65W Fast Charger",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "Input",
+     "value": "AC 100~240V 50/60Hz 1.5A"
+    },
+    {
+     "label": "USB-C1/C2 Output",
+     "value": "DC 5V-3A/9V-3A/12V-3A/15V-3A/20V-3.25A (65W Max)"
+    },
+    {
+     "label": "USB-C1",
+     "value": "AVS 9-20V-3A"
+    },
+    {
+     "label": "USB-A Output",
+     "value": "DC 5V-3A/9V-3A/12V-2.5A/20V-1.5A"
+    },
+    {
+     "label": "USB-C1+USB-C2 Output",
+     "value": "45W+18W (63W Max)"
+    },
+    {
+     "label": "USB-C1+USB-A Output",
+     "value": "45W+18W (63W Max)"
+    },
+    {
+     "label": "USB-C2+USB-A Output",
+     "value": "15W"
+    },
+    {
+     "label": "USB-C1+USB-C2 +USB-A Output",
+     "value": "45W+15w (60W Max)"
+    }
+   ],
+   "images": [
+    "seed/images/r22-product.webp",
+    "seed/images/r22-package.webp"
+   ]
+  },
+  {
+   "sku": "AC53-DARK-GRAY",
+   "row": 23,
+   "category": "cables",
+   "modelNumber": "AC53",
+   "nameEn": "Type-C Nylon Braided Cable",
+   "nameKa": "ASPOR AC53 Type-C Nylon Braided Cable",
+   "color": "მუქი ნაცრისფერი",
+   "colorEn": "dark gray",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "Pass 5A Max"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Support Data Transmission"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "1M Length"
+    }
+   ],
+   "images": [
+    "seed/images/r23-product.webp",
+    "seed/images/r23-package.webp"
+   ]
+  },
+  {
+   "sku": "AC56-DARK-GRAY",
+   "row": 24,
+   "category": "cables",
+   "modelNumber": "AC56",
+   "nameEn": "Type-C to Lightning Nylon Braided Cable",
+   "nameKa": "ASPOR AC56 Type-C to Lightning Nylon Braided Cable",
+   "color": "მუქი ნაცრისფერი",
+   "colorEn": "dark gray",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "27W Fast Charging"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Support Data Transmission"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "1M Length"
+    }
+   ],
+   "images": [
+    "seed/images/r24-product.webp",
+    "seed/images/r24-package.webp"
+   ]
+  },
+  {
+   "sku": "A975-DARK-GRAY",
+   "row": 25,
+   "category": "chargers",
+   "modelNumber": "A975",
+   "nameEn": "",
+   "nameKa": "ASPOR A975",
+   "color": "მუქი ნაცრისფერი",
+   "colorEn": "dark gray",
+   "specs": [
+    {
+     "label": "Input",
+     "value": "12-24V 50/60Hz,10A"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "DC 5V=3A/9V=3A/12V=2.5A"
+    },
+    {
+     "label": "USB-A Output",
+     "value": "DC 5V=3A/9V=2A/12V=1.5A"
+    },
+    {
+     "label": "USB-C+USB-A Output",
+     "value": "5V=3.4A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "PPS 3.3-11V=3A"
+    }
+   ],
+   "images": [
+    "seed/images/r25-product.webp",
+    "seed/images/r25-package.webp"
+   ]
+  },
+  {
+   "sku": "A975-TYPE-C-TO-TYPE-C-DARK-GRAY",
+   "row": 26,
+   "category": "cables",
+   "modelNumber": "A975 (Type-C to Type-C)",
+   "nameEn": "+Type-C to Type-C Cable",
+   "nameKa": "ASPOR A975 +Type-C to Type-C Cable",
+   "color": "მუქი ნაცრისფერი",
+   "colorEn": "dark gray",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C to Type-C"
+    },
+    {
+     "label": "Input",
+     "value": "12-24V 50/60Hz,10A"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "DC 5V=3A/9V=3A/12V=2.5A"
+    },
+    {
+     "label": "USB-A Output",
+     "value": "DC 5V=3A/9V=2A/12V=1.5A"
+    },
+    {
+     "label": "USB-C+USB-A Output",
+     "value": "5V=3.4A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "PPS 3.3-11V=3A"
+    }
+   ],
+   "images": [
+    "seed/images/r26-product.webp",
+    "seed/images/r26-package.webp"
+   ]
+  },
+  {
+   "sku": "A976-DARK-GRAY",
+   "row": 27,
+   "category": "chargers",
+   "modelNumber": "A976",
+   "nameEn": "Satry Sky Car Charger",
+   "nameKa": "ASPOR A976 Satry Sky Car Charger",
+   "color": "მუქი ნაცრისფერი",
+   "colorEn": "dark gray",
+   "specs": [
+    {
+     "label": "Input",
+     "value": "DC 12V-24V"
+    },
+    {
+     "label": "USB-C cable output",
+     "value": "5V=3A/ 9V=3A/ 12V=2.5A"
+    },
+    {
+     "label": "iPh Cable+USB-C+USB-A shared output",
+     "value": "5V=3.1A"
+    }
+   ],
+   "images": [
+    "seed/images/r27-product.webp",
+    "seed/images/r27-package.webp"
+   ]
+  },
+  {
+   "sku": "A970-BLACK",
+   "row": 28,
+   "category": "other",
+   "modelNumber": "A970",
+   "nameEn": "Car MP3 Player",
+   "nameKa": "ASPOR A970 Car MP3 Player",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "Wireless Version",
+     "value": "BT5.3"
+    },
+    {
+     "label": "Input",
+     "value": "DC 12V-24V"
+    },
+    {
+     "label": "USB-A Output",
+     "value": "5V-3.1A"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "5V-3.1A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "RGB Dynamic Lighting"
+    }
+   ],
+   "images": [
+    "seed/images/r28-product.webp",
+    "seed/images/r28-package.webp"
+   ]
+  },
+  {
+   "sku": "A971-BLACK",
+   "row": 29,
+   "category": "other",
+   "modelNumber": "A971",
+   "nameEn": "Car MP3 Player",
+   "nameKa": "ASPOR A971 Car MP3 Player",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "Wireless Version",
+     "value": "BT5.3"
+    },
+    {
+     "label": "Input",
+     "value": "DC 12V-24V"
+    },
+    {
+     "label": "USB-A Output",
+     "value": "5V-3.1A"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "5V-3.1A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "LED Blue Light"
+    }
+   ],
+   "images": [
+    "seed/images/r29-product.webp",
+    "seed/images/r29-package.webp"
+   ]
+  },
+  {
+   "sku": "A781-GRAY",
+   "row": 30,
+   "category": "other",
+   "modelNumber": "A781",
+   "nameEn": "7-in-1 Multi-Function Portable Hub",
+   "nameKa": "ASPOR A781 7-in-1 Multi-Function Portable Hub",
+   "color": "ნაცრისფერი",
+   "colorEn": "gray",
+   "specs": [
+    {
+     "label": "Plug Type",
+     "value": "USB-A/ USB-C To 5*USB-A + 2*USB-C"
+    },
+    {
+     "label": "Material",
+     "value": "Aluminum alloy +ABS"
+    },
+    {
+     "label": "Cable length",
+     "value": "190mm"
+    },
+    {
+     "label": "Transmission Speed",
+     "value": "USB3.0 5Gbps / USB 2.0 480Mbps"
+    },
+    {
+     "label": "Support System",
+     "value": "Windows / Vista / Mac /Android"
+    }
+   ],
+   "images": [
+    "seed/images/r30-product.webp",
+    "seed/images/r30-package.webp"
+   ]
+  },
+  {
+   "sku": "A780-GRAY",
+   "row": 31,
+   "category": "other",
+   "modelNumber": "A780",
+   "nameEn": "4-in-1 Multi-Function Portable Hub",
+   "nameKa": "ASPOR A780 4-in-1 Multi-Function Portable Hub",
+   "color": "ნაცრისფერი",
+   "colorEn": "gray",
+   "specs": [
+    {
+     "label": "Plug Type",
+     "value": "USB-A/ USB-C To 2*USB-A + 2*USB-C"
+    },
+    {
+     "label": "Material",
+     "value": "Aluminum alloy +ABS"
+    },
+    {
+     "label": "Cable length",
+     "value": "150mm"
+    },
+    {
+     "label": "Transmission Speed",
+     "value": "USB 3.0 5Gbps / USB-C 5Gbps"
+    },
+    {
+     "label": "Support System",
+     "value": "Windows / Vista / Mac / Android"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Support USB 3.0 fast data transfer,"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "tible with a variety of systems"
+    }
+   ],
+   "images": [
+    "seed/images/r31-product.webp",
+    "seed/images/r31-package.webp"
+   ]
+  },
+  {
+   "sku": "A782-GRAY",
+   "row": 32,
+   "category": "other",
+   "modelNumber": "A782",
+   "nameEn": "8-in-1 Multi-Function Portable Hub",
+   "nameKa": "ASPOR A782 8-in-1 Multi-Function Portable Hub",
+   "color": "ნაცრისფერი",
+   "colorEn": "gray",
+   "specs": [
+    {
+     "label": "Plug Type",
+     "value": "Ethernet 100Mbps + HDMI 4K 30Hz + USB-A/1 (3.0)+ USB-A/2 (2.0)+ USB-C/1 PD100W + USB-C1/2 480Mbps + SD+TF"
+    },
+    {
+     "label": "Material",
+     "value": "Aluminum alloy + ABS"
+    },
+    {
+     "label": "Cable length",
+     "value": "180mm"
+    },
+    {
+     "label": "Support System",
+     "value": "Windows / Vissa / Mac / Android"
+    }
+   ],
+   "images": [
+    "seed/images/r32-product.webp",
+    "seed/images/r32-package.webp"
+   ]
+  },
+  {
+   "sku": "A783-BLACK",
+   "row": 33,
+   "category": "other",
+   "modelNumber": "A783",
+   "nameEn": "OTG",
+   "nameKa": "ASPOR A783 OTG",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "Material",
+     "value": "Zinc Alloy"
+    },
+    {
+     "label": "Plug Type",
+     "value": "USB-A TO USB-C"
+    },
+    {
+     "label": "Transfer Speed",
+     "value": "480 Mbps"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Data Exchange"
+    }
+   ],
+   "images": [
+    "seed/images/r33-product.webp",
+    "seed/images/r33-package.webp"
+   ]
+  },
+  {
+   "sku": "A335-BLACK",
+   "row": 34,
+   "category": "power-banks",
+   "modelNumber": "A335",
+   "nameEn": "22.5W PD + QC 3.0",
+   "nameKa": "ASPOR A335 22.5W PD + QC 3.0",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "Capacity",
+     "value": "10000mAh"
+    },
+    {
+     "label": "Micro Input",
+     "value": "DC 5V / 2A 9V/2A"
+    },
+    {
+     "label": "Type C Input",
+     "value": "DC5V /2A 9V/2A 12V/1.5A(PD)"
+    },
+    {
+     "label": "Type-C Output",
+     "value": "DC 5V / 3A 9V/2.22A 12V/1.5A(PD)"
+    },
+    {
+     "label": "USB 1/2 Output",
+     "value": "5V 4.5A / 9V 2A / 12V 1.5A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "LCD DISPLAY QUICK CHARGE/ FAST CHARGE"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "2 Input/3 Output"
+    }
+   ],
+   "images": [
+    "seed/images/r34-product.webp",
+    "seed/images/r34-package.webp"
+   ]
+  },
+  {
+   "sku": "A335-WHITE",
+   "row": 34,
+   "category": "power-banks",
+   "modelNumber": "A335",
+   "nameEn": "22.5W PD + QC 3.0",
+   "nameKa": "ASPOR A335 22.5W PD + QC 3.0",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "Capacity",
+     "value": "10000mAh"
+    },
+    {
+     "label": "Micro Input",
+     "value": "DC 5V / 2A 9V/2A"
+    },
+    {
+     "label": "Type C Input",
+     "value": "DC5V /2A 9V/2A 12V/1.5A(PD)"
+    },
+    {
+     "label": "Type-C Output",
+     "value": "DC 5V / 3A 9V/2.22A 12V/1.5A(PD)"
+    },
+    {
+     "label": "USB 1/2 Output",
+     "value": "5V 4.5A / 9V 2A / 12V 1.5A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "LCD DISPLAY QUICK CHARGE/ FAST CHARGE"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "2 Input/3 Output"
+    }
+   ],
+   "images": [
+    "seed/images/r34-product.webp",
+    "seed/images/r34-package.webp"
+   ]
+  },
+  {
+   "sku": "A336-BLACK",
+   "row": 35,
+   "category": "power-banks",
+   "modelNumber": "A336",
+   "nameEn": "22.5W PD + QC 3.0",
+   "nameKa": "ASPOR A336 22.5W PD + QC 3.0",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "Capacity",
+     "value": "20000mAh"
+    },
+    {
+     "label": "Micro Input",
+     "value": "DC 5V / 2A 9V/2A"
+    },
+    {
+     "label": "Type C Input",
+     "value": "DC5V /2A 9V/2A 12V/1.5A(PD)"
+    },
+    {
+     "label": "Type-C Output",
+     "value": "DC 5V / 3A 9V/2.22A 12V/1.5A(PD)"
+    },
+    {
+     "label": "USB 1/2 Output",
+     "value": "5V 4.5A / 9V 2A / 12V 1.5A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "LCD DISPLAY QUICK CHARGE/ FAST CHARGE"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "2 Input/3 Output"
+    }
+   ],
+   "images": [
+    "seed/images/r35-product.webp",
+    "seed/images/r35-package.webp"
+   ]
+  },
+  {
+   "sku": "A336-WHITE",
+   "row": 35,
+   "category": "power-banks",
+   "modelNumber": "A336",
+   "nameEn": "22.5W PD + QC 3.0",
+   "nameKa": "ASPOR A336 22.5W PD + QC 3.0",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "Capacity",
+     "value": "20000mAh"
+    },
+    {
+     "label": "Micro Input",
+     "value": "DC 5V / 2A 9V/2A"
+    },
+    {
+     "label": "Type C Input",
+     "value": "DC5V /2A 9V/2A 12V/1.5A(PD)"
+    },
+    {
+     "label": "Type-C Output",
+     "value": "DC 5V / 3A 9V/2.22A 12V/1.5A(PD)"
+    },
+    {
+     "label": "USB 1/2 Output",
+     "value": "5V 4.5A / 9V 2A / 12V 1.5A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "LCD DISPLAY QUICK CHARGE/ FAST CHARGE"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "2 Input/3 Output"
+    }
+   ],
+   "images": [
+    "seed/images/r35-product.webp",
+    "seed/images/r35-package.webp"
+   ]
+  },
+  {
+   "sku": "A300-WHITE",
+   "row": 36,
+   "category": "power-banks",
+   "modelNumber": "A300",
+   "nameEn": "Built-in cable 10000mAh power bank",
+   "nameKa": "ASPOR A300 Built-in cable 10000mAh power bank",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "USB Cable",
+     "value": "5V/2A"
+    },
+    {
+     "label": "Type-C",
+     "value": "5V/2A"
+    },
+    {
+     "label": "Micro Cable",
+     "value": "5V/2.4A, Type-C Cable 5V/2.4A, Lightning Cable: 5V/2.4A"
+    },
+    {
+     "label": "USB-A",
+     "value": "5V/2.4A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "4 Cables"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Input:"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "Output:"
+    }
+   ],
+   "images": [
+    "seed/images/r36-product.webp",
+    "seed/images/r36-package.webp"
+   ]
+  },
+  {
+   "sku": "A300-BLACK",
+   "row": 36,
+   "category": "power-banks",
+   "modelNumber": "A300",
+   "nameEn": "Built-in cable 10000mAh power bank",
+   "nameKa": "ASPOR A300 Built-in cable 10000mAh power bank",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "USB Cable",
+     "value": "5V/2A"
+    },
+    {
+     "label": "Type-C",
+     "value": "5V/2A"
+    },
+    {
+     "label": "Micro Cable",
+     "value": "5V/2.4A, Type-C Cable 5V/2.4A, Lightning Cable: 5V/2.4A"
+    },
+    {
+     "label": "USB-A",
+     "value": "5V/2.4A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "4 Cables"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Input:"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "Output:"
+    }
+   ],
+   "images": [
+    "seed/images/r36-product.webp",
+    "seed/images/r36-package.webp"
+   ]
+  },
+  {
+   "sku": "A301-WHITE",
+   "row": 37,
+   "category": "power-banks",
+   "modelNumber": "A301",
+   "nameEn": "Built-in cable 20000mAh power bank",
+   "nameKa": "ASPOR A301 Built-in cable 20000mAh power bank",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "USB Cable",
+     "value": "5V/2A"
+    },
+    {
+     "label": "Type-C",
+     "value": "5V/2A"
+    },
+    {
+     "label": "Micro Cable",
+     "value": "5V/2.4A, Type-C Cable 5V/2.4A, Lightning Cable: 5V/2.4A"
+    },
+    {
+     "label": "USB-A",
+     "value": "5V/2.4A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "4 Cables"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Input:"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "Output:"
+    }
+   ],
+   "images": [
+    "seed/images/r37-product.webp",
+    "seed/images/r37-package.webp"
+   ]
+  },
+  {
+   "sku": "A301-BLACK",
+   "row": 37,
+   "category": "power-banks",
+   "modelNumber": "A301",
+   "nameEn": "Built-in cable 20000mAh power bank",
+   "nameKa": "ASPOR A301 Built-in cable 20000mAh power bank",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "USB Cable",
+     "value": "5V/2A"
+    },
+    {
+     "label": "Type-C",
+     "value": "5V/2A"
+    },
+    {
+     "label": "Micro Cable",
+     "value": "5V/2.4A, Type-C Cable 5V/2.4A, Lightning Cable: 5V/2.4A"
+    },
+    {
+     "label": "USB-A",
+     "value": "5V/2.4A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "4 Cables"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Input:"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "Output:"
+    }
+   ],
+   "images": [
+    "seed/images/r37-product.webp",
+    "seed/images/r37-package.webp"
+   ]
+  },
+  {
+   "sku": "A300PD-BLACK",
+   "row": 38,
+   "category": "power-banks",
+   "modelNumber": "A300PD",
+   "nameEn": "22.5W Built-in cables power bank",
+   "nameKa": "ASPOR A300PD 22.5W Built-in cables power bank",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "Battery capacity",
+     "value": "10000mAh/37Wh"
+    },
+    {
+     "label": "Support protocols",
+     "value": "DCP; QC2.0/QC3.0; FCP; SCP; MTK PE+2.0; VOOC"
+    },
+    {
+     "label": "USB-A cable input",
+     "value": "5V=2.0A"
+    },
+    {
+     "label": "Micro cable output",
+     "value": "5V=2.0A"
+    },
+    {
+     "label": "USB-C cable output",
+     "value": "5V=3.0A/9V=2.22A/10V=2.25A /12V-1.67A (PD 22.5W)"
+    },
+    {
+     "label": "iPh cable output",
+     "value": "5V=2.0A"
+    },
+    {
+     "label": "USB-A output",
+     "value": "5V=2.1A/9V=2.0A/10V=2.25A/12V=1.5A (QC 22.5W)"
+    },
+    {
+     "label": "USB-C input",
+     "value": "5V=2.5A/9V=2.0A/10V=1.5A"
+    },
+    {
+     "label": "USB-C output",
+     "value": "5V=3.0/9V=2.22A/10V=2.25A/12V=1.5A (PD 22.5W)"
+    }
+   ],
+   "images": [
+    "seed/images/r38-product.webp",
+    "seed/images/r38-package.webp"
+   ]
+  },
+  {
+   "sku": "A300PD-WHITE",
+   "row": 38,
+   "category": "power-banks",
+   "modelNumber": "A300PD",
+   "nameEn": "22.5W Built-in cables power bank",
+   "nameKa": "ASPOR A300PD 22.5W Built-in cables power bank",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "Battery capacity",
+     "value": "10000mAh/37Wh"
+    },
+    {
+     "label": "Support protocols",
+     "value": "DCP; QC2.0/QC3.0; FCP; SCP; MTK PE+2.0; VOOC"
+    },
+    {
+     "label": "USB-A cable input",
+     "value": "5V=2.0A"
+    },
+    {
+     "label": "Micro cable output",
+     "value": "5V=2.0A"
+    },
+    {
+     "label": "USB-C cable output",
+     "value": "5V=3.0A/9V=2.22A/10V=2.25A /12V-1.67A (PD 22.5W)"
+    },
+    {
+     "label": "iPh cable output",
+     "value": "5V=2.0A"
+    },
+    {
+     "label": "USB-A output",
+     "value": "5V=2.1A/9V=2.0A/10V=2.25A/12V=1.5A (QC 22.5W)"
+    },
+    {
+     "label": "USB-C input",
+     "value": "5V=2.5A/9V=2.0A/10V=1.5A"
+    },
+    {
+     "label": "USB-C output",
+     "value": "5V=3.0/9V=2.22A/10V=2.25A/12V=1.5A (PD 22.5W)"
+    }
+   ],
+   "images": [
+    "seed/images/r38-product.webp",
+    "seed/images/r38-package.webp"
+   ]
+  },
+  {
+   "sku": "A301PD-BLACK",
+   "row": 39,
+   "category": "power-banks",
+   "modelNumber": "A301PD",
+   "nameEn": "22.5W Built-in cables power bank",
+   "nameKa": "ASPOR A301PD 22.5W Built-in cables power bank",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "Battery capacity",
+     "value": "20000mAh/74Wh"
+    },
+    {
+     "label": "Support protocols",
+     "value": "DCP; QC2.0/QC3.0; FCP; SCP; MTK PE+2.0; VOOC"
+    },
+    {
+     "label": "USB-A cable input",
+     "value": "5V=2.0A"
+    },
+    {
+     "label": "Micro cable output",
+     "value": "5V=2.0A"
+    },
+    {
+     "label": "USB-C cable output",
+     "value": "5V=3.0A/9V=2.22A/10V=2.25A /12V-1.67A (PD 22.5W)"
+    },
+    {
+     "label": "iPh cable output",
+     "value": "5V=2.0A"
+    },
+    {
+     "label": "USB-A output",
+     "value": "5V=2.1A/9V=2.0A/10V=2.25A/12V=1.5A (QC 22.5W)"
+    },
+    {
+     "label": "USB-C input",
+     "value": "5V=2.5A/9V=2.0A/10V=1.5A"
+    },
+    {
+     "label": "USB-C output",
+     "value": "5V=3.0/9V=2.22A/10V=2.25A/12V=1.5A (PD 22.5W)"
+    }
+   ],
+   "images": [
+    "seed/images/r39-product.webp",
+    "seed/images/r39-package.webp"
+   ]
+  },
+  {
+   "sku": "A301PD-WHITE",
+   "row": 39,
+   "category": "power-banks",
+   "modelNumber": "A301PD",
+   "nameEn": "22.5W Built-in cables power bank",
+   "nameKa": "ASPOR A301PD 22.5W Built-in cables power bank",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "Battery capacity",
+     "value": "20000mAh/74Wh"
+    },
+    {
+     "label": "Support protocols",
+     "value": "DCP; QC2.0/QC3.0; FCP; SCP; MTK PE+2.0; VOOC"
+    },
+    {
+     "label": "USB-A cable input",
+     "value": "5V=2.0A"
+    },
+    {
+     "label": "Micro cable output",
+     "value": "5V=2.0A"
+    },
+    {
+     "label": "USB-C cable output",
+     "value": "5V=3.0A/9V=2.22A/10V=2.25A /12V-1.67A (PD 22.5W)"
+    },
+    {
+     "label": "iPh cable output",
+     "value": "5V=2.0A"
+    },
+    {
+     "label": "USB-A output",
+     "value": "5V=2.1A/9V=2.0A/10V=2.25A/12V=1.5A (QC 22.5W)"
+    },
+    {
+     "label": "USB-C input",
+     "value": "5V=2.5A/9V=2.0A/10V=1.5A"
+    },
+    {
+     "label": "USB-C output",
+     "value": "5V=3.0/9V=2.22A/10V=2.25A/12V=1.5A (PD 22.5W)"
+    }
+   ],
+   "images": [
+    "seed/images/r39-product.webp",
+    "seed/images/r39-package.webp"
+   ]
+  },
+  {
+   "sku": "A315-BLACK",
+   "row": 40,
+   "category": "power-banks",
+   "modelNumber": "A315",
+   "nameEn": "10000mAh  22.5W  High Speed",
+   "nameKa": "ASPOR A315 10000mAh  22.5W  High Speed",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "IPH cable output",
+     "value": "5V=2.4A"
+    },
+    {
+     "label": "USB cable input",
+     "value": "5V=2.4A"
+    },
+    {
+     "label": "USB-C cable output",
+     "value": "5V=4.5A/9V=2A/12V=1.5A (22.5W MAX)"
+    },
+    {
+     "label": "USB-C 1 input",
+     "value": "5V=3A/9V=2A/12V=1.5A (18W MAX)"
+    },
+    {
+     "label": "USB-C 2 input",
+     "value": "5V=3A/9V=2A/12V=15A (18W MAX)"
+    },
+    {
+     "label": "USB-Coutput",
+     "value": "5V=3A/9V=2.22A/12V-1.67A (20W MAX)"
+    },
+    {
+     "label": "USB-A1/2 output",
+     "value": "5V=3A/9V=2A/12V=1.5A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Built-in Cable Power Bank"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "5V=4.5A/4.5V=5A (22.5WMAX)"
+    }
+   ],
+   "images": [
+    "seed/images/r40-product.webp",
+    "seed/images/r40-package.webp"
+   ]
+  },
+  {
+   "sku": "A315-WHITE",
+   "row": 40,
+   "category": "power-banks",
+   "modelNumber": "A315",
+   "nameEn": "10000mAh  22.5W  High Speed",
+   "nameKa": "ASPOR A315 10000mAh  22.5W  High Speed",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "IPH cable output",
+     "value": "5V=2.4A"
+    },
+    {
+     "label": "USB cable input",
+     "value": "5V=2.4A"
+    },
+    {
+     "label": "USB-C cable output",
+     "value": "5V=4.5A/9V=2A/12V=1.5A (22.5W MAX)"
+    },
+    {
+     "label": "USB-C 1 input",
+     "value": "5V=3A/9V=2A/12V=1.5A (18W MAX)"
+    },
+    {
+     "label": "USB-C 2 input",
+     "value": "5V=3A/9V=2A/12V=15A (18W MAX)"
+    },
+    {
+     "label": "USB-Coutput",
+     "value": "5V=3A/9V=2.22A/12V-1.67A (20W MAX)"
+    },
+    {
+     "label": "USB-A1/2 output",
+     "value": "5V=3A/9V=2A/12V=1.5A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Built-in Cable Power Bank"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "5V=4.5A/4.5V=5A (22.5WMAX)"
+    }
+   ],
+   "images": [
+    "seed/images/r40-product.webp",
+    "seed/images/r40-package.webp"
+   ]
+  },
+  {
+   "sku": "A316-BLACK",
+   "row": 41,
+   "category": "power-banks",
+   "modelNumber": "A316",
+   "nameEn": "20000mAh  22.5W  High Speed",
+   "nameKa": "ASPOR A316 20000mAh  22.5W  High Speed",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "IPH cable output",
+     "value": "5V=2.4A"
+    },
+    {
+     "label": "USB cable input",
+     "value": "5V=2.4A"
+    },
+    {
+     "label": "USB-C cable output",
+     "value": "5V=4.5A/9V=2A/12V=1.5A (22.5W MAX)"
+    },
+    {
+     "label": "USB-C 1 input",
+     "value": "5V=3A/9V=2A/12V=1.5A (18W MAX)"
+    },
+    {
+     "label": "USB-C 2 input",
+     "value": "5V=3A/9V=2A/12V=15A (18W MAX)"
+    },
+    {
+     "label": "USB-Coutput",
+     "value": "5V=3A/9V=2.22A/12V-1.67A (20W MAX)"
+    },
+    {
+     "label": "USB-A1/2 output",
+     "value": "5V=3A/9V=2A/12V=1.5A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Built-in Cable Power Bank"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "5V=4.5A/4.5V=5A (22.5WMAX)"
+    }
+   ],
+   "images": [
+    "seed/images/r41-product.webp",
+    "seed/images/r41-package.webp"
+   ]
+  },
+  {
+   "sku": "A316-WHITE",
+   "row": 41,
+   "category": "power-banks",
+   "modelNumber": "A316",
+   "nameEn": "20000mAh  22.5W  High Speed",
+   "nameKa": "ASPOR A316 20000mAh  22.5W  High Speed",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "IPH cable output",
+     "value": "5V=2.4A"
+    },
+    {
+     "label": "USB cable input",
+     "value": "5V=2.4A"
+    },
+    {
+     "label": "USB-C cable output",
+     "value": "5V=4.5A/9V=2A/12V=1.5A (22.5W MAX)"
+    },
+    {
+     "label": "USB-C 1 input",
+     "value": "5V=3A/9V=2A/12V=1.5A (18W MAX)"
+    },
+    {
+     "label": "USB-C 2 input",
+     "value": "5V=3A/9V=2A/12V=15A (18W MAX)"
+    },
+    {
+     "label": "USB-Coutput",
+     "value": "5V=3A/9V=2.22A/12V-1.67A (20W MAX)"
+    },
+    {
+     "label": "USB-A1/2 output",
+     "value": "5V=3A/9V=2A/12V=1.5A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Built-in Cable Power Bank"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "5V=4.5A/4.5V=5A (22.5WMAX)"
+    }
+   ],
+   "images": [
+    "seed/images/r41-product.webp",
+    "seed/images/r41-package.webp"
+   ]
+  },
+  {
+   "sku": "A327-BLACK",
+   "row": 42,
+   "category": "power-banks",
+   "modelNumber": "A327",
+   "nameEn": "Magsafe Power Bank",
+   "nameKa": "ASPOR A327 Magsafe Power Bank",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "BATTERY CAPACITY",
+     "value": "10000mAh/37Wh"
+    },
+    {
+     "label": "USB-CINPUT",
+     "value": "5V-3.0A/9V-2.0A/12V-1.5A (18W MAX)"
+    },
+    {
+     "label": "USB-A OUTPUT",
+     "value": "4.5V-5.0A/5V-4.5A/9V-2.0A/12V-1.5A (22.5W MAX)"
+    },
+    {
+     "label": "USB-C OUTPUT",
+     "value": "5V-3.0A/9V-2.22A/12V-1.67A (PD20W)"
+    },
+    {
+     "label": "iPh CABLE OUTPUT",
+     "value": "5V-2.0A"
+    },
+    {
+     "label": "USB-C CABLE OUTPUT",
+     "value": "5V-3.0A/9V-2.22A/12V-1.67A (20W MAX)"
+    },
+    {
+     "label": "USB-C CABLE INPUT",
+     "value": "5V-3.0A/9V-2.0A/12V-1.5A (18W MAX)"
+    },
+    {
+     "label": "WIRLESS OUTPUT",
+     "value": "SUPPORT 5W / 7.5W / 10W/15W"
+    },
+    {
+     "label": "iPh WATCH WIRELESS OUTPUT",
+     "value": "2.5W"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "6IN1 WIRELESS&BUILT-IN CABLE"
+    }
+   ],
+   "images": [
+    "seed/images/r42-product.webp",
+    "seed/images/r42-package.webp"
+   ]
+  },
+  {
+   "sku": "A327-WHITE",
+   "row": 42,
+   "category": "power-banks",
+   "modelNumber": "A327",
+   "nameEn": "Magsafe Power Bank",
+   "nameKa": "ASPOR A327 Magsafe Power Bank",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "BATTERY CAPACITY",
+     "value": "10000mAh/37Wh"
+    },
+    {
+     "label": "USB-CINPUT",
+     "value": "5V-3.0A/9V-2.0A/12V-1.5A (18W MAX)"
+    },
+    {
+     "label": "USB-A OUTPUT",
+     "value": "4.5V-5.0A/5V-4.5A/9V-2.0A/12V-1.5A (22.5W MAX)"
+    },
+    {
+     "label": "USB-C OUTPUT",
+     "value": "5V-3.0A/9V-2.22A/12V-1.67A (PD20W)"
+    },
+    {
+     "label": "iPh CABLE OUTPUT",
+     "value": "5V-2.0A"
+    },
+    {
+     "label": "USB-C CABLE OUTPUT",
+     "value": "5V-3.0A/9V-2.22A/12V-1.67A (20W MAX)"
+    },
+    {
+     "label": "USB-C CABLE INPUT",
+     "value": "5V-3.0A/9V-2.0A/12V-1.5A (18W MAX)"
+    },
+    {
+     "label": "WIRLESS OUTPUT",
+     "value": "SUPPORT 5W / 7.5W / 10W/15W"
+    },
+    {
+     "label": "iPh WATCH WIRELESS OUTPUT",
+     "value": "2.5W"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "6IN1 WIRELESS&BUILT-IN CABLE"
+    }
+   ],
+   "images": [
+    "seed/images/r42-product.webp",
+    "seed/images/r42-package.webp"
+   ]
+  },
+  {
+   "sku": "A381-GRAY",
+   "row": 43,
+   "category": "power-banks",
+   "modelNumber": "A381",
+   "nameEn": "Magsafe Power Bank",
+   "nameKa": "ASPOR A381 Magsafe Power Bank",
+   "color": "ნაცრისფერი",
+   "colorEn": "gray",
+   "specs": [
+    {
+     "label": "BATTERY CAPACITY",
+     "value": "5000MAH/37WH"
+    },
+    {
+     "label": "WIRLESS CHARGING OUTPUT",
+     "value": "15W"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "USB-C INPUT:"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "5V=3A/9V=2.22A/12V=1.67A (PD20W)"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "USB-C OUTPUT:"
+    },
+    {
+     "label": "ფუნქცია 4",
+     "value": "5V=3A/9V=2.22A/12V=1.67A (PD20W)"
+    },
+    {
+     "label": "ფუნქცია 5",
+     "value": "Metal Case"
+    }
+   ],
+   "images": [
+    "seed/images/r43-product.webp",
+    "seed/images/r43-package.webp"
+   ]
+  },
+  {
+   "sku": "A381-BLUE",
+   "row": 43,
+   "category": "power-banks",
+   "modelNumber": "A381",
+   "nameEn": "Magsafe Power Bank",
+   "nameKa": "ASPOR A381 Magsafe Power Bank",
+   "color": "ლურჯი",
+   "colorEn": "blue",
+   "specs": [
+    {
+     "label": "BATTERY CAPACITY",
+     "value": "5000MAH/37WH"
+    },
+    {
+     "label": "WIRLESS CHARGING OUTPUT",
+     "value": "15W"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "USB-C INPUT:"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "5V=3A/9V=2.22A/12V=1.67A (PD20W)"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "USB-C OUTPUT:"
+    },
+    {
+     "label": "ფუნქცია 4",
+     "value": "5V=3A/9V=2.22A/12V=1.67A (PD20W)"
+    },
+    {
+     "label": "ფუნქცია 5",
+     "value": "Metal Case"
+    }
+   ],
+   "images": [
+    "seed/images/r43-product.webp",
+    "seed/images/r43-package.webp"
+   ]
+  },
+  {
+   "sku": "A381-PURPLE",
+   "row": 43,
+   "category": "power-banks",
+   "modelNumber": "A381",
+   "nameEn": "Magsafe Power Bank",
+   "nameKa": "ASPOR A381 Magsafe Power Bank",
+   "color": "იისფერი",
+   "colorEn": "purple",
+   "specs": [
+    {
+     "label": "BATTERY CAPACITY",
+     "value": "5000MAH/37WH"
+    },
+    {
+     "label": "WIRLESS CHARGING OUTPUT",
+     "value": "15W"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "USB-C INPUT:"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "5V=3A/9V=2.22A/12V=1.67A (PD20W)"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "USB-C OUTPUT:"
+    },
+    {
+     "label": "ფუნქცია 4",
+     "value": "5V=3A/9V=2.22A/12V=1.67A (PD20W)"
+    },
+    {
+     "label": "ფუნქცია 5",
+     "value": "Metal Case"
+    }
+   ],
+   "images": [
+    "seed/images/r43-product.webp",
+    "seed/images/r43-package.webp"
+   ]
+  },
+  {
+   "sku": "A382-GRAY",
+   "row": 44,
+   "category": "power-banks",
+   "modelNumber": "A382",
+   "nameEn": "Magsafe Power Bank",
+   "nameKa": "ASPOR A382 Magsafe Power Bank",
+   "color": "ნაცრისფერი",
+   "colorEn": "gray",
+   "specs": [
+    {
+     "label": "BATTERY CAPACITY",
+     "value": "10000MAH/37WH"
+    },
+    {
+     "label": "WIRLESS CHARGING OUTPUT",
+     "value": "15W"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "USB-C INPUT:"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "5V=3A/9V=2.22A/12V=1.67A (PD20W)"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "USB-C OUTPUT:"
+    },
+    {
+     "label": "ფუნქცია 4",
+     "value": "5V=3A/9V=2.22A/12V=1.67A (PD20W)"
+    },
+    {
+     "label": "ფუნქცია 5",
+     "value": "Metal Case"
+    }
+   ],
+   "images": [
+    "seed/images/r44-product.webp",
+    "seed/images/r44-package.webp"
+   ]
+  },
+  {
+   "sku": "A382-BLUE",
+   "row": 44,
+   "category": "power-banks",
+   "modelNumber": "A382",
+   "nameEn": "Magsafe Power Bank",
+   "nameKa": "ASPOR A382 Magsafe Power Bank",
+   "color": "ლურჯი",
+   "colorEn": "blue",
+   "specs": [
+    {
+     "label": "BATTERY CAPACITY",
+     "value": "10000MAH/37WH"
+    },
+    {
+     "label": "WIRLESS CHARGING OUTPUT",
+     "value": "15W"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "USB-C INPUT:"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "5V=3A/9V=2.22A/12V=1.67A (PD20W)"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "USB-C OUTPUT:"
+    },
+    {
+     "label": "ფუნქცია 4",
+     "value": "5V=3A/9V=2.22A/12V=1.67A (PD20W)"
+    },
+    {
+     "label": "ფუნქცია 5",
+     "value": "Metal Case"
+    }
+   ],
+   "images": [
+    "seed/images/r44-product.webp",
+    "seed/images/r44-package.webp"
+   ]
+  },
+  {
+   "sku": "A382-PURPLE",
+   "row": 44,
+   "category": "power-banks",
+   "modelNumber": "A382",
+   "nameEn": "Magsafe Power Bank",
+   "nameKa": "ASPOR A382 Magsafe Power Bank",
+   "color": "იისფერი",
+   "colorEn": "purple",
+   "specs": [
+    {
+     "label": "BATTERY CAPACITY",
+     "value": "10000MAH/37WH"
+    },
+    {
+     "label": "WIRLESS CHARGING OUTPUT",
+     "value": "15W"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "USB-C INPUT:"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "5V=3A/9V=2.22A/12V=1.67A (PD20W)"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "USB-C OUTPUT:"
+    },
+    {
+     "label": "ფუნქცია 4",
+     "value": "5V=3A/9V=2.22A/12V=1.67A (PD20W)"
+    },
+    {
+     "label": "ფუნქცია 5",
+     "value": "Metal Case"
+    }
+   ],
+   "images": [
+    "seed/images/r44-product.webp",
+    "seed/images/r44-package.webp"
+   ]
+  },
+  {
+   "sku": "A351-LIGHTNING-CONNECTOR-WHITE",
+   "row": 45,
+   "category": "power-banks",
+   "modelNumber": "A351 (Lightning Connector)",
+   "nameEn": "Capacity 5000mAh",
+   "nameKa": "ASPOR A351 Capacity 5000mAh",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Lightning Connector"
+    },
+    {
+     "label": "IPh connector output",
+     "value": "DC5V=2.0A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Smart mini Power Bank FOR Emergency using"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Built-in Lightning connector"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "USB-C input:"
+    },
+    {
+     "label": "ფუნქცია 4",
+     "value": "DC5V=3.0A/9V=2.0A (PD18W)"
+    },
+    {
+     "label": "ფუნქცია 5",
+     "value": "USB-C output:"
+    },
+    {
+     "label": "ფუნქცია 6",
+     "value": "DC5V=3.0A/9V=2.22A/12V=1.67A (P D20W)"
+    }
+   ],
+   "images": [
+    "seed/images/r45-product.webp",
+    "seed/images/r45-package.webp"
+   ]
+  },
+  {
+   "sku": "A351-LIGHTNING-CONNECTOR-BLACK",
+   "row": 45,
+   "category": "power-banks",
+   "modelNumber": "A351 (Lightning Connector)",
+   "nameEn": "Capacity 5000mAh",
+   "nameKa": "ASPOR A351 Capacity 5000mAh",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Lightning Connector"
+    },
+    {
+     "label": "IPh connector output",
+     "value": "DC5V=2.0A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Smart mini Power Bank FOR Emergency using"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Built-in Lightning connector"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "USB-C input:"
+    },
+    {
+     "label": "ფუნქცია 4",
+     "value": "DC5V=3.0A/9V=2.0A (PD18W)"
+    },
+    {
+     "label": "ფუნქცია 5",
+     "value": "USB-C output:"
+    },
+    {
+     "label": "ფუნქცია 6",
+     "value": "DC5V=3.0A/9V=2.22A/12V=1.67A (P D20W)"
+    }
+   ],
+   "images": [
+    "seed/images/r45-product.webp",
+    "seed/images/r45-package.webp"
+   ]
+  },
+  {
+   "sku": "A352-TYPE-C-CONNECTOR-WHITE",
+   "row": 46,
+   "category": "power-banks",
+   "modelNumber": "A352 (Type-C / Connector)",
+   "nameEn": "Capacity 5000mAh",
+   "nameKa": "ASPOR A352 Capacity 5000mAh",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C / Connector"
+    },
+    {
+     "label": "USB-C connector output",
+     "value": "DC5V=2.0A/9V= 2.0A/12V=1.5A (PD18W)"
+    },
+    {
+     "label": "USB-C input",
+     "value": "DC5V=3.0A/9V=2.0A"
+    },
+    {
+     "label": "USB-C output",
+     "value": "DC5V=3.0A/9V=2.22A /12V=1.67A (PD20W)"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Smart mini Power Bank FOR Emergency using"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Built-in Type-C connector"
+    }
+   ],
+   "images": [
+    "seed/images/r46-product.webp",
+    "seed/images/r46-package.webp"
+   ]
+  },
+  {
+   "sku": "A352-TYPE-C-CONNECTOR-BLACK",
+   "row": 46,
+   "category": "power-banks",
+   "modelNumber": "A352 (Type-C / Connector)",
+   "nameEn": "Capacity 5000mAh",
+   "nameKa": "ASPOR A352 Capacity 5000mAh",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C / Connector"
+    },
+    {
+     "label": "USB-C connector output",
+     "value": "DC5V=2.0A/9V= 2.0A/12V=1.5A (PD18W)"
+    },
+    {
+     "label": "USB-C input",
+     "value": "DC5V=3.0A/9V=2.0A"
+    },
+    {
+     "label": "USB-C output",
+     "value": "DC5V=3.0A/9V=2.22A /12V=1.67A (PD20W)"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Smart mini Power Bank FOR Emergency using"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Built-in Type-C connector"
+    }
+   ],
+   "images": [
+    "seed/images/r46-product.webp",
+    "seed/images/r46-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-57-WHITE",
+   "row": 47,
+   "category": "cables",
+   "modelNumber": "AC-57",
+   "nameEn": "3A Fast Charging",
+   "nameKa": "ASPOR AC-57 3A Fast Charging",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "USB-A to Micro"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Silicone Cable"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "Data Transmission"
+    },
+    {
+     "label": "ფუნქცია 4",
+     "value": "1.0 M Length"
+    }
+   ],
+   "images": [
+    "seed/images/r47-product.webp",
+    "seed/images/r47-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-58-WHITE",
+   "row": 48,
+   "category": "cables",
+   "modelNumber": "AC-58",
+   "nameEn": "3A Fast Charging",
+   "nameKa": "ASPOR AC-58 3A Fast Charging",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "USB-A to iPhone"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Silicone Cable"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "Data Transmission"
+    },
+    {
+     "label": "ფუნქცია 4",
+     "value": "1.0 M Length"
+    }
+   ],
+   "images": [
+    "seed/images/r48-product.webp",
+    "seed/images/r48-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-59-WHITE",
+   "row": 49,
+   "category": "cables",
+   "modelNumber": "AC-59",
+   "nameEn": "3A Fast Charging",
+   "nameKa": "ASPOR AC-59 3A Fast Charging",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "USB-A to Type-C"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Silicone Cable"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "Data Transmission"
+    },
+    {
+     "label": "ფუნქცია 4",
+     "value": "1.0 M Length"
+    }
+   ],
+   "images": [
+    "seed/images/r49-product.webp",
+    "seed/images/r49-package.webp"
+   ]
+  },
+  {
+   "sku": "A080-WHITE",
+   "row": 50,
+   "category": "cables",
+   "modelNumber": "A080",
+   "nameEn": "5A Fast Charging",
+   "nameKa": "ASPOR A080 5A Fast Charging",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "USB-A to Micro"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "1M Length"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "PVC"
+    }
+   ],
+   "images": [
+    "seed/images/r50-product.webp",
+    "seed/images/r50-package.webp"
+   ]
+  },
+  {
+   "sku": "A081-WHITE",
+   "row": 51,
+   "category": "cables",
+   "modelNumber": "A081",
+   "nameEn": "5A Fast Charging",
+   "nameKa": "ASPOR A081 5A Fast Charging",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "USB-A to iPhone"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "1M Length"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "PVC"
+    }
+   ],
+   "images": [
+    "seed/images/r51-product.webp",
+    "seed/images/r51-package.webp"
+   ]
+  },
+  {
+   "sku": "A082-WHITE",
+   "row": 52,
+   "category": "chargers",
+   "modelNumber": "A082",
+   "nameEn": "5A Fast Charging",
+   "nameKa": "ASPOR A082 5A Fast Charging",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "USB-A to Type C"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "1M Length"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "PVC"
+    }
+   ],
+   "images": [
+    "seed/images/r52-product.webp",
+    "seed/images/r52-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-25-BLACK",
+   "row": 53,
+   "category": "cables",
+   "modelNumber": "AC-25",
+   "nameEn": "Micro Nylon data cable",
+   "nameKa": "ASPOR AC-25 Micro Nylon data cable",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "სიგრძე",
+     "value": "1m"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "pass 3.1A  max"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "1.0 m length"
+    }
+   ],
+   "images": [
+    "seed/images/r53-product.webp",
+    "seed/images/r53-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-25-GRAY",
+   "row": 53,
+   "category": "cables",
+   "modelNumber": "AC-25",
+   "nameEn": "Micro Nylon data cable",
+   "nameKa": "ASPOR AC-25 Micro Nylon data cable",
+   "color": "ნაცრისფერი",
+   "colorEn": "gray",
+   "specs": [
+    {
+     "label": "სიგრძე",
+     "value": "1m"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "pass 3.1A  max"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "1.0 m length"
+    }
+   ],
+   "images": [
+    "seed/images/r53-product.webp",
+    "seed/images/r53-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-26-BLACK",
+   "row": 54,
+   "category": "cables",
+   "modelNumber": "AC-26",
+   "nameEn": "IPhone Nylon data cable",
+   "nameKa": "ASPOR AC-26 IPhone Nylon data cable",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "სიგრძე",
+     "value": "1m"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "pass 3.1A  max"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "1.0 m length"
+    }
+   ],
+   "images": [
+    "seed/images/r54-product.webp",
+    "seed/images/r54-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-26-GRAY",
+   "row": 54,
+   "category": "cables",
+   "modelNumber": "AC-26",
+   "nameEn": "IPhone Nylon data cable",
+   "nameKa": "ASPOR AC-26 IPhone Nylon data cable",
+   "color": "ნაცრისფერი",
+   "colorEn": "gray",
+   "specs": [
+    {
+     "label": "სიგრძე",
+     "value": "1m"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "pass 3.1A  max"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "1.0 m length"
+    }
+   ],
+   "images": [
+    "seed/images/r54-product.webp",
+    "seed/images/r54-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-27-BLACK",
+   "row": 55,
+   "category": "cables",
+   "modelNumber": "AC-27",
+   "nameEn": "Type-C Nylon data cable",
+   "nameKa": "ASPOR AC-27 Type-C Nylon data cable",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "სიგრძე",
+     "value": "1m"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "pass 3.1A  max"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "1.0 m length"
+    }
+   ],
+   "images": [
+    "seed/images/r55-product.webp",
+    "seed/images/r55-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-27-GRAY",
+   "row": 55,
+   "category": "cables",
+   "modelNumber": "AC-27",
+   "nameEn": "Type-C Nylon data cable",
+   "nameKa": "ASPOR AC-27 Type-C Nylon data cable",
+   "color": "ნაცრისფერი",
+   "colorEn": "gray",
+   "specs": [
+    {
+     "label": "სიგრძე",
+     "value": "1m"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "pass 3.1A  max"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "1.0 m length"
+    }
+   ],
+   "images": [
+    "seed/images/r55-product.webp",
+    "seed/images/r55-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-25L-BLACK",
+   "row": 56,
+   "category": "cables",
+   "modelNumber": "AC-25L",
+   "nameEn": "Micro Nylon data cable",
+   "nameKa": "ASPOR AC-25L Micro Nylon data cable",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "სიგრძე",
+     "value": "2m"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "pass 3.1A  max"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "2.0 m length"
+    }
+   ],
+   "images": [
+    "seed/images/r56-product.webp",
+    "seed/images/r56-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-26L-BLACK",
+   "row": 57,
+   "category": "cables",
+   "modelNumber": "AC-26L",
+   "nameEn": "IPhone Nylon data cable",
+   "nameKa": "ASPOR AC-26L IPhone Nylon data cable",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "სიგრძე",
+     "value": "2m"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "pass 3.1A  max"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "2.0 m length"
+    }
+   ],
+   "images": [
+    "seed/images/r57-product.webp",
+    "seed/images/r57-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-27L-BLACK",
+   "row": 58,
+   "category": "cables",
+   "modelNumber": "AC-27L",
+   "nameEn": "Type-C Nylon data cable",
+   "nameKa": "ASPOR AC-27L Type-C Nylon data cable",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "სიგრძე",
+     "value": "2m"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "pass 3.1A  max"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "2.0 m length"
+    }
+   ],
+   "images": [
+    "seed/images/r58-product.webp",
+    "seed/images/r58-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-25-XL-BLACK",
+   "row": 59,
+   "category": "cables",
+   "modelNumber": "AC-25 XL",
+   "nameEn": "Micro Nylon data cable",
+   "nameKa": "ASPOR AC-25 XL Micro Nylon data cable",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "სიგრძე",
+     "value": "3m"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "pass 3.1A  max"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "3.0 m length"
+    }
+   ],
+   "images": [
+    "seed/images/r59-product.webp",
+    "seed/images/r59-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-26-XL-BLACK",
+   "row": 60,
+   "category": "cables",
+   "modelNumber": "AC-26 XL",
+   "nameEn": "IPhone Nylon data cable",
+   "nameKa": "ASPOR AC-26 XL IPhone Nylon data cable",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "სიგრძე",
+     "value": "3m"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "pass 3.1A  max"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "3.0 m length"
+    }
+   ],
+   "images": [
+    "seed/images/r60-product.webp",
+    "seed/images/r60-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-27-XL-BLACK",
+   "row": 61,
+   "category": "cables",
+   "modelNumber": "AC-27 XL",
+   "nameEn": "Type-C Nylon data cable",
+   "nameKa": "ASPOR AC-27 XL Type-C Nylon data cable",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "სიგრძე",
+     "value": "3m"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "pass 3.1A  max"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "3.0 m length"
+    }
+   ],
+   "images": [
+    "seed/images/r61-product.webp",
+    "seed/images/r61-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-28-WHITE",
+   "row": 62,
+   "category": "cables",
+   "modelNumber": "AC-28",
+   "nameEn": "3A Fast Charge",
+   "nameKa": "ASPOR AC-28 3A Fast Charge",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "Micro Cable"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "1M Length"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "Silicone"
+    }
+   ],
+   "images": [
+    "seed/images/r62-product.webp",
+    "seed/images/r62-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-28-BLACK",
+   "row": 62,
+   "category": "cables",
+   "modelNumber": "AC-28",
+   "nameEn": "3A Fast Charge",
+   "nameKa": "ASPOR AC-28 3A Fast Charge",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "Micro Cable"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "1M Length"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "Silicone"
+    }
+   ],
+   "images": [
+    "seed/images/r62-product.webp",
+    "seed/images/r62-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-28-BLUE",
+   "row": 62,
+   "category": "cables",
+   "modelNumber": "AC-28",
+   "nameEn": "3A Fast Charge",
+   "nameKa": "ASPOR AC-28 3A Fast Charge",
+   "color": "ლურჯი",
+   "colorEn": "blue",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "Micro Cable"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "1M Length"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "Silicone"
+    }
+   ],
+   "images": [
+    "seed/images/r62-product.webp",
+    "seed/images/r62-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-19-BLACK",
+   "row": 63,
+   "category": "cables",
+   "modelNumber": "AC-19",
+   "nameEn": "60W Fast Charging",
+   "nameKa": "ASPOR AC-19 60W Fast Charging",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "USB-C to USB-C"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Nylon Braided Cable"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "Data Transmission"
+    },
+    {
+     "label": "ფუნქცია 4",
+     "value": "1.2 M Length"
+    }
+   ],
+   "images": [
+    "seed/images/r63-product.webp",
+    "seed/images/r63-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-20-BLACK",
+   "row": 64,
+   "category": "cables",
+   "modelNumber": "AC-20",
+   "nameEn": "27W Fast Charging",
+   "nameKa": "ASPOR AC-20 27W Fast Charging",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "USB-C to Lightning"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Nylon Braided Cable"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "Data Transmission"
+    },
+    {
+     "label": "ფუნქცია 4",
+     "value": "1.2 M Length"
+    }
+   ],
+   "images": [
+    "seed/images/r64-product.webp",
+    "seed/images/r64-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-60-WHITE",
+   "row": 65,
+   "category": "cables",
+   "modelNumber": "AC-60",
+   "nameEn": "60W Fast Charging",
+   "nameKa": "ASPOR AC-60 60W Fast Charging",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "USB-C to USB-C"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Silicone Cable"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "Data Transmission"
+    },
+    {
+     "label": "ფუნქცია 4",
+     "value": "1.0 M Length"
+    }
+   ],
+   "images": [
+    "seed/images/r65-product.webp",
+    "seed/images/r65-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-61-WHITE",
+   "row": 66,
+   "category": "cables",
+   "modelNumber": "AC-61",
+   "nameEn": "27W Fast Charging",
+   "nameKa": "ASPOR AC-61 27W Fast Charging",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "USB-C to Lightning"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Silicone Cable"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "Data Transmission"
+    },
+    {
+     "label": "ფუნქცია 4",
+     "value": "1.0 M Length"
+    }
+   ],
+   "images": [
+    "seed/images/r66-product.webp",
+    "seed/images/r66-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-31-BLACK",
+   "row": 67,
+   "category": "cables",
+   "modelNumber": "AC-31",
+   "nameEn": "100W Super Fast Charging",
+   "nameKa": "ASPOR AC-31 100W Super Fast Charging",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "Type C-Type C"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "1.0M Length"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "Silicone"
+    }
+   ],
+   "images": [
+    "seed/images/r67-product.webp",
+    "seed/images/r67-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-31-WHITE",
+   "row": 67,
+   "category": "cables",
+   "modelNumber": "AC-31",
+   "nameEn": "100W Super Fast Charging",
+   "nameKa": "ASPOR AC-31 100W Super Fast Charging",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "Type C-Type C"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "1.0M Length"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "Silicone"
+    }
+   ],
+   "images": [
+    "seed/images/r67-product.webp",
+    "seed/images/r67-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-32-BLACK",
+   "row": 68,
+   "category": "cables",
+   "modelNumber": "AC-32",
+   "nameEn": "27W Fast Charging",
+   "nameKa": "ASPOR AC-32 27W Fast Charging",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "Type C-Lightning"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "1.0M Length"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "Silicone"
+    }
+   ],
+   "images": [
+    "seed/images/r68-product.webp",
+    "seed/images/r68-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-32-WHITE",
+   "row": 68,
+   "category": "cables",
+   "modelNumber": "AC-32",
+   "nameEn": "27W Fast Charging",
+   "nameKa": "ASPOR AC-32 27W Fast Charging",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "Type C-Lightning"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "1.0M Length"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "Silicone"
+    }
+   ],
+   "images": [
+    "seed/images/r68-product.webp",
+    "seed/images/r68-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-21-BLACK",
+   "row": 69,
+   "category": "cables",
+   "modelNumber": "AC-21",
+   "nameEn": "100W Super Fast Charging",
+   "nameKa": "ASPOR AC-21 100W Super Fast Charging",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "სიგრძე",
+     "value": "1m"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Nylon Cable"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Type-C to Type-C"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "1.0 m length"
+    }
+   ],
+   "images": [
+    "seed/images/r69-product.webp",
+    "seed/images/r69-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-22-BLACK",
+   "row": 70,
+   "category": "cables",
+   "modelNumber": "AC-22",
+   "nameEn": "27W Super Fast Charging",
+   "nameKa": "ASPOR AC-22 27W Super Fast Charging",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "სიგრძე",
+     "value": "1m"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Nylon Cable"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Type-C to Lightning"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "1.0 m length"
+    }
+   ],
+   "images": [
+    "seed/images/r70-product.webp",
+    "seed/images/r70-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-21L-BLACK",
+   "row": 71,
+   "category": "cables",
+   "modelNumber": "AC-21L",
+   "nameEn": "100W Super Fast Charging",
+   "nameKa": "ASPOR AC-21L 100W Super Fast Charging",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "სიგრძე",
+     "value": "2m"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Nylon Cable"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Type-C to Type-C"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "2.0 m length"
+    }
+   ],
+   "images": [
+    "seed/images/r71-product.webp",
+    "seed/images/r71-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-22L-BLACK",
+   "row": 72,
+   "category": "cables",
+   "modelNumber": "AC-22L",
+   "nameEn": "27W Fast Charging",
+   "nameKa": "ASPOR AC-22L 27W Fast Charging",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "სიგრძე",
+     "value": "2m"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Nylon Cable"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Type-C to Lightning"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "2.0 m length"
+    }
+   ],
+   "images": [
+    "seed/images/r72-product.webp",
+    "seed/images/r72-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-21-XL-BLACK",
+   "row": 73,
+   "category": "cables",
+   "modelNumber": "AC-21 XL",
+   "nameEn": "100W Super Fast Charging",
+   "nameKa": "ASPOR AC-21 XL 100W Super Fast Charging",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "სიგრძე",
+     "value": "3m"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Nylon Cable"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Type-C to Type-C"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "3.0 m length"
+    }
+   ],
+   "images": [
+    "seed/images/r73-product.webp",
+    "seed/images/r73-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-22-XL-BLACK",
+   "row": 74,
+   "category": "cables",
+   "modelNumber": "AC-22 XL",
+   "nameEn": "27W Fast Charging",
+   "nameKa": "ASPOR AC-22 XL 27W Fast Charging",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "სიგრძე",
+     "value": "3m"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Nylon Cable"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Type-C to Lightning"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "3.0 m length"
+    }
+   ],
+   "images": [
+    "seed/images/r74-product.webp",
+    "seed/images/r74-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-35-BLACK",
+   "row": 75,
+   "category": "cables",
+   "modelNumber": "AC-35",
+   "nameEn": "3 IN 1 Nylon Cable",
+   "nameKa": "ASPOR AC-35 3 IN 1 Nylon Cable",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "USB-A to Micro",
+     "value": "5V-2.4A"
+    },
+    {
+     "label": "USB-A to Lightning",
+     "value": "5V-2.4A"
+    },
+    {
+     "label": "USB-A to Type-C",
+     "value": "5V-2.4A/9V-3A/"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "60W Super Fast Charging"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Aluminum Alloy Case"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "1.0M length"
+    },
+    {
+     "label": "ფუნქცია 4",
+     "value": "Support Multiple Devices Charging"
+    },
+    {
+     "label": "ფუნქცია 5",
+     "value": "20V-3A(60W)"
+    }
+   ],
+   "images": [
+    "seed/images/r75-product.webp",
+    "seed/images/r75-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-36-BLACK",
+   "row": 76,
+   "category": "cables",
+   "modelNumber": "AC-36",
+   "nameEn": "3 IN 1 Nylon Cable",
+   "nameKa": "ASPOR AC-36 3 IN 1 Nylon Cable",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "USB-C to Micro",
+     "value": "5V-2.4A"
+    },
+    {
+     "label": "USB-C to Lightning",
+     "value": "5V-2.4A"
+    },
+    {
+     "label": "USB-C to Type-C",
+     "value": "5V-2.4A/9V-3A/"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "60W Super Fast Charging"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Aluminum Alloy Case"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "1.0M length"
+    },
+    {
+     "label": "ფუნქცია 4",
+     "value": "Fully compatible protocol"
+    },
+    {
+     "label": "ფუნქცია 5",
+     "value": "Support Multiple Devices Charging"
+    },
+    {
+     "label": "ფუნქცია 6",
+     "value": "20V-3A(60W)"
+    }
+   ],
+   "images": [
+    "seed/images/r76-product.webp",
+    "seed/images/r76-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-38-BLACK",
+   "row": 77,
+   "category": "cables",
+   "modelNumber": "AC-38",
+   "nameEn": "6 IN 1 Nylon Cable",
+   "nameKa": "ASPOR AC-38 6 IN 1 Nylon Cable",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "Micro",
+     "value": "5V-2.4A"
+    },
+    {
+     "label": "Lightning",
+     "value": "5V-2.4A"
+    },
+    {
+     "label": "Type-C",
+     "value": "5V-2.4A/9V-3A/"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "60W Super Fast Charging"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Aluminum Alloy Case"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "1.0M length"
+    },
+    {
+     "label": "ფუნქცია 4",
+     "value": "Fully compatible protocol"
+    },
+    {
+     "label": "ფუნქცია 5",
+     "value": "Support Multiple Devices Charging"
+    },
+    {
+     "label": "ფუნქცია 6",
+     "value": "20V-3A(60W)"
+    }
+   ],
+   "images": [
+    "seed/images/r77-product.webp",
+    "seed/images/r77-package.webp"
+   ]
+  },
+  {
+   "sku": "AC-39-BLACK",
+   "row": 78,
+   "category": "cables",
+   "modelNumber": "AC-39",
+   "nameEn": "4IN1 Nylon Cable",
+   "nameKa": "ASPOR AC-39 4IN1 Nylon Cable",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "USB-C to USB-C support output",
+     "value": "60W (PD)"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "60W Super Fast Charging"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Length 1200mm"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "USB-C to Lightning 27W (PD)"
+    },
+    {
+     "label": "ფუნქცია 4",
+     "value": "USB to Type-C  2.4A"
+    },
+    {
+     "label": "ფუნქცია 5",
+     "value": "USB to lightning 2.4A"
+    }
+   ],
+   "images": [
+    "seed/images/r78-product.webp",
+    "seed/images/r78-package.webp"
+   ]
+  },
+  {
+   "sku": "A801-EU-WHITE",
+   "row": 79,
+   "category": "chargers",
+   "modelNumber": "A801 EU",
+   "nameEn": "20W PD Fast Charger",
+   "nameKa": "ASPOR A801 EU 20W PD Fast Charger",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "EU  PIN"
+    }
+   ],
+   "images": [
+    "seed/images/r79-product.webp",
+    "seed/images/r79-package.webp"
+   ]
+  },
+  {
+   "sku": "A801-EU-TYPE-C-TO-TYPE-C-WHITE",
+   "row": 80,
+   "category": "chargers",
+   "modelNumber": "A801 EU (Type-C to Type-C)",
+   "nameEn": "20W PD Fast Charger",
+   "nameKa": "ASPOR A801 EU 20W PD Fast Charger",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C to Type-C"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "EU  PIN+"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Type-C to Type-C Cable"
+    }
+   ],
+   "images": [
+    "seed/images/r80-product.webp",
+    "seed/images/r80-package.webp"
+   ]
+  },
+  {
+   "sku": "A827-EU-WHITE",
+   "row": 81,
+   "category": "chargers",
+   "modelNumber": "A827 EU",
+   "nameEn": "Combo (EU Pin）",
+   "nameKa": "ASPOR A827 EU Combo (EU Pin）",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "2.4A Home Charger IQ"
+    }
+   ],
+   "images": [
+    "seed/images/r81-product.webp",
+    "seed/images/r81-package.webp"
+   ]
+  },
+  {
+   "sku": "A827-EU-TYPE-C-WHITE",
+   "row": 82,
+   "category": "chargers",
+   "modelNumber": "A827 EU (Type-C)",
+   "nameEn": "Combo (EU Pin）",
+   "nameKa": "ASPOR A827 EU Combo (EU Pin）",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "2.4A Home Charger IQ"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "+ Type-C Cable"
+    }
+   ],
+   "images": [
+    "seed/images/r82-product.webp",
+    "seed/images/r82-package.webp"
+   ]
+  },
+  {
+   "sku": "A823-EU-WHITE",
+   "row": 83,
+   "category": "chargers",
+   "modelNumber": "A823 EU",
+   "nameEn": "2.4 A IQ Home charger",
+   "nameKa": "ASPOR A823 EU 2.4 A IQ Home charger",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "LED blue light"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "2 USB / EU PIN"
+    }
+   ],
+   "images": [
+    "seed/images/r83-product.webp",
+    "seed/images/r83-package.webp"
+   ]
+  },
+  {
+   "sku": "A823-EU-TYPE-C-WHITE",
+   "row": 84,
+   "category": "chargers",
+   "modelNumber": "A823 EU (Type-C)",
+   "nameEn": "2.4 A IQ Home charger",
+   "nameKa": "ASPOR A823 EU 2.4 A IQ Home charger",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "+ Type C cable"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "led blue light ,2 usb"
+    }
+   ],
+   "images": [
+    "seed/images/r84-product.webp",
+    "seed/images/r84-package.webp"
+   ]
+  },
+  {
+   "sku": "A829-EU-WHITE",
+   "row": 85,
+   "category": "chargers",
+   "modelNumber": "A829 EU",
+   "nameEn": "2.4 A IQ Home charger",
+   "nameKa": "ASPOR A829 EU 2.4 A IQ Home charger",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "led blue light"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "2 usb"
+    },
+    {
+     "label": "ფუნქცია 3",
+     "value": "EU PIN"
+    }
+   ],
+   "images": [
+    "seed/images/r85-product.webp",
+    "seed/images/r85-package.webp"
+   ]
+  },
+  {
+   "sku": "A829-EU-TYPE-C-WHITE",
+   "row": 86,
+   "category": "chargers",
+   "modelNumber": "A829 EU (Type-C)",
+   "nameEn": "2.4 A IQ Home charger",
+   "nameKa": "ASPOR A829 EU 2.4 A IQ Home charger",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "+ Type C cable"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "led blue light ,2 usb"
+    }
+   ],
+   "images": [
+    "seed/images/r86-product.webp",
+    "seed/images/r86-package.webp"
+   ]
+  },
+  {
+   "sku": "A826-EU-WHITE",
+   "row": 87,
+   "category": "chargers",
+   "modelNumber": "A826 EU",
+   "nameEn": "20W PD+ QC FAST CHARGER/ EU PIN",
+   "nameKa": "ASPOR A826 EU 20W PD+ QC FAST CHARGER/ EU PIN",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [],
+   "images": [
+    "seed/images/r87-product.webp",
+    "seed/images/r87-package.webp"
+   ]
+  },
+  {
+   "sku": "A826-EU-TYPE-C-WHITE",
+   "row": 88,
+   "category": "chargers",
+   "modelNumber": "A826 EU (Type-C)",
+   "nameEn": "20W PD+ QC FAST CHARGER / EU PIN",
+   "nameKa": "ASPOR A826 EU 20W PD+ QC FAST CHARGER / EU PIN",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "+ Type-C  CABLE"
+    }
+   ],
+   "images": [
+    "seed/images/r88-product.webp",
+    "seed/images/r88-package.webp"
+   ]
+  },
+  {
+   "sku": "A826-EU-TYPE-C-TYPE-C-WHITE",
+   "row": 89,
+   "category": "chargers",
+   "modelNumber": "A826 EU (Type C-Type C)",
+   "nameEn": "20W PD+ QC FAST CHARGER / EU PIN",
+   "nameKa": "ASPOR A826 EU 20W PD+ QC FAST CHARGER / EU PIN",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type C-Type C"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "+ Type C- Type C / PD CABLE"
+    }
+   ],
+   "images": [
+    "seed/images/r89-product.webp",
+    "seed/images/r89-package.webp"
+   ]
+  },
+  {
+   "sku": "A806-EU-SINGLE-WHITE",
+   "row": 90,
+   "category": "chargers",
+   "modelNumber": "A806 EU (Single)",
+   "nameEn": "33W",
+   "nameKa": "ASPOR A806 EU 33W",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Single"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "PD+ QC FAST CHARGER/ EU PIN"
+    }
+   ],
+   "images": [
+    "seed/images/r90-product.webp",
+    "seed/images/r90-package.webp"
+   ]
+  },
+  {
+   "sku": "A806-EU-TYPE-C-TO-TYPE-C-WHITE",
+   "row": 91,
+   "category": "chargers",
+   "modelNumber": "A806 EU (Type-C TO Type-C)",
+   "nameEn": "33W",
+   "nameKa": "ASPOR A806 EU 33W",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C TO Type-C"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "PD+ QC FAST CHARGER / EU PIN"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "+ TYPE -C to TYPE -C PD CABLE"
+    }
+   ],
+   "images": [
+    "seed/images/r91-product.webp",
+    "seed/images/r91-package.webp"
+   ]
+  },
+  {
+   "sku": "A821EU-WHITE",
+   "row": 92,
+   "category": "chargers",
+   "modelNumber": "A821EU",
+   "nameEn": "20W Fast Charger",
+   "nameKa": "ASPOR A821EU 20W Fast Charger",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "Input",
+     "value": "AC 220V~240V 50/60Hz"
+    },
+    {
+     "label": "USB-A Output",
+     "value": "5V-3A/9V-2.22A/12V-1.67A (20W Max)"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "5V-3A/9V-2.22A/12V-1.67A(20W Max)"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "QC+PD 20W Fast Charging"
+    }
+   ],
+   "images": [
+    "seed/images/r92-product.webp",
+    "seed/images/r92-package.webp"
+   ]
+  },
+  {
+   "sku": "A821EU-TYPE-C-TO-TYPE-C-WHITE",
+   "row": 93,
+   "category": "chargers",
+   "modelNumber": "A821EU (Type-C to Type-C)",
+   "nameEn": "20W Fast Charger+Type-C to Type-C Cable",
+   "nameKa": "ASPOR A821EU 20W Fast Charger+Type-C to Type-C Cable",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C to Type-C"
+    },
+    {
+     "label": "Input",
+     "value": "AC 220V~240V 50/60Hz"
+    },
+    {
+     "label": "USB-A Output",
+     "value": "5V-3A/9V-2.22A/12V-1.67A (20W Max)"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "5V-3A/9V-2.22A/12V-1.67A(20W Max)"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "QC+PD 20W Fast Charging"
+    }
+   ],
+   "images": [
+    "seed/images/r93-product.webp",
+    "seed/images/r93-package.webp"
+   ]
+  },
+  {
+   "sku": "A820EU-BLACK",
+   "row": 94,
+   "category": "chargers",
+   "modelNumber": "A820EU",
+   "nameEn": "25W Fast Charger",
+   "nameKa": "ASPOR A820EU 25W Fast Charger",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "Input",
+     "value": "AC100~240V 50/60Hz 0.6A"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "5V=3A/9V2.77A/12V=2.08A"
+    },
+    {
+     "label": "PPS",
+     "value": "3.3V-11V=2.25A"
+    }
+   ],
+   "images": [
+    "seed/images/r94-product.webp",
+    "seed/images/r94-package.webp"
+   ]
+  },
+  {
+   "sku": "A820EU-TYPE-C-TO-TYPE-C-BLACK",
+   "row": 95,
+   "category": "chargers",
+   "modelNumber": "A820EU (Type-C to Type-C)",
+   "nameEn": "25W Fast Charger",
+   "nameKa": "ASPOR A820EU 25W Fast Charger",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C to Type-C"
+    },
+    {
+     "label": "Input",
+     "value": "AC100~240V 50/60Hz 0.6A"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "5V=3A/9V2.77A/12V=2.08A"
+    },
+    {
+     "label": "PPS",
+     "value": "3.3V-11V=2.25A"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "+Type-C to Type-C Cable"
+    }
+   ],
+   "images": [
+    "seed/images/r95-product.webp",
+    "seed/images/r95-package.webp"
+   ]
+  },
+  {
+   "sku": "A810-EU-WHITE",
+   "row": 96,
+   "category": "chargers",
+   "modelNumber": "A810 EU",
+   "nameEn": "30W Fast Charger",
+   "nameKa": "ASPOR A810 EU 30W Fast Charger",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "Input",
+     "value": "AC 100~240V 50/60Hz 0.6A"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "DC 5V=3.0A/9V=3.0A/12V=2.5A/15V=2A (30W MAX)"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Type-C Charging Port"
+    }
+   ],
+   "images": [
+    "seed/images/r96-product.webp",
+    "seed/images/r96-package.webp"
+   ]
+  },
+  {
+   "sku": "A810-EU-TYPE-C-TO-TYPE-C-CABLES-WHITE",
+   "row": 97,
+   "category": "chargers",
+   "modelNumber": "A810 EU (Type-C to Type-C / Cables)",
+   "nameEn": "30W Fast Charger",
+   "nameKa": "ASPOR A810 EU 30W Fast Charger",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C to Type-C / Cables"
+    },
+    {
+     "label": "Input",
+     "value": "AC 100~240V 50/60Hz 0.6A"
+    },
+    {
+     "label": "USB-C Output",
+     "value": "DC 5V=3.0A/9V=3.0A/12V=2.5A/15V=2A (30W MAX)"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "Type-C Charging Port"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "+Type C to Type-C Cables"
+    }
+   ],
+   "images": [
+    "seed/images/r97-product.webp",
+    "seed/images/r97-package.webp"
+   ]
+  },
+  {
+   "sku": "A808-EU-WHITE",
+   "row": 98,
+   "category": "chargers",
+   "modelNumber": "A808 EU",
+   "nameEn": "20W PD Fast Charger",
+   "nameKa": "ASPOR A808 EU 20W PD Fast Charger",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "EU  PIN"
+    }
+   ],
+   "images": [
+    "seed/images/r98-product.webp",
+    "seed/images/r98-package.webp"
+   ]
+  },
+  {
+   "sku": "A808-EU-TYPE-C-TO-TYPE-C-WHITE",
+   "row": 99,
+   "category": "chargers",
+   "modelNumber": "A808 EU (Type-C to Type-C)",
+   "nameEn": "20W PD Fast Charger",
+   "nameKa": "ASPOR A808 EU 20W PD Fast Charger",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C to Type-C"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "EU  PIN+"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Type-C to Type-C Cable"
+    }
+   ],
+   "images": [
+    "seed/images/r99-product.webp",
+    "seed/images/r99-package.webp"
+   ]
+  },
+  {
+   "sku": "A833-EU-WHITE",
+   "row": 100,
+   "category": "chargers",
+   "modelNumber": "A833 EU",
+   "nameEn": "40W Fast Charger (EU Plug)",
+   "nameKa": "ASPOR A833 EU 40W Fast Charger (EU Plug)",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "Input",
+     "value": "AC 100-24V 0.8A"
+    },
+    {
+     "label": "USB-C 1/USB-C 2 Output",
+     "value": "5V=3A/9V=2.2A/12V=1.67A (20W Max)"
+    },
+    {
+     "label": "USB-A 1/USB-A 2 Output",
+     "value": "5V=3A/9V=2.2A/12V=1.67A (20W Max)"
+    },
+    {
+     "label": "USB-C1+USB-C2 Output",
+     "value": "20W+20W (Total 40W)"
+    },
+    {
+     "label": "USB-C1+USB-A1 Output",
+     "value": "20W+20W (Total 40W)"
+    },
+    {
+     "label": "USB-C1+USB-A2 Output",
+     "value": "5V=3A (Total 15W)"
+    },
+    {
+     "label": "USB-C2+USB-A1 Output",
+     "value": "5V=3A (Total 15W)"
+    },
+    {
+     "label": "USB-C2+USB-A2 Output",
+     "value": "20W+20W (Total 40W)"
+    },
+    {
+     "label": "USB-A1+USB-A2 Output",
+     "value": "20W+20W (Total 40W)"
+    }
+   ],
+   "images": [
+    "seed/images/r100-product.webp",
+    "seed/images/r100-package.webp"
+   ]
+  },
+  {
+   "sku": "A822-EU-WHITE",
+   "row": 101,
+   "category": "chargers",
+   "modelNumber": "A822 EU",
+   "nameEn": "18W Fast Charger, QC 3.0",
+   "nameKa": "ASPOR A822 EU 18W Fast Charger, QC 3.0",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "EU  PIN"
+    }
+   ],
+   "images": [
+    "seed/images/r101-product.webp",
+    "seed/images/r101-package.webp"
+   ]
+  },
+  {
+   "sku": "A822-EU-TYPE-C-WHITE",
+   "row": 102,
+   "category": "chargers",
+   "modelNumber": "A822 EU (Type-C)",
+   "nameEn": "18W Fast Charger, QC 3.0",
+   "nameKa": "ASPOR A822 EU 18W Fast Charger, QC 3.0",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "EU PIN + Type C  Cable"
+    }
+   ],
+   "images": [
+    "seed/images/r102-product.webp",
+    "seed/images/r102-package.webp"
+   ]
+  },
+  {
+   "sku": "A815-EU-WHITE",
+   "row": 103,
+   "category": "chargers",
+   "modelNumber": "A815 EU",
+   "nameEn": "20W PD Fast Charger",
+   "nameKa": "ASPOR A815 EU 20W PD Fast Charger",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "EU  PIN"
+    }
+   ],
+   "images": [
+    "seed/images/r103-product.webp",
+    "seed/images/r103-package.webp"
+   ]
+  },
+  {
+   "sku": "A815-EU-TYPE-C-TO-TYPE-C-WHITE",
+   "row": 104,
+   "category": "chargers",
+   "modelNumber": "A815 EU (Type-C to Type-C)",
+   "nameEn": "20W PD Fast Charger",
+   "nameKa": "ASPOR A815 EU 20W PD Fast Charger",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C to Type-C"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "EU  PIN+"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Type-C to Type-C Cable"
+    }
+   ],
+   "images": [
+    "seed/images/r104-product.webp",
+    "seed/images/r104-package.webp"
+   ]
+  },
+  {
+   "sku": "A825-EU-WHITE",
+   "row": 105,
+   "category": "chargers",
+   "modelNumber": "A825 EU",
+   "nameEn": "20W PD Fast Charger",
+   "nameKa": "ASPOR A825 EU 20W PD Fast Charger",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "EU  PIN"
+    }
+   ],
+   "images": [
+    "seed/images/r105-product.webp",
+    "seed/images/r105-package.webp"
+   ]
+  },
+  {
+   "sku": "A825-EU-TYPE-C-TO-TYPE-C-WHITE",
+   "row": 106,
+   "category": "chargers",
+   "modelNumber": "A825 EU (Type-C to Type-C)",
+   "nameEn": "20W PD Fast Charger",
+   "nameKa": "ASPOR A825 EU 20W PD Fast Charger",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C to Type-C"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "EU  PIN+"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "Type-C to Type-C Cable"
+    }
+   ],
+   "images": [
+    "seed/images/r106-product.webp",
+    "seed/images/r106-package.webp"
+   ]
+  },
+  {
+   "sku": "A816-EU-WHITE",
+   "row": 107,
+   "category": "chargers",
+   "modelNumber": "A816 EU",
+   "nameEn": "20W",
+   "nameKa": "ASPOR A816 EU 20W",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "ფუნქცია",
+     "value": "PD+ QC FAST CHARGER/ EU PIN"
+    }
+   ],
+   "images": [
+    "seed/images/r107-product.webp",
+    "seed/images/r107-package.webp"
+   ]
+  },
+  {
+   "sku": "A816-EU-TYPE-C-TO-TYPE-C-WHITE",
+   "row": 108,
+   "category": "chargers",
+   "modelNumber": "A816 EU (Type-C to Type-C)",
+   "nameEn": "20W",
+   "nameKa": "ASPOR A816 EU 20W",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "Type-C to Type-C"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "PD+ QC FAST CHARGER / EU PIN"
+    },
+    {
+     "label": "ფუნქცია 2",
+     "value": "+ Type C- Type C / PD CABLE"
+    }
+   ],
+   "images": [
+    "seed/images/r108-product.webp",
+    "seed/images/r108-package.webp"
+   ]
+  },
+  {
+   "sku": "A502-US-PIN-BLACK",
+   "row": 109,
+   "category": "other",
+   "modelNumber": "A502 (US Pin)",
+   "nameEn": "IQ Power Socket",
+   "nameKa": "ASPOR A502 IQ Power Socket",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "US Pin"
+    },
+    {
+     "label": "Rated current",
+     "value": "10A (Max)"
+    },
+    {
+     "label": "Rated voltage",
+     "value": "250V"
+    },
+    {
+     "label": "Rated power",
+     "value": "2500 W"
+    },
+    {
+     "label": "USB Output",
+     "value": "DC 5V /2.4A (Auto Max)"
+    },
+    {
+     "label": "Output Port",
+     "value": "3* Sokets Combo +4*USB"
+    },
+    {
+     "label": "Products Size",
+     "value": "162*97*38 MM"
+    },
+    {
+     "label": "Power Cord",
+     "value": "200 CM"
+    },
+    {
+     "label": "Plus",
+     "value": "US/UK/EU"
+    }
+   ],
+   "images": [
+    "seed/images/r109-product.webp",
+    "seed/images/r109-package.webp"
+   ]
+  },
+  {
+   "sku": "A502-US-PIN-WHITE",
+   "row": 109,
+   "category": "other",
+   "modelNumber": "A502 (US Pin)",
+   "nameEn": "IQ Power Socket",
+   "nameKa": "ASPOR A502 IQ Power Socket",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "კომპლექტაცია",
+     "value": "US Pin"
+    },
+    {
+     "label": "Rated current",
+     "value": "10A (Max)"
+    },
+    {
+     "label": "Rated voltage",
+     "value": "250V"
+    },
+    {
+     "label": "Rated power",
+     "value": "2500 W"
+    },
+    {
+     "label": "USB Output",
+     "value": "DC 5V /2.4A (Auto Max)"
+    },
+    {
+     "label": "Output Port",
+     "value": "3* Sokets Combo +4*USB"
+    },
+    {
+     "label": "Products Size",
+     "value": "162*97*38 MM"
+    },
+    {
+     "label": "Power Cord",
+     "value": "200 CM"
+    },
+    {
+     "label": "Plus",
+     "value": "US/UK/EU"
+    }
+   ],
+   "images": [
+    "seed/images/r109-product.webp",
+    "seed/images/r109-package.webp"
+   ]
+  },
+  {
+   "sku": "A503-BLACK",
+   "row": 110,
+   "category": "other",
+   "modelNumber": "A503",
+   "nameEn": "IQ Power Socket",
+   "nameKa": "ASPOR A503 IQ Power Socket",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "Sale point",
+     "value": "Setting digital timing cut off power"
+    },
+    {
+     "label": "Rated current",
+     "value": "10A (Max)"
+    },
+    {
+     "label": "Rated voltage",
+     "value": "250V"
+    },
+    {
+     "label": "Rated power",
+     "value": "2500 W"
+    },
+    {
+     "label": "USB Output",
+     "value": "DC 5V /3.4A (Auto Max)"
+    },
+    {
+     "label": "Output Port",
+     "value": "3* Sokets Combo + 5*USB"
+    },
+    {
+     "label": "Products Size",
+     "value": "162*97*38 MM"
+    },
+    {
+     "label": "Power Cord",
+     "value": "200 CM"
+    },
+    {
+     "label": "Plus",
+     "value": "US/UK/EU"
+    }
+   ],
+   "images": [
+    "seed/images/r110-product.webp",
+    "seed/images/r110-package.webp"
+   ]
+  },
+  {
+   "sku": "A503-WHITE",
+   "row": 110,
+   "category": "other",
+   "modelNumber": "A503",
+   "nameEn": "IQ Power Socket",
+   "nameKa": "ASPOR A503 IQ Power Socket",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "Sale point",
+     "value": "Setting digital timing cut off power"
+    },
+    {
+     "label": "Rated current",
+     "value": "10A (Max)"
+    },
+    {
+     "label": "Rated voltage",
+     "value": "250V"
+    },
+    {
+     "label": "Rated power",
+     "value": "2500 W"
+    },
+    {
+     "label": "USB Output",
+     "value": "DC 5V /3.4A (Auto Max)"
+    },
+    {
+     "label": "Output Port",
+     "value": "3* Sokets Combo + 5*USB"
+    },
+    {
+     "label": "Products Size",
+     "value": "162*97*38 MM"
+    },
+    {
+     "label": "Power Cord",
+     "value": "200 CM"
+    },
+    {
+     "label": "Plus",
+     "value": "US/UK/EU"
+    }
+   ],
+   "images": [
+    "seed/images/r110-product.webp",
+    "seed/images/r110-package.webp"
+   ]
+  },
+  {
+   "sku": "A505-PD-BLACK",
+   "row": 111,
+   "category": "other",
+   "modelNumber": "A505 PD",
+   "nameEn": "IQ Power Socket",
+   "nameKa": "ASPOR A505 PD IQ Power Socket",
+   "color": "შავი",
+   "colorEn": "black",
+   "specs": [
+    {
+     "label": "Sale point",
+     "value": "Setting digital timing cut off power"
+    },
+    {
+     "label": "Rated current",
+     "value": "10A (Max)"
+    },
+    {
+     "label": "Rated voltage",
+     "value": "250V"
+    },
+    {
+     "label": "Rated power",
+     "value": "2500 W"
+    },
+    {
+     "label": "USB-C PD Port",
+     "value": "20W"
+    },
+    {
+     "label": "QC 3.0 Port",
+     "value": "18W"
+    },
+    {
+     "label": "USB Port",
+     "value": "12W"
+    },
+    {
+     "label": "Products Size",
+     "value": "162*97*38 MM"
+    },
+    {
+     "label": "Power Cord",
+     "value": "200 CM"
+    },
+    {
+     "label": "Plus",
+     "value": "US/UK/EU"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "USB-C + A = 32W Output"
+    }
+   ],
+   "images": [
+    "seed/images/r111-product.webp",
+    "seed/images/r111-package.webp"
+   ]
+  },
+  {
+   "sku": "A505-PD-WHITE",
+   "row": 111,
+   "category": "other",
+   "modelNumber": "A505 PD",
+   "nameEn": "IQ Power Socket",
+   "nameKa": "ASPOR A505 PD IQ Power Socket",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "Sale point",
+     "value": "Setting digital timing cut off power"
+    },
+    {
+     "label": "Rated current",
+     "value": "10A (Max)"
+    },
+    {
+     "label": "Rated voltage",
+     "value": "250V"
+    },
+    {
+     "label": "Rated power",
+     "value": "2500 W"
+    },
+    {
+     "label": "USB-C PD Port",
+     "value": "20W"
+    },
+    {
+     "label": "QC 3.0 Port",
+     "value": "18W"
+    },
+    {
+     "label": "USB Port",
+     "value": "12W"
+    },
+    {
+     "label": "Products Size",
+     "value": "162*97*38 MM"
+    },
+    {
+     "label": "Power Cord",
+     "value": "200 CM"
+    },
+    {
+     "label": "Plus",
+     "value": "US/UK/EU"
+    },
+    {
+     "label": "ფუნქცია",
+     "value": "USB-C + A = 32W Output"
+    }
+   ],
+   "images": [
+    "seed/images/r111-product.webp",
+    "seed/images/r111-package.webp"
+   ]
+  },
+  {
+   "sku": "A523-WHITE",
+   "row": 112,
+   "category": "chargers",
+   "modelNumber": "A523",
+   "nameEn": "Use for iPhone Original Watches.",
+   "nameKa": "ASPOR A523 Use for iPhone Original Watches.",
+   "color": "თეთრი",
+   "colorEn": "white",
+   "specs": [
+    {
+     "label": "Output power",
+     "value": "3W"
+    },
+    {
+     "label": "Line length",
+     "value": "1000mm"
+    },
+    {
+     "label": "OD",
+     "value": "29mm"
+    },
+    {
+     "label": "Interface",
+     "value": "Type-C"
+    }
+   ],
+   "images": [
+    "seed/images/r112-product.webp",
+    "seed/images/r112-package.webp"
+   ]
+  }
+ ]
+}

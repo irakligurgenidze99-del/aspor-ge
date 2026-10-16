@@ -1,0 +1,525 @@
+// ASPOR.GE — database schema (PostgreSQL, Prisma 7)
+// Wholesale prices live ONLY in WholesalePrice and are read exclusively by
+// src/server/services/pricing.ts after a live DB check of partner status.
+
+generator client {
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "esm"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ───────────────────────── Auth ─────────────────────────
+
+enum Role {
+  SUPER_ADMIN
+  PARTNER
+}
+
+enum UserStatus {
+  PENDING_SETUP // approved, password not yet set
+  ACTIVE
+  SUSPENDED
+}
+
+model User {
+  id                String     @id @default(cuid())
+  email             String     @unique // stored lower-cased
+  passwordHash      String?
+  role              Role
+  status            UserStatus @default(PENDING_SETUP)
+  name              String?
+  // TOTP MFA (admin). Secret is AES-256-GCM encrypted with APP_ENCRYPTION_KEY.
+  totpSecretEnc     String?
+  totpEnabledAt     DateTime?
+  totpLastStep      Int? // last accepted TOTP time-step (replay protection)
+  recoveryCodes     String[] // argon2 hashes, consumed on use
+  failedLoginCount  Int        @default(0)
+  lockedUntil       DateTime?
+  lastLoginAt       DateTime?
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime   @updatedAt
+  partner           B2BPartner?
+  sessions          Session[]
+  tokens            AuthToken[]
+  auditLogs         AuditLog[]
+}
+
+model Session {
+  id          String   @id @default(cuid())
+  tokenHash   String   @unique // sha256 of the cookie token
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  mfaPassed   Boolean  @default(false)
+  ip          String?
+  userAgent   String?
+  createdAt   DateTime @default(now())
+  lastSeenAt  DateTime @default(now())
+  expiresAt   DateTime
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+enum TokenPurpose {
+  PASSWORD_SETUP
+  PASSWORD_RESET
+}
+
+model AuthToken {
+  id        String       @id @default(cuid())
+  tokenHash String       @unique
+  purpose   TokenPurpose
+  userId    String
+  user      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime     @default(now())
+
+  @@index([userId, purpose])
+}
+
+model RateLimitHit {
+  id        String   @id @default(cuid())
+  key       String // e.g. "login:<sha256(ip)>"
+  createdAt DateTime @default(now())
+
+  @@index([key, createdAt])
+}
+
+// ───────────────────────── B2B ─────────────────────────
+
+enum PartnerStatus {
+  ACTIVE
+  SUSPENDED
+}
+
+model B2BPartner {
+  id             String        @id @default(cuid())
+  userId         String        @unique
+  user           User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  companyName    String
+  companyCode    String        @unique // საიდენტიფიკაციო კოდი
+  contactName    String
+  phone          String
+  address        String?
+  status         PartnerStatus @default(ACTIVE)
+  suspendedAt    DateTime?
+  suspendReason  String?
+  applicationId  String?       @unique
+  application    PartnershipApplication? @relation(fields: [applicationId], references: [id])
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+}
+
+enum ApplicationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model PartnershipApplication {
+  id             String            @id @default(cuid())
+  companyName    String
+  companyCode    String
+  contactName    String
+  phone          String
+  email          String // lower-cased
+  message        String?
+  consentAt      DateTime
+  consentVersion String
+  status         ApplicationStatus @default(PENDING)
+  reviewedAt     DateTime?
+  reviewNote     String?
+  ipHash         String?
+  locale         String            @default("ka")
+  createdAt      DateTime          @default(now())
+  partner        B2BPartner?
+
+  @@index([status, createdAt])
+  @@index([email])
+  @@index([companyCode])
+}
+
+// ───────────────────────── Catalog ─────────────────────────
+
+enum PublishStatus {
+  DRAFT
+  PUBLISHED
+}
+
+enum TranslationStatus {
+  NONE
+  DRAFT_REVIEW // machine-generated or edited, not public
+  APPROVED
+  REJECTED
+}
+
+model Category {
+  id           String                @id @default(cuid())
+  slug         String                @unique
+  sortOrder    Int                   @default(0)
+  isActive     Boolean               @default(true)
+  imageId      String?
+  image        MediaAsset?           @relation(fields: [imageId], references: [id], onDelete: SetNull)
+  createdAt    DateTime              @default(now())
+  updatedAt    DateTime              @updatedAt
+  translations CategoryTranslation[]
+  products     Product[]
+}
+
+model CategoryTranslation {
+  id          String            @id @default(cuid())
+  categoryId  String
+  category    Category          @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  locale      String
+  name        String
+  description String?
+  seoTitle    String?
+  seoDesc     String?
+  status      TranslationStatus @default(APPROVED)
+
+  @@unique([categoryId, locale])
+}
+
+model Product {
+  id           String               @id @default(cuid())
+  sku          String               @unique
+  slug         String               @unique // ASCII, shared by locales
+  modelNumber  String?
+  color        String?
+  categoryId   String
+  category     Category             @relation(fields: [categoryId], references: [id])
+  status       PublishStatus        @default(DRAFT)
+  isHidden     Boolean              @default(false) // set by full import when SKU absent
+  hiddenReason String?
+  featured     Boolean              @default(false)
+  sortOrder    Int                  @default(0)
+  publishedAt  DateTime?
+  createdAt    DateTime             @default(now())
+  updatedAt    DateTime             @updatedAt
+  translations ProductTranslation[]
+  attributes   ProductAttribute[]
+  images       ProductImage[]
+  price        WholesalePrice?
+
+  @@index([status, isHidden, categoryId])
+}
+
+model ProductTranslation {
+  id          String            @id @default(cuid())
+  productId   String
+  product     Product           @relation(fields: [productId], references: [id], onDelete: Cascade)
+  locale      String
+  name        String
+  description String?
+  seoTitle    String?
+  seoDesc     String?
+  status      TranslationStatus @default(APPROVED)
+  source      String? // "manual" | "claude:<model>" | "import"
+  updatedAt   DateTime          @updatedAt
+
+  @@unique([productId, locale])
+  @@index([locale, name])
+}
+
+model ProductAttribute {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  key       String // stable key, e.g. "capacity"
+  labelKa   String
+  labelEn   String?
+  value     String // technical value, language-neutral (units, model numbers)
+  valueEn   String?
+  sortOrder Int     @default(0)
+
+  @@unique([productId, key])
+}
+
+model ProductImage {
+  id        String     @id @default(cuid())
+  productId String
+  product   Product    @relation(fields: [productId], references: [id], onDelete: Cascade)
+  assetId   String
+  asset     MediaAsset @relation(fields: [assetId], references: [id], onDelete: Cascade)
+  sortOrder Int        @default(0)
+  altKa     String?
+  altEn     String?
+
+  @@index([productId, sortOrder])
+}
+
+/// Server-protected. Single shared wholesale price, GEL, VAT (18%) included.
+model WholesalePrice {
+  id         String   @id @default(cuid())
+  productId  String   @unique
+  product    Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  amountGel  Decimal  @db.Decimal(12, 2)
+  updatedAt  DateTime @updatedAt
+}
+
+// ───────────────────────── Media ─────────────────────────
+
+model MediaAsset {
+  id          String         @id @default(cuid())
+  storageKey  String         @unique
+  url         String
+  mimeType    String
+  sizeBytes   Int
+  width       Int?
+  height      Int?
+  originalName String?
+  sourceRef   String? // original URL / file reference (import de-duplication)
+  altKa       String?
+  altEn       String?
+  createdAt   DateTime       @default(now())
+  productImages ProductImage[]
+  categories  Category[]
+  banners     Banner[]
+}
+
+// ───────────────────────── Content ─────────────────────────
+
+model Page {
+  id           String            @id @default(cuid())
+  key          String            @unique // "home", "about", "privacy", ...
+  slug         String            @unique // ASCII path segment ("" for home)
+  isSystem     Boolean           @default(false)
+  hasDraft     Boolean           @default(false)
+  publishedAt  DateTime?
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+  translations PageTranslation[]
+  sections     PageSection[]
+}
+
+model PageTranslation {
+  id        String            @id @default(cuid())
+  pageId    String
+  page      Page              @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  locale    String
+  title     String
+  seoTitle  String?
+  seoDesc   String?
+  status    TranslationStatus @default(APPROVED)
+
+  @@unique([pageId, locale])
+}
+
+enum SectionRevision {
+  DRAFT
+  PUBLISHED
+}
+
+/// Structured page-builder section. `data` is validated against the typed
+/// registry in src/lib/page-builder/registry.ts. Localized fields are stored as
+/// { ka: ..., en: ... }; English is public only when enStatus = APPROVED.
+model PageSection {
+  id        String            @id @default(cuid())
+  pageId    String
+  page      Page              @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  revision  SectionRevision   @default(DRAFT)
+  type      String
+  sortOrder Int               @default(0)
+  hidden    Boolean           @default(false)
+  data      Json
+  enStatus  TranslationStatus @default(NONE)
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+
+  @@index([pageId, revision, sortOrder])
+}
+
+model Banner {
+  id        String      @id @default(cuid())
+  placement String      @default("home") // where it appears
+  titleKa   String
+  titleEn   String?
+  textKa    String?
+  textEn    String?
+  linkUrl   String?
+  enStatus  TranslationStatus @default(NONE)
+  imageId   String?
+  image     MediaAsset? @relation(fields: [imageId], references: [id], onDelete: SetNull)
+  isActive  Boolean     @default(true)
+  sortOrder Int         @default(0)
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+}
+
+/// Key/value editorial strings & settings (contact details, footer text, SEO defaults).
+model SiteSetting {
+  key       String   @id
+  valueKa   String?
+  valueEn   String?
+  enStatus  TranslationStatus @default(NONE)
+  updatedAt DateTime @updatedAt
+}
+
+model PartnerStore {
+  id        String   @id @default(cuid())
+  nameKa    String
+  nameEn    String?
+  city      String
+  cityEn    String?
+  addressKa String
+  addressEn String?
+  phone     String?
+  mapUrl    String?
+  isActive  Boolean  @default(true)
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([isActive, city])
+}
+
+enum MessageStatus {
+  NEW
+  READ
+  ARCHIVED
+}
+
+model ContactMessage {
+  id        String        @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String?
+  message   String
+  status    MessageStatus @default(NEW)
+  ipHash    String?
+  locale    String        @default("ka")
+  createdAt DateTime      @default(now())
+
+  @@index([status, createdAt])
+}
+
+// ───────────────────────── Email outbox ─────────────────────────
+
+enum EmailStatus {
+  PENDING
+  SENT
+  FAILED
+}
+
+model EmailLog {
+  id          String      @id @default(cuid())
+  to          String
+  template    String
+  subject     String
+  // Rendered bodies are kept so retries are deterministic. Never contains secrets
+  // except one-time links, which are purged after send (see email service).
+  html        String
+  text        String
+  status      EmailStatus @default(PENDING)
+  attempts    Int         @default(0)
+  lastError   String?
+  providerId  String?
+  sentAt      DateTime?
+  nextAttemptAt DateTime  @default(now())
+  createdAt   DateTime    @default(now())
+
+  @@index([status, nextAttemptAt])
+}
+
+// ───────────────────────── Import ─────────────────────────
+
+enum ImportMode {
+  PARTIAL
+  FULL_CATALOG
+}
+
+enum ImportJobStatus {
+  PREVIEWED
+  COMMITTED
+  FAILED
+  CANCELLED
+}
+
+model ImportJob {
+  id             String          @id @default(cuid())
+  fileName       String
+  fileHash       String // sha256 of uploaded file — idempotency guard
+  mode           ImportMode
+  status         ImportJobStatus @default(PREVIEWED)
+  mapping        Json
+  headers        String[]
+  rawRows        Json // parsed source rows (admin-only; purged after commit)
+  totals         Json
+  hideCount      Int             @default(0)
+  hideSample     String[]
+  error          String?
+  createdById    String?
+  createdAt      DateTime        @default(now())
+  committedAt    DateTime?
+  rows           ImportJobRow[]
+
+  @@index([fileHash, mode])
+  @@index([status, createdAt])
+}
+
+enum ImportRowAction {
+  CREATE
+  UPDATE
+  UNCHANGED
+  INVALID
+  HIDE
+}
+
+model ImportJobRow {
+  id       String          @id @default(cuid())
+  jobId    String
+  job      ImportJob       @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  rowNum   Int
+  sku      String?
+  action   ImportRowAction
+  errors   String[]
+  diff     Json? // { field: [old, new] } — price fields included, admin-only
+  payload  Json? // normalized row ready to commit
+
+  @@index([jobId, action])
+}
+
+// ───────────────────────── Translation jobs ─────────────────────────
+
+enum TranslationJobStatus {
+  SUCCEEDED
+  FAILED
+}
+
+model TranslationJob {
+  id           String               @id @default(cuid())
+  entityType   String // "product" | "page_section" | "category" | "banner" | "setting"
+  entityId     String
+  model        String
+  status       TranslationJobStatus
+  inputTokens  Int?
+  outputTokens Int?
+  error        String?
+  createdById  String?
+  createdAt    DateTime             @default(now())
+
+  @@index([entityType, entityId])
+}
+
+// ───────────────────────── Audit ─────────────────────────
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  actorId    String?
+  actor      User?    @relation(fields: [actorId], references: [id], onDelete: SetNull)
+  action     String
+  entityType String?
+  entityId   String?
+  meta       Json?
+  ipHash     String?
+  createdAt  DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([entityType, entityId])
+}

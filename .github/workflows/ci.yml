@@ -1,0 +1,36 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env: { POSTGRES_USER: aspor, POSTGRES_PASSWORD: aspor_dev, POSTGRES_DB: aspor_test }
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U aspor" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgresql://aspor:aspor_dev@localhost:5432/aspor_test
+      TEST_DATABASE_URL: postgresql://aspor:aspor_dev@localhost:5432/aspor_test
+      APP_URL: http://localhost:3100
+      NEXT_PUBLIC_SITE_URL: http://localhost:3100
+      APP_ENCRYPTION_KEY: ci-only-0123456789abcdef0123456789abcdef
+      SESSION_SECRET: ci-only-session-secret-0123456789abcdef0000
+      EMAIL_PROVIDER: console
+      STORAGE_PROVIDER: local
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npx prisma migrate deploy
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with: { name: playwright-report, path: playwright-report }

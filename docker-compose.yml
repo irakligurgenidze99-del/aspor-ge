@@ -1,0 +1,14 @@
+# Local PostgreSQL for development and tests.  docker compose up -d
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: aspor
+      POSTGRES_PASSWORD: aspor_dev
+      POSTGRES_DB: aspor
+    ports: ["5432:5432"]
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./scripts/docker-init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+volumes:
+  pgdata:
