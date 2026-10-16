@@ -2,7 +2,7 @@
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { z } from 'zod';
-import { db } from '@/lib/db';
+import { db, tableRef } from '@/lib/db';
 import { slugify } from '@/lib/slug';
 import { isSafeHref } from '@/lib/urls';
 import { collectLocalized, emptySection, isSectionType, parseSection, setAtPath } from '@/lib/page-builder/registry';
@@ -179,7 +179,7 @@ export async function deleteMediaAction(fd: FormData) {
   const admin = await requireAdmin();
   const id = String(fd.get('id'));
   const a = await db.mediaAsset.findUniqueOrThrow({ where: { id }, include: { _count: { select: { productImages: true, categories: true, banners: true } } } });
-  const [{ n }] = await db.$queryRaw<{ n: bigint }[]>`SELECT count(*)::bigint AS n FROM "PageSection" WHERE data::text LIKE ${'%' + id + '%'}`;
+  const [{ n }] = await db.$queryRawUnsafe<{ n: bigint }[]>(`SELECT count(*)::bigint AS n FROM ${tableRef('PageSection')} WHERE data::text LIKE $1`, '%' + id + '%');
   const inSections = Number(n);
   if (a._count.productImages || a._count.categories || a._count.banners || inSections) return; // in use — UI shows why
   await storage().delete(a.storageKey).catch(() => {});
