@@ -36,7 +36,10 @@ const nextConfig: NextConfig = {
   },
   images: {
     formats: ['image/avif', 'image/webp'],
-    remotePatterns: storageHost ? [{ protocol: 'https', hostname: storageHost }] : [],
+    remotePatterns: [
+      { protocol: 'https', hostname: '*.public.blob.vercel-storage.com' },
+      ...(storageHost ? [{ protocol: 'https' as const, hostname: storageHost }] : []),
+    ],
   },
   async headers() {
     return [

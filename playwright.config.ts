@@ -28,6 +28,6 @@ export default defineConfig({
     url: `http://localhost:${PORT}/api/health`,
     reuseExistingServer: false,
     timeout: 120_000,
-    env: { DATABASE_URL: TEST_DB, EMAIL_PROVIDER: 'console', EMAIL_CAPTURE_FILE: '.e2e/e2e-mail.jsonl', ANTISPAM_MIN_MS: '0', APP_URL: `http://localhost:${PORT}`, ADMIN_NOTIFY_EMAIL: 'ops@example.test', ANTHROPIC_API_KEY: '', ANTHROPIC_MODEL: '' },
+    env: { ALLOW_INDEXING: '1', DATABASE_URL: TEST_DB, EMAIL_PROVIDER: 'console', EMAIL_CAPTURE_FILE: '.e2e/e2e-mail.jsonl', ANTISPAM_MIN_MS: '0', APP_URL: `http://localhost:${PORT}`, ADMIN_NOTIFY_EMAIL: 'ops@example.test', ANTHROPIC_API_KEY: '', ANTHROPIC_MODEL: '' },
   },
 });

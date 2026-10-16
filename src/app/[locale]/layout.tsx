@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Pr
     metadataBase: new URL(SITE_URL()),
     title: { default: t('defaultTitle'), template: '%s | ASPOR' },
     description: t('defaultDescription'),
+    ...(process.env.ALLOW_INDEXING === '1' ? {} : { robots: { index: false, follow: false } }),
     ...(publicEnv.googleSiteVerification ? { verification: { google: publicEnv.googleSiteVerification } } : {}),
   };
 }

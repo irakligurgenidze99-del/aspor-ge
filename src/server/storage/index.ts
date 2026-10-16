@@ -2,6 +2,7 @@ import 'server-only';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { S3Client, PutObjectCommand, DeleteObjectCommand } from '@aws-sdk/client-s3';
+import { put as blobPut, del as blobDel } from '@vercel/blob';
 
 export interface StorageAdapter {
   put(key: string, body: Buffer, contentType: string): Promise<{ url: string }>;
@@ -46,10 +47,24 @@ class S3Storage implements StorageAdapter {
   }
 }
 
+/** Vercel Blob (public store connected to the project → BLOB_READ_WRITE_TOKEN is injected automatically). */
+class VercelBlobStorage implements StorageAdapter {
+  async put(key: string, body: Buffer, contentType: string) {
+    const r = await blobPut(key, body, { access: 'public', contentType, addRandomSuffix: false, allowOverwrite: false, cacheControlMaxAge: 31536000 });
+    return { url: r.url };
+  }
+  async delete(key: string) {
+    await blobDel(key);
+  }
+}
+
 let instance: StorageAdapter | null = null;
 export function storage(): StorageAdapter {
   if (instance) return instance;
-  if (process.env.STORAGE_PROVIDER === 's3') {
+  if (process.env.STORAGE_PROVIDER === 'vercel-blob') {
+    if (!process.env.BLOB_READ_WRITE_TOKEN) throw new Error('STORAGE_PROVIDER=vercel-blob requires BLOB_READ_WRITE_TOKEN (connect a Blob store to the project)');
+    instance = new VercelBlobStorage();
+  } else if (process.env.STORAGE_PROVIDER === 's3') {
     for (const k of ['S3_ENDPOINT', 'S3_BUCKET', 'S3_ACCESS_KEY_ID', 'S3_SECRET_ACCESS_KEY', 'STORAGE_PUBLIC_BASE_URL']) {
       if (!process.env[k]) throw new Error(`STORAGE_PROVIDER=s3 requires ${k}`);
     }

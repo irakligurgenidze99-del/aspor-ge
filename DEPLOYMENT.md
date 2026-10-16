@@ -37,6 +37,18 @@ Assessed for cost at this site's scale (~500 SKUs, low traffic, B2B), fit with V
 | 15 | Privacy and cookie policy approved by Georgian counsel | CMS pages | ⚠ templates marked "draft" |
 | 16 | Higher-resolution white-background photos (optional) | Media | ⚠ workbook images used (≤1400 px) |
 
+## Current live setup (Oct 2026)
+
+- Vercel project **`aspor-ge`** (`prj_Z7jSOMCrdFCn1tsnP37fzbz8dGEO`), Hobby plan, functions region `fra1`. Vercel Authentication protects `*.vercel.app` URLs, so only the account owner can view them until a custom domain is added.
+- **Storage:** Vercel Blob store `aspor-media` (fra1, public), already connected to the project (`STORAGE_PROVIDER=vercel-blob`). Cloudflare R2 is no longer required, though the S3 adapter remains available.
+- **Env already set:** `APP_ENCRYPTION_KEY`, `SESSION_SECRET`, `CRON_SECRET` (sensitive, generated), `ADMIN_MFA_REQUIRED=true`, `EMAIL_PROVIDER=console`, `EMAIL_FROM`, `STORAGE_PROVIDER`, `APP_URL`/`NEXT_PUBLIC_SITE_URL=https://aspor-ge.vercel.app`, `SEED_ON_BUILD=1`.
+- **Still to do:**
+  1. Connect Neon in Storage, which provides `DATABASE_URL` and `DATABASE_URL_UNPOOLED`.
+  2. The owner adds `SEED_ADMIN_EMAIL` and `SEED_ADMIN_PASSWORD`.
+  3. Push the code to GitHub and link the repository.
+- **After the first successful deploy:** delete `SEED_ON_BUILD` and `SEED_ADMIN_PASSWORD`, enrol MFA, then publish the products.
+- **Indexing:** search engines are blocked until `ALLOW_INDEXING=1` is set, which should happen only on the final aspor.ge domain.
+
 ## Step-by-step
 
 ### 1. Database (Neon)

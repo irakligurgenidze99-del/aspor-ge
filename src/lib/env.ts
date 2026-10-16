@@ -13,7 +13,7 @@ const schema = z.object({
   RESEND_API_KEY: z.string().optional(),
   ADMIN_NOTIFY_EMAIL: z.string().email().optional(),
   // Storage
-  STORAGE_PROVIDER: z.enum(['local', 's3']).default('local'),
+  STORAGE_PROVIDER: z.enum(['local', 's3', 'vercel-blob']).default('local'),
   S3_ENDPOINT: z.string().url().optional(),
   S3_REGION: z.string().default('auto'),
   S3_BUCKET: z.string().optional(),

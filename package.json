@@ -19,7 +19,7 @@
     "db:sandbox:deploy": "node --no-warnings scripts/prisma-wasm.mjs deploy",
     "db:sandbox:reset": "node --no-warnings scripts/prisma-wasm.mjs reset",
     "postinstall": "prisma generate",
-    "vercel-build": "prisma generate && prisma migrate deploy && next build"
+    "vercel-build": "bash scripts/vercel-build.sh"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.135.0",
@@ -27,6 +27,7 @@
     "@node-rs/argon2": "^2.2.2",
     "@prisma/adapter-pg": "^7.10.1",
     "@prisma/client": "^7.10.1",
+    "@vercel/blob": "^2.8.2",
     "clsx": "^2.1.1",
     "exceljs": "^4.4.0",
     "motion": "^14.3.0",
@@ -63,5 +64,8 @@
     "tsx": "^4.23.15",
     "typescript": "^5",
     "vitest": "^4.1.12"
+  },
+  "engines": {
+    "node": "22.x"
   }
 }

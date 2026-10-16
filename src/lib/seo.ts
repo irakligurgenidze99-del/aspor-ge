@@ -16,7 +16,7 @@ export function localeAlternates(path: string, locale: 'ka' | 'en', enIndexable 
 
 export function buildMetadata(o: { title: string; description?: string; path: string; locale: 'ka' | 'en'; enIndexable?: boolean; image?: string | null; noindex?: boolean; type?: 'website' | 'article' }): Metadata {
   const enIndexable = o.enIndexable ?? true;
-  const noindex = o.noindex || (o.locale === 'en' && !enIndexable);
+  const noindex = o.noindex || (o.locale === 'en' && !enIndexable) || process.env.ALLOW_INDEXING !== '1';
   const image = o.image ? (o.image.startsWith('http') ? o.image : `${SITE_URL()}${o.image}`) : `${SITE_URL()}/brand/og-default.png`;
   return {
     title: o.title,
