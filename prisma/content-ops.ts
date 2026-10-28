@@ -8,6 +8,8 @@
  */
 import 'dotenv/config';
 import { db } from '../src/lib/db';
+import fs from 'node:fs';
+import path from 'node:path';
 import { LEGAL_PAGES } from './legal-content';
 
 type Op = { id: string; run: () => Promise<string> };
@@ -51,6 +53,20 @@ const OPS: Op[] = [
   },
   // Owner request 28.10.2026 (later): online shop — terms/privacy/cookies updated for online sales.
   { id: 'legal-pages-shop-2026-10-28', run: applyLegalPages },
+  {
+    // Owner request 28.10.2026: approximate retail prices from Georgian market research
+    // (prisma/retail-prices-2026-10-28.json). Only fills products that have no retail price yet.
+    id: 'retail-prices-2026-10-28',
+    run: async () => {
+      const prices = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'prisma/retail-prices-2026-10-28.json'), 'utf8')) as Record<string, string>;
+      let n = 0;
+      for (const [sku, price] of Object.entries(prices)) {
+        const r = await db.product.updateMany({ where: { sku, retailPrice: null }, data: { retailPrice: price } });
+        n += r.count;
+      }
+      return `retail prices set: ${n}`;
+    },
+  },
 ];
 
 async function main() {
