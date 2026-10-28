@@ -16,7 +16,7 @@ export async function cmsMetadata(key: string, path: string, locale: Locale) {
 export async function CmsPage({ pageKey, locale, before }: { pageKey: string; locale: Locale; before?: React.ReactNode }) {
   const page = await getPublishedPage(pageKey);
   if (!page) notFound();
-  const usesTokens = page.sections.some((s) => JSON.stringify(s.data).includes('{{'));
+  const usesTokens = page.sections.some((s) => /\{\{|\[\[/.test(JSON.stringify(s.data)));
   const values = usesTokens ? await getSettings([...TOKEN_KEYS], locale) : {};
   const sections = usesTokens ? page.sections.map((s) => ({ ...s, data: fillTokensDeep(s.data, values) })) : page.sections;
   return (

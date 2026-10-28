@@ -67,6 +67,23 @@ const OPS: Op[] = [
       return `retail prices set: ${n}`;
     },
   },
+  {
+    // Owner request 28.10.2026: company name "ASPOR", email contact@aspor.ge, no phone.
+    // Only fills empty settings (never overwrites what an admin entered).
+    id: 'company-settings-2026-10-28',
+    run: async () => {
+      const set: string[] = [];
+      for (const [key, value] of [['company.name', 'ASPOR'], ['contact.email', 'contact@aspor.ge']] as const) {
+        const cur = await db.siteSetting.findUnique({ where: { key } });
+        if (cur?.valueKa) continue;
+        await db.siteSetting.upsert({ where: { key }, create: { key, valueKa: value }, update: { valueKa: value } });
+        set.push(key);
+      }
+      return `settings set: ${set.join(', ') || 'none'}`;
+    },
+  },
+  // Legal pages: optional fragments so empty details (ID code, address, phone) are hidden.
+  { id: 'legal-pages-optional-details-2026-10-28', run: applyLegalPages },
 ];
 
 async function main() {

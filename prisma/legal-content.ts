@@ -8,15 +8,16 @@
  *
  * Company details are NOT hard-coded. `{{company.name}}`, `{{company.code}}`,
  * `{{company.address}}`, `{{contact.email}}`, `{{contact.phone}}` are filled at
- * render time from Admin → პარამეტრები (src/lib/legal-tokens.ts).
+ * render time from Admin → პარამეტრები (src/lib/legal-tokens.ts). Text inside
+ * [[ … ]] is shown only when every placeholder in it has a value.
  */
 import { LEGAL_UPDATED } from '../src/lib/legal-version';
 export { LEGAL_UPDATED };
 
 const L = (ka: string, en: string) => ({ ka, en });
 
-const CONTROLLER_KA = `<p><strong>{{company.name}}</strong>, საიდენტიფიკაციო კოდი: {{company.code}}, მისამართი: {{company.address}}.<br>ელფოსტა: {{contact.email}}, ტელეფონი: {{contact.phone}}.</p>`;
-const CONTROLLER_EN = `<p><strong>{{company.name}}</strong>, identification code: {{company.code}}, address: {{company.address}}.<br>Email: {{contact.email}}, phone: {{contact.phone}}.</p>`;
+const CONTROLLER_KA = `<p><strong>{{company.name}}</strong>[[, საიდენტიფიკაციო კოდი: {{company.code}}]][[, მისამართი: {{company.address}}]].<br>[[ელფოსტა: {{contact.email}}<br>]][[ტელეფონი: {{contact.phone}}<br>]]კონტაქტი: <a href="/ka/contact">საკონტაქტო ფორმა</a>.</p>`;
+const CONTROLLER_EN = `<p><strong>{{company.name}}</strong>[[, identification code: {{company.code}}]][[, address: {{company.address}}]].<br>[[Email: {{contact.email}}<br>]][[Phone: {{contact.phone}}<br>]]Contact: <a href="/en/contact">contact form</a>.</p>`;
 
 export const PRIVACY_SECTIONS = [
   {
@@ -81,11 +82,11 @@ ${CONTROLLER_KA}
 <li>ნებისმიერ დროს გამოიხმოთ თანხმობა — ეს არ მოქმედებს გამოხმობამდე განხორციელებული დამუშავების კანონიერებაზე;</li>
 <li>მიმართოთ საჩივრით <strong>პერსონალურ მონაცემთა დაცვის სამსახურს</strong> (personaldata.ge) ან სასამართლოს.</li>
 </ul>
-<p>მოთხოვნის გასაგზავნად მოგვწერეთ: {{contact.email}}. მოთხოვნას ვუპასუხებთ კანონით დადგენილ ვადაში (არაუგვიანეს 10 სამუშაო დღისა). შესაძლოა გთხოვოთ ვინაობის დადასტურება.</p>
+<p>მოთხოვნის გასაგზავნად მოგვწერეთ[[ ელფოსტაზე {{contact.email}} ან]] <a href="/ka/contact">საკონტაქტო ფორმით</a>. მოთხოვნას ვუპასუხებთ კანონით დადგენილ ვადაში (არაუგვიანეს 10 სამუშაო დღისა). შესაძლოა გთხოვოთ ვინაობის დადასტურება.</p>
 <h2>8. ცვლილებები</h2>
 <p>პოლიტიკა შეიძლება განახლდეს. მოქმედი ვერსია ყოველთვის ამ გვერდზეა გამოქვეყნებული და მითითებულია ბოლო განახლების თარიღი. არსებითი ცვლილებების შესახებ პარტნიორებს ელფოსტით შევატყობინებთ.</p>
 <h2>9. კონტაქტი</h2>
-<p>ელფოსტა: {{contact.email}}<br>ტელეფონი: {{contact.phone}}</p>`,
+<p>[[ელფოსტა: {{contact.email}}<br>]][[ტელეფონი: {{contact.phone}}<br>]]საკონტაქტო ფორმა: <a href="/ka/contact">aspor.ge/ka/contact</a></p>`,
         `<p><em>Last updated: ${LEGAL_UPDATED}</em></p>
 <p>This policy explains how the ASPOR website (aspor.ge, the “Site”) collects, uses and protects personal data. Data is processed in accordance with the Law of Georgia on Personal Data Protection.</p>
 <h2>1. Data controller</h2>
@@ -143,11 +144,11 @@ ${CONTROLLER_EN}
 <li>withdraw consent at any time, without affecting the lawfulness of processing before withdrawal;</li>
 <li>lodge a complaint with the <strong>Personal Data Protection Service of Georgia</strong> (personaldata.ge) or a court.</li>
 </ul>
-<p>To make a request, write to {{contact.email}}. We will reply within the period set by law (no later than 10 working days). We may ask you to confirm your identity.</p>
+<p>To make a request, write to us[[ at {{contact.email}} or]] via the <a href="/en/contact">contact form</a>. We will reply within the period set by law (no later than 10 working days). We may ask you to confirm your identity.</p>
 <h2>8. Changes</h2>
 <p>This policy may be updated. The current version is always published on this page with its last-updated date. Partners will be notified of material changes by email.</p>
 <h2>9. Contact</h2>
-<p>Email: {{contact.email}}<br>Phone: {{contact.phone}}</p>`,
+<p>[[Email: {{contact.email}}<br>]][[Phone: {{contact.phone}}<br>]]Contact form: <a href="/en/contact">aspor.ge/en/contact</a></p>`,
       ),
     },
   },
@@ -161,7 +162,7 @@ export const TERMS_SECTIONS = [
       body: L(
         `<p><em>ბოლო განახლება: ${LEGAL_UPDATED}</em></p>
 <h2>1. ზოგადი დებულებები</h2>
-<p>ვებგვერდს aspor.ge (შემდგომში „საიტი“) მართავს და პროდუქციას ყიდის {{company.name}} (ს/კ {{company.code}}, მისამართი: {{company.address}}; შემდგომში „ASPOR“, „გამყიდველი“ ან „ჩვენ“). საიტით სარგებლობით და შეკვეთის გაფორმებით ეთანხმებით ამ წესებს. თუ არ ეთანხმებით, გთხოვთ, არ გამოიყენოთ საიტი.</p>
+<p>ვებგვერდს aspor.ge (შემდგომში „საიტი“) მართავს და პროდუქციას ყიდის {{company.name}} ([[ს/კ {{company.code}}; ]][[მისამართი: {{company.address}}; ]]შემდგომში „ASPOR“, „გამყიდველი“ ან „ჩვენ“). საიტით სარგებლობით და შეკვეთის გაფორმებით ეთანხმებით ამ წესებს. თუ არ ეთანხმებით, გთხოვთ, არ გამოიყენოთ საიტი.</p>
 <h2>2. საიტის დანიშნულება</h2>
 <p>საიტი არის ASPOR-ის პროდუქციის (დამტენები, კაბელები, პაუერბანკები, ყურსასმენები, ქეისები) კატალოგი და ონლაინ მაღაზია. საცალო ფასით ყიდვა შეუძლია ნებისმიერ მომხმარებელს, ხოლო დამტკიცებულ B2B პარტნიორებს — საბითუმო ფასით. ASPOR-ის პროდუქცია ასევე იყიდება პარტნიორ მაღაზიებში (იხ. „სად ვიყიდო“).</p>
 <h2>3. შეკვეთა და ხელშეკრულების დადება</h2>
@@ -188,7 +189,7 @@ export const TERMS_SECTIONS = [
 <h2>6. ხელშეკრულებაზე უარის თქმა (14 დღე)</h2>
 <ul>
 <li>მომხმარებელს (ფიზიკურ პირს, რომელიც ყიდულობს პირადი მოხმარებისთვის) უფლება აქვს, მიზეზის მითითების გარეშე უარი თქვას ხელშეკრულებაზე <strong>14 კალენდარული დღის</strong> განმავლობაში, პროდუქციის მიღებიდან.</li>
-<li>უარის შესახებ შეგვატყობინეთ ელფოსტით ({{contact.email}}) ან ტელეფონით ({{contact.phone}}), შეკვეთის ნომრის მითითებით.</li>
+<li>უარის შესახებ შეგვატყობინეთ [[ელფოსტით ({{contact.email}}), ]][[ტელეფონით ({{contact.phone}}) ]]ან <a href="/ka/contact">საკონტაქტო ფორმით</a>, შეკვეთის ნომრის მითითებით.</li>
 <li>პროდუქცია დაგვიბრუნეთ შეტყობინებიდან 14 დღის განმავლობაში, სრული კომპლექტაციით. დაბრუნების პირდაპირ ხარჯს ფარავს მომხმარებელი, გარდა იმ შემთხვევისა, როცა ნივთი ნაკლიანია ან არასწორი ნივთი მოგეწოდათ.</li>
 <li>თანხას დაგიბრუნებთ შეტყობინების მიღებიდან 14 დღის განმავლობაში, იმავე საშუალებით, რომლითაც გადაიხადეთ (განვადების შემთხვევაში — ბანკთან შეთანხმებული წესით). თანხის დაბრუნება შეიძლება შეჩერდეს პროდუქციის დაბრუნებამდე.</li>
 <li>მომხმარებელი პასუხისმგებელია პროდუქციის ღირებულების შემცირებაზე, რომელიც გამოწვეულია ნივთის ისეთი გამოყენებით, რაც არ იყო საჭირო მისი ბუნების, მახასიათებლებისა და ფუნქციონირების შესამოწმებლად.</li>
@@ -200,7 +201,7 @@ export const TERMS_SECTIONS = [
 <li>თუ ნაკლი გამოვლინდა მიწოდებიდან 2 წლის განმავლობაში, უფლება გაქვთ, მოითხოვოთ ნივთის უსასყიდლოდ შეკეთება ან შეცვლა, ხოლო თუ ეს შეუძლებელია — ფასის შემცირება ან ხელშეკრულებაზე უარი (უმნიშვნელო ნაკლის გარდა).</li>
 <li>მიწოდებიდან 6 თვის განმავლობაში გამოვლენილი ნაკლი ივარაუდება, რომ არსებობდა მიწოდების მომენტში, თუ ეს არ ეწინააღმდეგება ნივთის ან ნაკლის ბუნებას.</li>
 <li>გარანტია არ ვრცელდება დაზიანებაზე, რომელიც გამოწვეულია დავარდნით, სითხით, არასწორი გამოყენებით, არაავტორიზებული შეკეთებით ან ბუნებრივი ცვეთით.</li>
-<li>ნაკლის შესახებ დაგვიკავშირდით ({{contact.email}}, {{contact.phone}}) და მიუთითეთ შეკვეთის ნომერი.</li>
+<li>ნაკლის შესახებ დაგვიკავშირდით[[ ({{contact.email}})]][[ ({{contact.phone}})]] ან <a href="/ka/contact">საკონტაქტო ფორმით</a> და მიუთითეთ შეკვეთის ნომერი.</li>
 </ul>
 <h2>8. B2B პარტნიორობა და ანგარიში</h2>
 <ul>
@@ -237,10 +238,10 @@ export const TERMS_SECTIONS = [
 <h2>17. მოქმედი კანონმდებლობა და დავები</h2>
 <p>ეს წესები რეგულირდება საქართველოს კანონმდებლობით, მათ შორის „მომხმარებლის უფლებების დაცვის შესახებ“ საქართველოს კანონით. დავები წყდება მოლაპარაკებით, ხოლო შეთანხმების მიუღწევლობის შემთხვევაში — საქართველოს საერთო სასამართლოების მიერ.</p>
 <h2>18. კონტაქტი</h2>
-<p>ელფოსტა: {{contact.email}}<br>ტელეფონი: {{contact.phone}}<br>მისამართი: {{company.address}}</p>`,
+<p>[[ელფოსტა: {{contact.email}}<br>]][[ტელეფონი: {{contact.phone}}<br>]][[მისამართი: {{company.address}}<br>]]საკონტაქტო ფორმა: <a href="/ka/contact">aspor.ge/ka/contact</a></p>`,
         `<p><em>Last updated: ${LEGAL_UPDATED}</em></p>
 <h2>1. General</h2>
-<p>The website aspor.ge (the “Site”) is operated, and products are sold, by {{company.name}} (identification code {{company.code}}, address: {{company.address}}; “ASPOR”, the “Seller”, “we”). By using the Site and placing an order you accept these terms. If you do not agree, please do not use the Site.</p>
+<p>The website aspor.ge (the “Site”) is operated, and products are sold, by {{company.name}} ([[identification code {{company.code}}; ]][[address: {{company.address}}; ]]“ASPOR”, the “Seller”, “we”). By using the Site and placing an order you accept these terms. If you do not agree, please do not use the Site.</p>
 <h2>2. Purpose of the Site</h2>
 <p>The Site is a catalogue and online store for ASPOR products (chargers, cables, power banks, headphones, phone cases). Anyone can buy at the retail price; approved B2B partners buy at the wholesale price. ASPOR products are also sold in partner stores (see “Where to buy”).</p>
 <h2>3. Orders and conclusion of the contract</h2>
@@ -267,7 +268,7 @@ export const TERMS_SECTIONS = [
 <h2>6. Right of withdrawal (14 days)</h2>
 <ul>
 <li>A consumer (an individual buying for personal use) may withdraw from the contract without giving a reason within <strong>14 calendar days</strong> of receiving the products.</li>
-<li>Notify us by email ({{contact.email}}) or phone ({{contact.phone}}), quoting the order number.</li>
+<li>Notify us [[by email ({{contact.email}}), ]][[by phone ({{contact.phone}}) ]]or via the <a href="/en/contact">contact form</a>, quoting the order number.</li>
 <li>Return the products within 14 days of your notice, complete with all accessories. The consumer bears the direct cost of return, unless the product is defective or the wrong product was delivered.</li>
 <li>We refund you within 14 days of receiving your notice, using the same payment method (for installments, as arranged with the bank). The refund may be withheld until the products have been returned.</li>
 <li>The consumer is liable for any loss in value caused by handling the product beyond what is needed to establish its nature, characteristics and functioning.</li>
@@ -279,7 +280,7 @@ export const TERMS_SECTIONS = [
 <li>If a defect appears within 2 years of delivery, you may ask for free repair or replacement and, if that is impossible, a price reduction or withdrawal from the contract (except for minor defects).</li>
 <li>A defect that appears within 6 months of delivery is presumed to have existed at delivery, unless this is incompatible with the nature of the product or the defect.</li>
 <li>The warranty does not cover damage caused by drops, liquid, misuse, unauthorised repair or normal wear.</li>
-<li>To report a defect, contact us ({{contact.email}}, {{contact.phone}}) with your order number.</li>
+<li>To report a defect, contact us[[ ({{contact.email}})]][[ ({{contact.phone}})]] or via the <a href="/en/contact">contact form</a> with your order number.</li>
 </ul>
 <h2>8. B2B partnership and accounts</h2>
 <ul>
@@ -316,7 +317,7 @@ export const TERMS_SECTIONS = [
 <h2>17. Governing law and disputes</h2>
 <p>These terms are governed by the laws of Georgia, including the Law of Georgia on Consumer Rights Protection. Disputes are resolved by negotiation and, failing agreement, by the common courts of Georgia.</p>
 <h2>18. Contact</h2>
-<p>Email: {{contact.email}}<br>Phone: {{contact.phone}}<br>Address: {{company.address}}</p>`,
+<p>[[Email: {{contact.email}}<br>]][[Phone: {{contact.phone}}<br>]][[Address: {{company.address}}<br>]]Contact form: <a href="/en/contact">aspor.ge/en/contact</a></p>`,
       ),
     },
   },
@@ -339,7 +340,7 @@ export const COOKIE_SECTIONS = [
 <p>BOG განვადების არჩევისას შეკვეთის გვერდზე იტვირთება Bank of Georgia-ს განვადების კალკულატორი (webstatic.bog.ge), ხოლო გადახდა სრულდება ბანკის გვერდზე — მათზე მოქმედებს ბანკის წესები.</p>
 <h2>3. არჩევანის შეცვლა</h2>
 <p>არჩევანის შეცვლა ნებისმიერ დროს შეგიძლიათ საიტის ქვედა ნაწილში ბმულით „Cookie პარამეტრები“. cookie-ების წაშლა ან დაბლოკვა ასევე შესაძლებელია ბრაუზერის პარამეტრებიდან; აუცილებელი cookie-ების დაბლოკვის შემთხვევაში ანგარიშში შესვლა ვერ იმუშავებს.</p>
-<p>დამატებითი ინფორმაცია: <a href="/ka/privacy">კონფიდენციალურობის პოლიტიკა</a>. კითხვებისთვის: {{contact.email}}.</p>`,
+<p>დამატებითი ინფორმაცია: <a href="/ka/privacy">კონფიდენციალურობის პოლიტიკა</a>. კითხვებისთვის: <a href="/ka/contact">საკონტაქტო ფორმა</a>[[ ან {{contact.email}}]].</p>`,
         `<p><em>Last updated: ${LEGAL_UPDATED}</em></p>
 <p>A cookie is a small text file a website stores in your browser. aspor.ge uses only the cookies needed to run the Site, and analytics and marketing cookies only with your consent.</p>
 <h2>1. Essential</h2>
@@ -351,7 +352,7 @@ export const COOKIE_SECTIONS = [
 <p>When you choose BOG installments, the checkout page loads Bank of Georgia’s installment calculator (webstatic.bog.ge), and payment is completed on the bank’s page — the bank’s own rules apply there.</p>
 <h2>3. Changing your choice</h2>
 <p>You can change your choice at any time via “Cookie settings” at the bottom of the Site. You can also delete or block cookies in your browser settings; if you block essential cookies, sign-in will not work.</p>
-<p>More information: <a href="/en/privacy">Privacy policy</a>. Questions: {{contact.email}}.</p>`,
+<p>More information: <a href="/en/privacy">Privacy policy</a>. Questions: <a href="/en/contact">contact form</a>[[ or {{contact.email}}]].</p>`,
       ),
     },
   },
