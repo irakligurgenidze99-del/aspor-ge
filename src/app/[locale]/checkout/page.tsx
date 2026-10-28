@@ -41,11 +41,10 @@ export default async function CheckoutPage({ params, searchParams }: PageProps<'
       <h1 className="text-3xl font-extrabold tracking-[-0.02em] sm:text-[2.5rem]">{t('checkoutTitle')}</h1>
       {!q.unitGel ? (
         <div className="mt-8"><Notice tone="warn">{t('notForSale')}</Notice></div>
-      ) : !provider ? (
-        <div className="mt-8"><Notice tone="warn">{t('paymentsOff')}</Notice></div>
       ) : (
         <div className="mt-8 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
           <div>
+            {!provider && <div className="mb-6"><Notice tone="warn">{t('paymentsOff')}</Notice></div>}
             {q.partner && <div className="mb-6"><Notice tone="info">{t('partnerNote', { company: q.partner.companyName })}</Notice></div>}
             <CheckoutForm
               ticket={formTicket()}
@@ -56,6 +55,7 @@ export default async function CheckoutPage({ params, searchParams }: PageProps<'
               initialMethod={method}
               installmentOn={installmentEnabled()}
               bogClientId={bogPublicClientId()}
+              paymentsOn={!!provider}
               defaults={{ customerName: account?.partner?.contactName ?? account?.name ?? '', phone: account?.partner?.phone ?? '', email: account?.email ?? '', address: account?.partner?.address ?? '' }}
             />
           </div>

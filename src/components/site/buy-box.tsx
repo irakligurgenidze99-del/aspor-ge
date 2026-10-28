@@ -31,7 +31,7 @@ export async function BuyBox({ slug, retail, wholesale, paymentsOn, installmentO
       )}
 
       {unit ? (
-        paymentsOn ? (
+        <>
           <form action={`/${locale}/checkout`} method="get" className="mt-5 space-y-4" data-testid="buy-form">
             <input type="hidden" name="p" value={slug} />
             <div className="flex flex-wrap items-end gap-3">
@@ -44,9 +44,8 @@ export async function BuyBox({ slug, retail, wholesale, paymentsOn, installmentO
             </div>
             <p className="flex items-center gap-2 text-sm text-graphite"><span aria-hidden className="inline-block size-1.5 rounded-full bg-ok" />{t('freeDelivery')}</p>
           </form>
-        ) : (
-          <p className="mt-4 text-sm text-graphite">{t('paymentsOff')}</p>
-        )
+          {!paymentsOn && <p className="mt-3 text-sm text-graphite">{t('paymentsOff')}</p>}
+        </>
       ) : (
         <p className="mt-2 text-sm text-graphite">
           {t('notForSale')}{' '}

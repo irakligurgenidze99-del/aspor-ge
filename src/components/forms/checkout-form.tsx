@@ -38,7 +38,7 @@ function loadSdk(clientId: string): Promise<BogCalc | null> {
 
 export function CheckoutForm(props: {
   ticket: string; slug: string; unitGel: string; initialQty: number; maxQty: number; initialMethod: 'CARD' | 'INSTALLMENT';
-  installmentOn: boolean; bogClientId: string; defaults: { customerName: string; phone: string; email: string; address: string };
+  installmentOn: boolean; bogClientId: string; paymentsOn: boolean; defaults: { customerName: string; phone: string; email: string; address: string };
 }) {
   const t = useTranslations('shop');
   const locale = useLocale() as 'ka' | 'en';
@@ -146,7 +146,7 @@ export function CheckoutForm(props: {
             privacy: (c) => <Link href="/privacy" target="_blank" className="font-semibold underline underline-offset-4">{c}</Link>,
           })}
         />
-        <Button type="submit" size="lg" variant={method === 'INSTALLMENT' ? 'spark' : 'primary'} disabled={pending} className="w-full sm:w-auto">
+        <Button type="submit" size="lg" variant={method === 'INSTALLMENT' ? 'spark' : 'primary'} disabled={pending || !props.paymentsOn} className="w-full sm:w-auto">
           {pending ? t('submitting') : method === 'INSTALLMENT' ? t('submitInstallment') : t('submitCard')}
         </Button>
       </section>
