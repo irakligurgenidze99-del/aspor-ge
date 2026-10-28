@@ -11,6 +11,7 @@ import { db } from '../src/lib/db';
 import fs from 'node:fs';
 import path from 'node:path';
 import { LEGAL_PAGES } from './legal-content';
+import { ABOUT_BODY, ABOUT_SUBHEADING } from './about-content';
 
 type Op = { id: string; run: () => Promise<string> };
 
@@ -84,6 +85,29 @@ const OPS: Op[] = [
   },
   // Legal pages: optional fragments so empty details (ID code, address, phone) are hidden.
   { id: 'legal-pages-optional-details-2026-10-28', run: applyLegalPages },
+  {
+    // Owner request 28.10.2026: About page text about the ASPOR brand.
+    // Replaces only the seeded placeholders; edited sections are left alone.
+    id: 'about-page-2026-10-28',
+    run: async () => {
+      const page = await db.page.findUnique({ where: { key: 'about' }, include: { sections: true } });
+      if (!page) return 'about page missing';
+      let n = 0;
+      for (const sec of page.sections) {
+        const d = sec.data as Record<string, { ka?: string; en?: string } | string>;
+        const isPlaceholder = (v: unknown) => typeof v === 'object' && v !== null && /\[(ჩაანაცვლეთ|დროებითი)/.test((v as { ka?: string }).ka ?? '');
+        if (sec.type === 'Hero' && isPlaceholder(d.subheading)) {
+          await db.pageSection.update({ where: { id: sec.id }, data: { data: { ...d, subheading: ABOUT_SUBHEADING }, enStatus: 'DRAFT_REVIEW' } });
+          n++;
+        }
+        if (sec.type === 'RichText' && isPlaceholder(d.body)) {
+          await db.pageSection.update({ where: { id: sec.id }, data: { data: { ...d, body: ABOUT_BODY }, enStatus: 'DRAFT_REVIEW' } });
+          n++;
+        }
+      }
+      return `about sections updated: ${n}`;
+    },
+  },
 ];
 
 async function main() {
