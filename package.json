@@ -19,7 +19,8 @@
     "db:sandbox:deploy": "node --no-warnings scripts/prisma-wasm.mjs deploy",
     "db:sandbox:reset": "node --no-warnings scripts/prisma-wasm.mjs reset",
     "postinstall": "prisma generate",
-    "vercel-build": "bash scripts/vercel-build.sh"
+    "vercel-build": "bash scripts/vercel-build.sh",
+    "db:ops": "tsx --conditions=react-server prisma/content-ops.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.135.0",

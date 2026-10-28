@@ -2,7 +2,7 @@
  * ASPOR seed — DEMO / initial content. Run: npm run db:seed
  *
  *  - 5 required categories (+ inactive "other" for items that fit none of them)
- *  - system pages (home, about, privacy, cookies) built from page-builder sections
+ *  - system pages (home, about, privacy, terms, cookies) built from page-builder sections
  *  - products extracted from the client's supplier workbook (seed/aspor-catalog.json),
  *    WITHOUT any prices (the workbook only had internal cost/VIP prices)
  *  - super-admin from SEED_ADMIN_EMAIL / SEED_ADMIN_PASSWORD (never hard-coded)
@@ -20,6 +20,7 @@ import { db } from '../src/lib/db';
 import { hashPassword, passwordPolicyError } from '../src/lib/password';
 import { ingestImage } from '../src/server/services/media';
 import { slugify } from '../src/lib/slug';
+import { LEGAL_PAGES } from './legal-content';
 
 const PUBLISH = process.env.SEED_PUBLISH_DEMO === '1';
 const EN_STATUS = process.env.SEED_APPROVE_DEMO_EN === '1' ? 'APPROVED' : 'DRAFT_REVIEW';
@@ -111,9 +112,6 @@ async function upsertPage(key: string, slug: string, titleKa: string, titleEn: s
   return page;
 }
 
-const LEGAL_NOTE_KA = '<blockquote><strong>სამუშაო ვერსია.</strong> ეს ტექსტი არის შაბლონი და საჭიროებს ადგილობრივი იურისტის განხილვას „პერსონალურ მონაცემთა დაცვის შესახებ“ საქართველოს კანონთან (2023) შესაბამისობისთვის. არ გამოიყენოთ საბოლოო ვერსიად დამტკიცებამდე.</blockquote>';
-const LEGAL_NOTE_EN = '<blockquote><strong>Working draft.</strong> This text is a template and must be reviewed by local counsel for compliance with the Law of Georgia on Personal Data Protection (2023). Do not treat as final until approved.</blockquote>';
-
 async function seedPages() {
   const heroAsset = await db.mediaAsset.findFirst({ where: { sourceRef: { contains: 'r11-product' } } });
   await upsertPage('home', '', 'მთავარი', 'Home', [
@@ -154,31 +152,9 @@ async function seedPages() {
     { type: 'RichText', data: { heading: L('', ''), body: L('<p>[დროებითი ტექსტი] ბრენდის ისტორია, ღირებულებები და საკონტაქტო ინფორმაცია ემატება CMS-იდან.</p>', '<p>[Placeholder] Brand story, values and contact details are edited in the CMS.</p>') } },
   ]);
 
-  await upsertPage('privacy', 'privacy', 'კონფიდენციალურობის პოლიტიკა', 'Privacy policy', [
-    {
-      type: 'RichText',
-      data: {
-        heading: L('კონფიდენციალურობის პოლიტიკა', 'Privacy policy'),
-        body: L(
-          `${LEGAL_NOTE_KA}<h2>რა მონაცემებს ვაგროვებთ</h2><p>პარტნიორობის განაცხადი: კომპანიის დასახელება, საიდენტიფიკაციო კოდი, საკონტაქტო პირის სახელი, ტელეფონი და ელფოსტა. საკონტაქტო ფორმა: სახელი, ელფოსტა, ტელეფონი (არასავალდებულო) და შეტყობინება. ტექნიკური: IP მისამართის ჰეში უსაფრთხოებისა და სპამისგან დაცვისთვის.</p><h2>მიზანი და საფუძველი</h2><p>განაცხადის განხილვა, პარტნიორის ანგარიშის მართვა და შეკითხვებზე პასუხი — თქვენი თანხმობისა და ხელშეკრულებამდელი ურთიერთობის საფუძველზე.</p><h2>შენახვის ვადა</h2><p>[შესავსებია იურისტთან ერთად]</p><h2>მესამე მხარეები</h2><p>ჰოსტინგი, მონაცემთა ბაზა, ფაილების საცავი და ელფოსტის მომსახურება (დამუშავებლები). ანალიტიკა (Google Analytics, Meta Pixel) — მხოლოდ თანხმობის შემთხვევაში.</p><h2>თქვენი უფლებები</h2><p>გაცნობა, გასწორება, წაშლა, დამუშავების შეწყვეტა და თანხმობის გამოხმობა. მოთხოვნისთვის დაგვიკავშირდით საკონტაქტო გვერდიდან.</p><h2>მონაცემთა დამმუშავებელი</h2><p>[კომპანიის რეკვიზიტები — შესავსებია]</p>`,
-          `${LEGAL_NOTE_EN}<h2>What we collect</h2><p>Partner applications: company name, identification code, contact name, phone and email. Contact form: name, email, optional phone and message. Technical: a hashed IP address for security and spam prevention.</p><h2>Purpose and basis</h2><p>Reviewing applications, managing partner accounts and answering enquiries — based on your consent and pre-contractual relations.</p><h2>Retention</h2><p>[To be completed with counsel]</p><h2>Third parties</h2><p>Hosting, database, file storage and email providers (processors). Analytics (Google Analytics, Meta Pixel) only with consent.</p><h2>Your rights</h2><p>Access, rectification, erasure, restriction and withdrawal of consent — contact us via the contact page.</p><h2>Controller</h2><p>[Company details — to be completed]</p>`,
-        ),
-      },
-    },
-  ]);
-
-  await upsertPage('cookies', 'cookies', 'Cookie პოლიტიკა', 'Cookie policy', [
-    {
-      type: 'RichText',
-      data: {
-        heading: L('Cookie პოლიტიკა', 'Cookie policy'),
-        body: L(
-          `${LEGAL_NOTE_KA}<h2>აუცილებელი</h2><table><tr><th>Cookie</th><th>მიზანი</th><th>ვადა</th></tr><tr><td>aspor_sid</td><td>პარტნიორის სესია</td><td>30 დღე</td></tr><tr><td>aspor_admin_sid</td><td>ადმინისტრატორის სესია</td><td>12 სთ</td></tr><tr><td>aspor_consent</td><td>თქვენი cookie არჩევანი</td><td>180 დღე</td></tr><tr><td>NEXT_LOCALE</td><td>ენის არჩევანი</td><td>სესია</td></tr></table><h2>ანალიტიკური და მარკეტინგული (მხოლოდ თანხმობით)</h2><p>Google Analytics 4 (_ga, _ga_*), Meta Pixel (_fbp). გამოირთვება „მხოლოდ აუცილებელი“ არჩევისას. არჩევანის შეცვლა შეგიძლიათ ფუტერში „Cookie პარამეტრები“.</p>`,
-          `${LEGAL_NOTE_EN}<h2>Essential</h2><table><tr><th>Cookie</th><th>Purpose</th><th>Duration</th></tr><tr><td>aspor_sid</td><td>Partner session</td><td>30 days</td></tr><tr><td>aspor_admin_sid</td><td>Admin session</td><td>12 h</td></tr><tr><td>aspor_consent</td><td>Your cookie choice</td><td>180 days</td></tr><tr><td>NEXT_LOCALE</td><td>Language choice</td><td>Session</td></tr></table><h2>Analytics and marketing (consent only)</h2><p>Google Analytics 4 (_ga, _ga_*), Meta Pixel (_fbp). Disabled when you choose “Essential only”. Change your choice any time via “Cookie settings” in the footer.</p>`,
-        ),
-      },
-    },
-  ]);
+  for (const lp of LEGAL_PAGES) {
+    await upsertPage(lp.key, lp.slug, lp.titleKa, lp.titleEn, lp.sections.map((x) => ({ type: x.type, data: x.data })), lp.seoKa, lp.seoEn);
+  }
 }
 
 async function seedAdmin() {

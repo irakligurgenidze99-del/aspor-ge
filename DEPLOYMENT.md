@@ -34,7 +34,7 @@ Assessed for cost at this site's scale (~500 SKUs, low traffic, B2B), fit with V
 | 12 | Brand story, About text, contact details (address, phone, email, hours) | CMS | ❌ placeholders shown |
 | 13 | Partner-store directory (name, city, address, phone) | CMS → მაღაზიები | ❌ empty |
 | 14 | Headphones and phone-case products | Catalogue | ❌ not in workbook |
-| 15 | Privacy and cookie policy approved by Georgian counsel | CMS pages | ⚠ templates marked "draft" |
+| 15 | Company legal name, ID code and legal address (Admin → პარამეტრები) — filled into privacy, terms and cookie pages automatically; counsel review recommended | Settings | ❌ needed |
 | 16 | Higher-resolution white-background photos (optional) | Media | ⚠ workbook images used (≤1400 px) |
 
 ## Current live setup (Oct 2026)
@@ -96,6 +96,10 @@ Add `aspor.ge` and `www.aspor.ge` in Vercel → Domains, create the DNS records 
 - [ ] Analytics IDs (optional) → redeploy (`NEXT_PUBLIC_*` values are inlined at build time)
 - [ ] Search Console: add the property, use the HTML-tag token from `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, submit `https://aspor.ge/sitemap.xml`
 - [ ] Send a test application end-to-end (application → approval → setup email arrives → partner login shows prices)
+
+## One-time content ops
+
+`prisma/content-ops.ts` holds one-off content changes for an existing database (the seed never overwrites existing pages/products). Each op runs once on the next production build and is recorded in `SiteSetting` as `ops:<id>`. Current ops: rewrite privacy/cookies + add terms (28.10.2026), publish all products (28.10.2026).
 
 ## Operations
 

@@ -35,6 +35,7 @@ export async function Footer() {
           <li><Link href="/account/login" className="hover:text-paper">{nav('partnerLogin')}</Link></li>
         </FooterCol>
         <FooterCol title={t('legal')}>
+          <li><Link href="/terms" className="hover:text-paper">{t('terms')}</Link></li>
           <li><Link href="/privacy" className="hover:text-paper">{t('privacy')}</Link></li>
           <li><Link href="/cookies" className="hover:text-paper">{t('cookies')}</Link></li>
           <li><CookieSettingsButton label={t('cookieSettings')} /></li>

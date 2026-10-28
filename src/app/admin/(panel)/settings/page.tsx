@@ -9,7 +9,7 @@ import { publicEnv } from '@/lib/public-env';
 
 export const metadata = { title: 'პარამეტრები' };
 
-const LABELS: Record<string, string> = { 'contact.email': 'საკონტაქტო ელფოსტა', 'contact.phone': 'ტელეფონი', 'contact.address': 'მისამართი', 'contact.hours': 'სამუშაო საათები', 'social.facebook': 'Facebook (https)', 'social.instagram': 'Instagram (https)' };
+const LABELS: Record<string, string> = { 'company.name': 'კომპანიის იურიდიული დასახელება (მაგ. შპს „…“)', 'company.code': 'საიდენტიფიკაციო კოდი', 'company.address': 'იურიდიული მისამართი', 'contact.email': 'საკონტაქტო ელფოსტა', 'contact.phone': 'ტელეფონი', 'contact.address': 'მისამართი', 'contact.hours': 'სამუშაო საათები', 'social.facebook': 'Facebook (https)', 'social.instagram': 'Instagram (https)' };
 
 export default async function Settings() {
   await requireAdmin(); // per-page guard: layouts can be skipped by RSC partial rendering
@@ -17,7 +17,7 @@ export default async function Settings() {
   const get = (k: string) => rows.find((r) => r.key === k);
   return (
     <>
-      <PageHead title="პარამეტრები / SEO" desc="საკონტაქტო მონაცემები ჩანს ფუტერში და კონტაქტის გვერდზე. ცარიელი ველი არ გამოჩნდება — არასოდეს ჩაწეროთ დროებითი/მოგონილი მონაცემები." />
+      <PageHead title="პარამეტრები / SEO" desc="საკონტაქტო მონაცემები ჩანს ფუტერში და კონტაქტის გვერდზე. ცარიელი ველი არ გამოჩნდება — არასოდეს ჩაწეროთ დროებითი/მოგონილი მონაცემები. კომპანიის რეკვიზიტები და კონტაქტი ავტომატურად ჩაჯდება კონფიდენციალურობის პოლიტიკაში, წესებსა და პირობებში და Cookie პოლიტიკაში." />
       <div className="grid gap-6 xl:grid-cols-[1.4fr_1fr]">
         <Card>
           <ActionForm action={saveSettingsAction} className="space-y-4">
