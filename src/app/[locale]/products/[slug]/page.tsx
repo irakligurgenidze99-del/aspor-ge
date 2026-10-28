@@ -4,7 +4,8 @@ import { Link } from '@/i18n/navigation';
 import { Container } from '@/components/ui/container';
 import { Gallery } from '@/components/site/gallery';
 import { JsonLd } from '@/components/site/json-ld';
-import { PartnerPriceCta, PriceTag } from '@/components/site/price';
+import { BuyBox } from '@/components/site/buy-box';
+import { paymentsProvider, installmentEnabled } from '@/server/payments/config';
 import { ProductCard, ProductGrid } from '@/components/site/product-card';
 import { Notice } from '@/components/ui/field';
 import { getPublicProduct, relatedProducts, type Locale } from '@/server/services/catalog';
@@ -35,13 +36,14 @@ export default async function ProductPage({ params }: PageProps<'/[locale]/produ
 
   return (
     <>
-      {/* Product JSON-LD: public factual fields only — no offers/price. */}
+      {/* Product JSON-LD: public fields only. Offers carry the PUBLIC retail price only — never wholesale. */}
       <JsonLd
         data={{
           '@context': 'https://schema.org', '@type': 'Product', name: p.name, sku: p.sku, ...(p.modelNumber ? { mpn: p.modelNumber } : {}),
           brand: { '@type': 'Brand', name: 'ASPOR' }, category: p.categoryName, url,
           ...(p.color ? { color: p.color } : {}), ...(p.description ? { description: p.description } : {}),
           image: p.images.map((i) => (i.url.startsWith('http') ? i.url : `${SITE_URL()}${i.url}`)),
+          ...(p.retailGel ? { offers: { '@type': 'Offer', priceCurrency: 'GEL', price: p.retailGel, url } } : {}),
         }}
       />
       <JsonLd
@@ -75,16 +77,7 @@ export default async function ProductPage({ params }: PageProps<'/[locale]/produ
               {p.modelNumber && <div><dt className="text-mute">{t('model')}</dt><dd className="font-semibold">{p.modelNumber}</dd></div>}
               {p.color && <div><dt className="text-mute">{t('color')}</dt><dd className="font-semibold">{p.color}</dd></div>}
             </dl>
-            <div className="mt-8 border-y border-line py-5">
-              {price !== undefined ? (
-                <>
-                  <p className="mb-1 text-sm text-graphite">{t('wholesale')}</p>
-                  <PriceTag amount={price} size="lg" />
-                </>
-              ) : (
-                <PartnerPriceCta />
-              )}
-            </div>
+            <BuyBox slug={p.slug} retail={p.retailGel} wholesale={price} paymentsOn={!!paymentsProvider()} installmentOn={installmentEnabled()} />
             {p.description && (
               <section className="mt-8">
                 <h2 className="text-lg font-bold">{t('description')}</h2>

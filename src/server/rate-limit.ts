@@ -11,6 +11,8 @@ export const RATE_RULES = {
   contact: { max: 8, windowSec: 60 * 60 },
   translate: { max: 60, windowSec: 60 * 60 },
   mfa: { max: 10, windowSec: 15 * 60 },
+  checkout: { max: 15, windowSec: 60 * 60 },
+  loan: { max: 30, windowSec: 60 * 60 },
 } satisfies Record<string, RateRule>;
 
 /**

@@ -11,6 +11,7 @@ export const IMPORT_FIELDS = [
   { key: 'name_en', label: 'Name (EN) — საჭიროებს დამტკიცებას', required: false, aliases: ['name_en'] },
   { key: 'description_en', label: 'Description (EN) — საჭიროებს დამტკიცებას', required: false, aliases: ['description_en'] },
   { key: 'wholesale_price_gel_vat_included', label: 'საბითუმო ფასი ₾ (დღგ-ს ჩათვლით)', required: false, aliases: ['wholesale_price_gel_vat_included', 'wholesale_price', 'b2b', 'b2b price', 'საბითუმო ფასი', 'ფასი'] },
+  { key: 'retail_price_gel_vat_included', label: 'საცალო ფასი ₾ (დღგ-ს ჩათვლით) — ჩანს ყველას, ონლაინ გაყიდვა', required: false, aliases: ['retail_price_gel_vat_included', 'retail_price', 'retail', 'საცალო ფასი', 'საცალო'] },
   { key: 'status', label: 'სტატუსი (draft / published)', required: false, aliases: ['status', 'publication', 'სტატუსი', 'publish'] },
   { key: 'color', label: 'ფერი', required: false, aliases: ['color', 'colour', 'ფერი'] },
   { key: 'model_number', label: 'მოდელის ნომერი', required: false, aliases: ['model_number', 'model', 'model no', 'model no.', 'მოდელი'] },

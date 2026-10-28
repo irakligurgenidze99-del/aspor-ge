@@ -31,7 +31,7 @@ async function loadState() {
   const [products, cats] = await Promise.all([
     db.product.findMany({
       select: {
-        id: true, sku: true, status: true, isHidden: true, hiddenReason: true, color: true, modelNumber: true, featured: true, sortOrder: true,
+        id: true, sku: true, status: true, isHidden: true, retailPrice: true, hiddenReason: true, color: true, modelNumber: true, featured: true, sortOrder: true,
         category: { select: { slug: true } },
         translations: { select: { locale: true, name: true, description: true } },
         price: { select: { amountGel: true } },
@@ -46,7 +46,7 @@ async function loadState() {
     const en = p.translations.find((t) => t.locale === 'en');
     return {
       id: p.id, sku: p.sku, categorySlug: p.category.slug, nameKa: ka?.name ?? '', descriptionKa: ka?.description ?? null,
-      nameEn: en?.name ?? null, descriptionEn: en?.description ?? null, price: p.price ? p.price.amountGel.toFixed(2) : null,
+      nameEn: en?.name ?? null, descriptionEn: en?.description ?? null, price: p.price ? p.price.amountGel.toFixed(2) : null, retailPrice: p.retailPrice ? p.retailPrice.toFixed(2) : null,
       status: p.status, isHidden: p.isHidden, hiddenByImport: !!p.hiddenReason?.startsWith('absent from full import'), color: p.color, modelNumber: p.modelNumber,
       imageRefs: p.images.map((i) => i.asset.sourceRef ?? `media:${i.asset.id}`), specs: p.attributes, featured: p.featured, sortOrder: p.sortOrder,
     };
@@ -129,7 +129,7 @@ export async function commitImport(jobId: string, adminId: string, opts: { confi
           const slug = await uniqueSlug(tx, row);
           const p = await tx.product.create({
             data: {
-              sku: row.sku, slug, categoryId, color: row.color, modelNumber: row.modelNumber, status: row.status ?? 'DRAFT',
+              sku: row.sku, slug, categoryId, retailPrice: row.retailPrice ?? null, color: row.color, modelNumber: row.modelNumber, status: row.status ?? 'DRAFT',
               publishedAt: row.status === 'PUBLISHED' ? new Date() : null, featured: row.featured ?? false, sortOrder: row.sortOrder ?? 0,
               translations: {
                 create: [
@@ -150,6 +150,7 @@ export async function commitImport(jobId: string, adminId: string, opts: { confi
             data: {
               categoryId,
               ...(d.color ? { color: row.color } : {}),
+              ...(d.retail_price && row.retailPrice !== undefined ? { retailPrice: row.retailPrice } : {}),
               ...(d.model_number ? { modelNumber: row.modelNumber } : {}),
               ...(d.status ? { status: row.status, publishedAt: row.status === 'PUBLISHED' ? new Date() : undefined } : {}),
               ...(d.featured ? { featured: row.featured } : {}),

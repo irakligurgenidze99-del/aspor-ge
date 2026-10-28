@@ -6,7 +6,7 @@ const headers = ['SKU', 'category', 'name_ka', 'wholesale_price_gel_vat_included
 const mapping = suggestMapping(headers);
 const row = (o: Record<string, string>) => ({ SKU: '', category: 'chargers', name_ka: 'დამტენი', wholesale_price_gel_vat_included: '', status: '', images: '', specifications: '', 'spec: Weight': '', ...o });
 const ex = (sku: string, o: Partial<ExistingSnapshot> = {}): ExistingSnapshot => ({
-  id: `id-${sku}`, sku, categorySlug: 'chargers', nameKa: 'დამტენი', descriptionKa: null, nameEn: null, descriptionEn: null, price: null,
+  id: `id-${sku}`, sku, categorySlug: 'chargers', nameKa: 'დამტენი', descriptionKa: null, nameEn: null, descriptionEn: null, price: null, retailPrice: null,
   status: 'PUBLISHED', isHidden: false, hiddenByImport: false, color: null, modelNumber: null, imageRefs: [], specs: [], featured: false, sortOrder: 0, ...o,
 });
 const cats = [{ slug: 'chargers', names: ['დამტენები', 'Chargers'] }];

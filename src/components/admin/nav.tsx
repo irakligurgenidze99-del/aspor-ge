@@ -6,6 +6,7 @@ import { cn } from '@/lib/cn';
 const groups: { title: string; items: [string, string][] }[] = [
   { title: '', items: [['/admin', 'მიმოხილვა']] },
   { title: 'კატალოგი', items: [['/admin/products', 'პროდუქტები'], ['/admin/categories', 'კატეგორიები'], ['/admin/imports', 'იმპორტი / ექსპორტი'], ['/admin/media', 'მედია']] },
+  { title: 'მაღაზია', items: [['/admin/orders', 'შეკვეთები']] },
   { title: 'B2B', items: [['/admin/applications', 'განაცხადები'], ['/admin/partners', 'პარტნიორები']] },
   { title: 'კონტენტი', items: [['/admin/pages', 'გვერდები'], ['/admin/banners', 'ბანერები'], ['/admin/stores', 'მაღაზიები'], ['/admin/translations', 'თარგმანები'], ['/admin/settings', 'პარამეტრები / SEO']] },
   { title: 'კომუნიკაცია', items: [['/admin/messages', 'შეტყობინებები'], ['/admin/emails', 'ელფოსტის ჟურნალი']] },

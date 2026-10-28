@@ -10,7 +10,7 @@ export default async function NewProduct() {
     <>
       <PageHead title="ახალი პროდუქტი" desc="იქმნება დრაფტად. გამოქვეყნება — შემდეგ ეტაპზე, განხილვის შემდეგ." />
       <Card className="max-w-3xl">
-        <ProductForm cats={cats.map((c) => ({ id: c.id, name: c.translations[0]?.name ?? c.slug }))} p={{ sku: '', slug: '', categoryId: '', nameKa: '', descriptionKa: '', seoTitleKa: '', seoDescKa: '', color: '', modelNumber: '', featured: false, sortOrder: 0, price: '', specs: '' }} />
+        <ProductForm cats={cats.map((c) => ({ id: c.id, name: c.translations[0]?.name ?? c.slug }))} p={{ sku: '', slug: '', categoryId: '', nameKa: '', descriptionKa: '', seoTitleKa: '', seoDescKa: '', color: '', modelNumber: '', featured: false, sortOrder: 0, price: '', retailPrice: '', specs: '' }} />
       </Card>
     </>
   );

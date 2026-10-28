@@ -97,6 +97,16 @@ Add `aspor.ge` and `www.aspor.ge` in Vercel → Domains, create the DNS records 
 - [ ] Search Console: add the property, use the HTML-tag token from `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, submit `https://aspor.ge/sitemap.xml`
 - [ ] Send a test application end-to-end (application → approval → setup email arrives → partner login shows prices)
 
+## Online payments (Bank of Georgia)
+
+1. Sign a merchant agreement with Bank of Georgia (online payments + online installment). The bank issues `client_id` and `secret` (api.bog.ge, bonline.bog.ge business panel).
+2. In Vercel → Environment Variables (Production): `BOG_CLIENT_ID`, `BOG_CLIENT_SECRET` (sensitive). Optional: `BOG_CALLBACK_PUBLIC_KEY` (PEM from api.bog.ge → Callback), `BOG_LOAN_MIN_GEL`, `SHOP_INSTALLMENT=off`.
+3. Set `APP_URL` / `NEXT_PUBLIC_SITE_URL` to `https://aspor.ge`. The callback URL sent to the bank is `${APP_URL}/api/payments/bog/callback`, and `*.vercel.app` URLs are protected by Vercel Authentication, so the bank cannot reach them.
+4. Redeploy. Then place a small real test order (card), check Admin → შეკვეთები shows **გადახდილი**, and refund it in the BOG panel.
+5. Without BOG keys the "Buy" buttons are hidden on production. `PAYMENTS_PROVIDER=mock` gives a simulated bank page for local/preview testing and is refused on the production deployment.
+
+How it works: order created with server-side prices → BOG order (`payment_method: card` or `bog_loan`, installments via the BOG calculator SDK with `config.loan`) → redirect → callback → the receipt is re-read from the BOG API (callback body is not trusted) → PAID only if the amount matches. The result page also re-checks pending orders, and the daily cron cancels unpaid orders older than 2 days.
+
 ## One-time content ops
 
 `prisma/content-ops.ts` holds one-off content changes for an existing database (the seed never overwrites existing pages/products). Each op runs once on the next production build and is recorded in `SiteSetting` as `ops:<id>`. Current ops: rewrite privacy/cookies + add terms (28.10.2026), publish all products (28.10.2026).

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import type { ProductCardDTO } from '@/server/services/catalog';
-import { PriceTag } from './price';
+import { PriceTag, RetailPriceTag } from './price';
 
 /**
  * `price`: undefined → viewer not authorised (nothing rendered);
@@ -37,7 +37,7 @@ export async function ProductCard({ p, price, priority }: { p: ProductCardDTO; p
           </Link>
         </h3>
         <div className="mt-auto pt-2">
-          <PriceTag amount={price} />
+          {price ? <PriceTag amount={price} /> : p.retailGel ? <RetailPriceTag amount={p.retailGel} /> : <PriceTag amount={price} />}
         </div>
       </div>
     </article>

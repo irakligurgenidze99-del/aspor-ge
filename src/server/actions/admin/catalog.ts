@@ -28,6 +28,7 @@ const productSchema = z.object({
   featured: z.literal('on').optional(),
   sortOrder: z.coerce.number().int().min(-99999).max(99999).default(0),
   price: z.union([z.literal(''), priceSchema]).optional(),
+  retailPrice: z.union([z.literal(''), priceSchema]).optional(),
   specs: str(20000).optional(),
 });
 
@@ -59,7 +60,7 @@ export async function saveProductAction(_: AState, fd: FormData): Promise<AState
   const clash = await db.product.findFirst({ where: { OR: [{ sku: d.sku }, { slug }], NOT: id ? { id } : undefined }, select: { sku: true, slug: true } });
   if (clash) return { error: clash.sku === d.sku ? 'ეს SKU უკვე არსებობს.' : 'ეს slug უკვე გამოყენებულია.' };
   const specs = dedupeKeys(parseSpecLines(d.specs ?? ''));
-  const base = { sku: d.sku, slug, categoryId: d.categoryId, color: d.color || null, modelNumber: d.modelNumber || null, featured: d.featured === 'on', sortOrder: d.sortOrder };
+  const base = { sku: d.sku, slug, categoryId: d.categoryId, color: d.color || null, modelNumber: d.modelNumber || null, featured: d.featured === 'on', sortOrder: d.sortOrder, retailPrice: d.retailPrice === '' || d.retailPrice === undefined ? null : d.retailPrice.toFixed(2) };
   const kaTr = { name: d.nameKa, description: d.descriptionKa || null, seoTitle: d.seoTitleKa || null, seoDesc: d.seoDescKa || null };
   let productId = id;
   await db.$transaction(async (tx) => {

@@ -12,35 +12,34 @@ import { LEGAL_PAGES } from './legal-content';
 
 type Op = { id: string; run: () => Promise<string> };
 
-const OPS: Op[] = [
-  {
-    // Owner request 28.10.2026: privacy / cookies rewritten, terms page added.
-    id: 'legal-pages-2026-10-28',
-    run: async () => {
-      const done: string[] = [];
-      for (const lp of LEGAL_PAGES) {
-        await db.$transaction(async (tx) => {
-          const existing = await tx.page.findUnique({ where: { key: lp.key } });
-          const page = existing
-            ? await tx.page.update({ where: { id: existing.id }, data: { publishedAt: new Date(), hasDraft: false } })
-            : await tx.page.create({ data: { key: lp.key, slug: lp.slug, isSystem: true, publishedAt: new Date() } });
-          for (const [locale, title, seoDesc, status] of [['ka', lp.titleKa, lp.seoKa, 'APPROVED'], ['en', lp.titleEn, lp.seoEn, 'DRAFT_REVIEW']] as const) {
-            await tx.pageTranslation.upsert({
-              where: { pageId_locale: { pageId: page.id, locale } },
-              create: { pageId: page.id, locale, title, seoDesc, status },
-              update: { title, seoDesc, ...(locale === 'en' ? { status } : {}) },
-            });
-          }
-          await tx.pageSection.deleteMany({ where: { pageId: page.id } });
-          for (const revision of ['DRAFT', 'PUBLISHED'] as const) {
-            await tx.pageSection.createMany({ data: lp.sections.map((s, i) => ({ pageId: page.id, revision, type: s.type, sortOrder: i, data: s.data, enStatus: 'DRAFT_REVIEW' as const })) });
-          }
+async function applyLegalPages() {
+  const done: string[] = [];
+  for (const lp of LEGAL_PAGES) {
+    await db.$transaction(async (tx) => {
+      const existing = await tx.page.findUnique({ where: { key: lp.key } });
+      const page = existing
+        ? await tx.page.update({ where: { id: existing.id }, data: { publishedAt: new Date(), hasDraft: false } })
+        : await tx.page.create({ data: { key: lp.key, slug: lp.slug, isSystem: true, publishedAt: new Date() } });
+      for (const [locale, title, seoDesc, status] of [['ka', lp.titleKa, lp.seoKa, 'APPROVED'], ['en', lp.titleEn, lp.seoEn, 'DRAFT_REVIEW']] as const) {
+        await tx.pageTranslation.upsert({
+          where: { pageId_locale: { pageId: page.id, locale } },
+          create: { pageId: page.id, locale, title, seoDesc, status },
+          update: { title, seoDesc, ...(locale === 'en' ? { status } : {}) },
         });
-        done.push(lp.key);
       }
-      return `pages updated: ${done.join(', ')}`;
-    },
-  },
+      await tx.pageSection.deleteMany({ where: { pageId: page.id } });
+      for (const revision of ['DRAFT', 'PUBLISHED'] as const) {
+        await tx.pageSection.createMany({ data: lp.sections.map((s, i) => ({ pageId: page.id, revision, type: s.type, sortOrder: i, data: s.data, enStatus: 'DRAFT_REVIEW' as const })) });
+      }
+    });
+    done.push(lp.key);
+  }
+  return `pages updated: ${done.join(', ')}`;
+}
+
+const OPS: Op[] = [
+  // Owner request 28.10.2026: privacy / cookies rewritten, terms page added.
+  { id: 'legal-pages-2026-10-28', run: applyLegalPages },
   {
     // Owner request 28.10.2026: publish every product. Items in the inactive
     // "other" category stay invisible until that category is activated.
@@ -50,6 +49,8 @@ const OPS: Op[] = [
       return `products published: ${r.count}`;
     },
   },
+  // Owner request 28.10.2026 (later): online shop — terms/privacy/cookies updated for online sales.
+  { id: 'legal-pages-shop-2026-10-28', run: applyLegalPages },
 ];
 
 async function main() {

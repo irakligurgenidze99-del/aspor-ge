@@ -26,39 +26,39 @@ enum UserStatus {
 }
 
 model User {
-  id                String     @id @default(cuid())
-  email             String     @unique // stored lower-cased
-  passwordHash      String?
-  role              Role
-  status            UserStatus @default(PENDING_SETUP)
-  name              String?
+  id               String      @id @default(cuid())
+  email            String      @unique // stored lower-cased
+  passwordHash     String?
+  role             Role
+  status           UserStatus  @default(PENDING_SETUP)
+  name             String?
   // TOTP MFA (admin). Secret is AES-256-GCM encrypted with APP_ENCRYPTION_KEY.
-  totpSecretEnc     String?
-  totpEnabledAt     DateTime?
-  totpLastStep      Int? // last accepted TOTP time-step (replay protection)
-  recoveryCodes     String[] // argon2 hashes, consumed on use
-  failedLoginCount  Int        @default(0)
-  lockedUntil       DateTime?
-  lastLoginAt       DateTime?
-  createdAt         DateTime   @default(now())
-  updatedAt         DateTime   @updatedAt
-  partner           B2BPartner?
-  sessions          Session[]
-  tokens            AuthToken[]
-  auditLogs         AuditLog[]
+  totpSecretEnc    String?
+  totpEnabledAt    DateTime?
+  totpLastStep     Int? // last accepted TOTP time-step (replay protection)
+  recoveryCodes    String[] // argon2 hashes, consumed on use
+  failedLoginCount Int         @default(0)
+  lockedUntil      DateTime?
+  lastLoginAt      DateTime?
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+  partner          B2BPartner?
+  sessions         Session[]
+  tokens           AuthToken[]
+  auditLogs        AuditLog[]
 }
 
 model Session {
-  id          String   @id @default(cuid())
-  tokenHash   String   @unique // sha256 of the cookie token
-  userId      String
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  mfaPassed   Boolean  @default(false)
-  ip          String?
-  userAgent   String?
-  createdAt   DateTime @default(now())
-  lastSeenAt  DateTime @default(now())
-  expiresAt   DateTime
+  id         String   @id @default(cuid())
+  tokenHash  String   @unique // sha256 of the cookie token
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  mfaPassed  Boolean  @default(false)
+  ip         String?
+  userAgent  String?
+  createdAt  DateTime @default(now())
+  lastSeenAt DateTime @default(now())
+  expiresAt  DateTime
 
   @@index([userId])
   @@index([expiresAt])
@@ -98,21 +98,22 @@ enum PartnerStatus {
 }
 
 model B2BPartner {
-  id             String        @id @default(cuid())
-  userId         String        @unique
-  user           User          @relation(fields: [userId], references: [id], onDelete: Cascade)
-  companyName    String
-  companyCode    String        @unique // საიდენტიფიკაციო კოდი
-  contactName    String
-  phone          String
-  address        String?
-  status         PartnerStatus @default(ACTIVE)
-  suspendedAt    DateTime?
-  suspendReason  String?
-  applicationId  String?       @unique
-  application    PartnershipApplication? @relation(fields: [applicationId], references: [id])
-  createdAt      DateTime      @default(now())
-  updatedAt      DateTime      @updatedAt
+  id            String                  @id @default(cuid())
+  userId        String                  @unique
+  user          User                    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  companyName   String
+  companyCode   String                  @unique // საიდენტიფიკაციო კოდი
+  contactName   String
+  phone         String
+  address       String?
+  status        PartnerStatus           @default(ACTIVE)
+  suspendedAt   DateTime?
+  suspendReason String?
+  applicationId String?                 @unique
+  application   PartnershipApplication? @relation(fields: [applicationId], references: [id])
+  orders        Order[]
+  createdAt     DateTime                @default(now())
+  updatedAt     DateTime                @updatedAt
 }
 
 enum ApplicationStatus {
@@ -205,6 +206,8 @@ model Product {
   attributes   ProductAttribute[]
   images       ProductImage[]
   price        WholesalePrice?
+  retailPrice  Decimal?             @db.Decimal(12, 2) // public price, GEL incl. VAT; null = not sold online
+  orderItems   OrderItem[]
 
   @@index([status, isHidden, categoryId])
 }
@@ -255,31 +258,31 @@ model ProductImage {
 
 /// Server-protected. Single shared wholesale price, GEL, VAT (18%) included.
 model WholesalePrice {
-  id         String   @id @default(cuid())
-  productId  String   @unique
-  product    Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
-  amountGel  Decimal  @db.Decimal(12, 2)
-  updatedAt  DateTime @updatedAt
+  id        String   @id @default(cuid())
+  productId String   @unique
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  amountGel Decimal  @db.Decimal(12, 2)
+  updatedAt DateTime @updatedAt
 }
 
 // ───────────────────────── Media ─────────────────────────
 
 model MediaAsset {
-  id          String         @id @default(cuid())
-  storageKey  String         @unique
-  url         String
-  mimeType    String
-  sizeBytes   Int
-  width       Int?
-  height      Int?
-  originalName String?
-  sourceRef   String? // original URL / file reference (import de-duplication)
-  altKa       String?
-  altEn       String?
-  createdAt   DateTime       @default(now())
+  id            String         @id @default(cuid())
+  storageKey    String         @unique
+  url           String
+  mimeType      String
+  sizeBytes     Int
+  width         Int?
+  height        Int?
+  originalName  String?
+  sourceRef     String? // original URL / file reference (import de-duplication)
+  altKa         String?
+  altEn         String?
+  createdAt     DateTime       @default(now())
   productImages ProductImage[]
-  categories  Category[]
-  banners     Banner[]
+  categories    Category[]
+  banners       Banner[]
 }
 
 // ───────────────────────── Content ─────────────────────────
@@ -298,14 +301,14 @@ model Page {
 }
 
 model PageTranslation {
-  id        String            @id @default(cuid())
-  pageId    String
-  page      Page              @relation(fields: [pageId], references: [id], onDelete: Cascade)
-  locale    String
-  title     String
-  seoTitle  String?
-  seoDesc   String?
-  status    TranslationStatus @default(APPROVED)
+  id       String            @id @default(cuid())
+  pageId   String
+  page     Page              @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  locale   String
+  title    String
+  seoTitle String?
+  seoDesc  String?
+  status   TranslationStatus @default(APPROVED)
 
   @@unique([pageId, locale])
 }
@@ -335,8 +338,8 @@ model PageSection {
 }
 
 model Banner {
-  id        String      @id @default(cuid())
-  placement String      @default("home") // where it appears
+  id        String            @id @default(cuid())
+  placement String            @default("home") // where it appears
   titleKa   String
   titleEn   String?
   textKa    String?
@@ -344,20 +347,20 @@ model Banner {
   linkUrl   String?
   enStatus  TranslationStatus @default(NONE)
   imageId   String?
-  image     MediaAsset? @relation(fields: [imageId], references: [id], onDelete: SetNull)
-  isActive  Boolean     @default(true)
-  sortOrder Int         @default(0)
-  createdAt DateTime    @default(now())
-  updatedAt DateTime    @updatedAt
+  image     MediaAsset?       @relation(fields: [imageId], references: [id], onDelete: SetNull)
+  isActive  Boolean           @default(true)
+  sortOrder Int               @default(0)
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
 }
 
 /// Key/value editorial strings & settings (contact details, footer text, SEO defaults).
 model SiteSetting {
-  key       String   @id
+  key       String            @id
   valueKa   String?
   valueEn   String?
   enStatus  TranslationStatus @default(NONE)
-  updatedAt DateTime @updatedAt
+  updatedAt DateTime          @updatedAt
 }
 
 model PartnerStore {
@@ -408,21 +411,21 @@ enum EmailStatus {
 }
 
 model EmailLog {
-  id          String      @id @default(cuid())
-  to          String
-  template    String
-  subject     String
+  id            String      @id @default(cuid())
+  to            String
+  template      String
+  subject       String
   // Rendered bodies are kept so retries are deterministic. Never contains secrets
   // except one-time links, which are purged after send (see email service).
-  html        String
-  text        String
-  status      EmailStatus @default(PENDING)
-  attempts    Int         @default(0)
-  lastError   String?
-  providerId  String?
-  sentAt      DateTime?
-  nextAttemptAt DateTime  @default(now())
-  createdAt   DateTime    @default(now())
+  html          String
+  text          String
+  status        EmailStatus @default(PENDING)
+  attempts      Int         @default(0)
+  lastError     String?
+  providerId    String?
+  sentAt        DateTime?
+  nextAttemptAt DateTime    @default(now())
+  createdAt     DateTime    @default(now())
 
   @@index([status, nextAttemptAt])
 }
@@ -442,22 +445,22 @@ enum ImportJobStatus {
 }
 
 model ImportJob {
-  id             String          @id @default(cuid())
-  fileName       String
-  fileHash       String // sha256 of uploaded file — idempotency guard
-  mode           ImportMode
-  status         ImportJobStatus @default(PREVIEWED)
-  mapping        Json
-  headers        String[]
-  rawRows        Json // parsed source rows (admin-only; purged after commit)
-  totals         Json
-  hideCount      Int             @default(0)
-  hideSample     String[]
-  error          String?
-  createdById    String?
-  createdAt      DateTime        @default(now())
-  committedAt    DateTime?
-  rows           ImportJobRow[]
+  id          String          @id @default(cuid())
+  fileName    String
+  fileHash    String // sha256 of uploaded file — idempotency guard
+  mode        ImportMode
+  status      ImportJobStatus @default(PREVIEWED)
+  mapping     Json
+  headers     String[]
+  rawRows     Json // parsed source rows (admin-only; purged after commit)
+  totals      Json
+  hideCount   Int             @default(0)
+  hideSample  String[]
+  error       String?
+  createdById String?
+  createdAt   DateTime        @default(now())
+  committedAt DateTime?
+  rows        ImportJobRow[]
 
   @@index([fileHash, mode])
   @@index([status, createdAt])
@@ -472,15 +475,15 @@ enum ImportRowAction {
 }
 
 model ImportJobRow {
-  id       String          @id @default(cuid())
-  jobId    String
-  job      ImportJob       @relation(fields: [jobId], references: [id], onDelete: Cascade)
-  rowNum   Int
-  sku      String?
-  action   ImportRowAction
-  errors   String[]
-  diff     Json? // { field: [old, new] } — price fields included, admin-only
-  payload  Json? // normalized row ready to commit
+  id      String          @id @default(cuid())
+  jobId   String
+  job     ImportJob       @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  rowNum  Int
+  sku     String?
+  action  ImportRowAction
+  errors  String[]
+  diff    Json? // { field: [old, new] } — price fields included, admin-only
+  payload Json? // normalized row ready to commit
 
   @@index([jobId, action])
 }
@@ -522,4 +525,77 @@ model AuditLog {
 
   @@index([createdAt])
   @@index([entityType, entityId])
+}
+
+// ───────────────────────── Shop ─────────────────────────
+
+enum OrderStatus {
+  PENDING_PAYMENT // created, waiting for BOG
+  PAID
+  FAILED // rejected / expired at BOG
+  CANCELLED
+  FULFILLED // delivered / handed over
+  REFUNDED
+}
+
+enum PaymentMethod {
+  CARD
+  INSTALLMENT
+}
+
+enum PriceType {
+  RETAIL
+  WHOLESALE
+}
+
+model Order {
+  id              String        @id @default(cuid())
+  number          String        @unique // human-readable, e.g. AS-20261028-4F7K
+  publicToken     String        @unique // unguessable, used on the result page
+  status          OrderStatus   @default(PENDING_PAYMENT)
+  paymentMethod   PaymentMethod
+  priceType       PriceType
+  partnerId       String?
+  partner         B2BPartner?   @relation(fields: [partnerId], references: [id], onDelete: SetNull)
+  customerName    String
+  companyName     String?
+  companyCode     String?
+  phone           String
+  email           String
+  city            String
+  address         String
+  comment         String?
+  locale          String        @default("ka")
+  subtotalGel     Decimal       @db.Decimal(12, 2)
+  deliveryGel     Decimal       @default(0) @db.Decimal(12, 2)
+  totalGel        Decimal       @db.Decimal(12, 2)
+  consentAt       DateTime
+  termsVersion    String
+  provider        String // "bog" | "mock"
+  providerOrderId String?       @unique
+  providerStatus  String?
+  providerMethod  String? // card | bog_loan | google_pay ...
+  loanMonths      Int?
+  paidAt          DateTime?
+  adminNote       String?
+  ipHash          String?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  items           OrderItem[]
+
+  @@index([status, createdAt])
+  @@index([email])
+}
+
+model OrderItem {
+  id        String   @id @default(cuid())
+  orderId   String
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId String?
+  product   Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+  sku       String
+  name      String
+  quantity  Int
+  unitGel   Decimal  @db.Decimal(12, 2)
+  lineGel   Decimal  @db.Decimal(12, 2)
 }

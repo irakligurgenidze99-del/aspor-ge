@@ -16,6 +16,7 @@ export type NormalizedRow = {
   nameEn?: string;
   descriptionEn?: string;
   price?: string; // "12.50" — undefined = leave unchanged
+  retailPrice?: string; // same semantics, public retail price
   status?: 'DRAFT' | 'PUBLISHED'; // undefined = unchanged (new → DRAFT)
   color?: string;
   modelNumber?: string;
@@ -94,6 +95,8 @@ export function normalizeRow(raw: RawRow, mapping: Mapping): { row?: NormalizedR
   }
   const price = parsePrice(get(raw, m.wholesale_price_gel_vat_included));
   if (price.error) errors.push(`wholesale_price_gel_vat_included: ${price.error}`);
+  const retail = parsePrice(get(raw, m.retail_price_gel_vat_included));
+  if (retail.error) errors.push(`retail_price_gel_vat_included: ${retail.error}`);
   const status = parseStatus(get(raw, m.status));
   if (status.error) errors.push(`status: ${status.error}`);
 
@@ -139,6 +142,7 @@ export function normalizeRow(raw: RawRow, mapping: Mapping): { row?: NormalizedR
       nameEn: get(raw, m.name_en) || undefined,
       descriptionEn: get(raw, m.description_en) || undefined,
       price: price.value,
+      retailPrice: retail.value,
       status: status.value,
       color: m.color ? get(raw, m.color) || undefined : undefined,
       modelNumber: m.model_number ? get(raw, m.model_number) || undefined : undefined,
@@ -160,6 +164,7 @@ export type ExistingSnapshot = {
   nameEn: string | null;
   descriptionEn: string | null;
   price: string | null;
+  retailPrice: string | null;
   status: 'DRAFT' | 'PUBLISHED';
   isHidden: boolean;
   /** hidden by a previous full-catalog import (vs. manually by an admin) */
@@ -187,6 +192,7 @@ export function diffRow(ex: ExistingSnapshot, r: NormalizedRow, resolvedCategory
   cmp('name_en', ex.nameEn, r.nameEn);
   cmp('description_en', ex.descriptionEn, r.descriptionEn);
   cmp('price', ex.price, r.price);
+  cmp('retail_price', ex.retailPrice, r.retailPrice);
   cmp('status', ex.status, r.status);
   cmp('color', ex.color, r.color);
   cmp('model_number', ex.modelNumber, r.modelNumber);

@@ -34,6 +34,20 @@ export const contactSchema = z.object({
   consent: z.literal('on', { message: 'consent_required' }),
 });
 
+export const checkoutSchema = z.object({
+  slug: z.string().trim().max(120).regex(/^[a-z0-9-]+$/),
+  quantity: z.coerce.number().int().min(1, 'qty').max(999, 'qty'),
+  method: z.enum(['CARD', 'INSTALLMENT']),
+  customerName: trimmed(120).min(2, 'required'),
+  phone: phoneSchema,
+  email: emailSchema,
+  city: trimmed(80).min(2, 'required'),
+  address: trimmed(300).min(5, 'required'),
+  comment: trimmed(1000).optional().or(z.literal('')),
+  consent: z.literal('on', { message: 'consent_required' }),
+});
+export type CheckoutForm = z.infer<typeof checkoutSchema>;
+
 export const loginSchema = z.object({
   email: emailSchema,
   password: z.string().min(1).max(200),

@@ -50,7 +50,7 @@ export default async function EditProduct({ params, searchParams }: PageProps<'/
           <h2 className="mb-4 font-bold">ძირითადი (ქართული)</h2>
           <ProductForm
             cats={cats.map((c) => ({ id: c.id, name: c.translations[0]?.name ?? c.slug }))}
-            p={{ id: p.id, sku: p.sku, slug: p.slug, categoryId: p.categoryId, nameKa: ka?.name ?? '', descriptionKa: ka?.description ?? '', seoTitleKa: ka?.seoTitle ?? '', seoDescKa: ka?.seoDesc ?? '', color: p.color ?? '', modelNumber: p.modelNumber ?? '', featured: p.featured, sortOrder: p.sortOrder, price: p.price ? p.price.amountGel.toFixed(2) : '', specs: p.attributes.map((a) => `${a.labelKa}: ${a.value}`).join('\n') }}
+            p={{ id: p.id, sku: p.sku, slug: p.slug, categoryId: p.categoryId, nameKa: ka?.name ?? '', descriptionKa: ka?.description ?? '', seoTitleKa: ka?.seoTitle ?? '', seoDescKa: ka?.seoDesc ?? '', color: p.color ?? '', modelNumber: p.modelNumber ?? '', featured: p.featured, sortOrder: p.sortOrder, price: p.price ? p.price.amountGel.toFixed(2) : '', retailPrice: p.retailPrice ? p.retailPrice.toFixed(2) : '', specs: p.attributes.map((a) => `${a.labelKa}: ${a.value}`).join('\n') }}
           />
         </Card>
         <div className="space-y-6">

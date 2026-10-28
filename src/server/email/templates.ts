@@ -76,3 +76,36 @@ export function contactAdminNotify(p: { name: string; email: string; phone?: str
   const text = `${p.name} <${p.email}> ${p.phone ?? ''}\n\n${p.message}\n\n${p.adminUrl}`;
   return { subject, html, text };
 }
+
+type OrderMail = {
+  number: string; customerName: string; totalGel: string; method: 'CARD' | 'INSTALLMENT'; priceType: 'RETAIL' | 'WHOLESALE';
+  items: { sku: string; name: string; quantity: number; lineGel: string }[]; phone: string; email: string; city: string; address: string; comment?: string | null; companyName?: string | null;
+};
+const itemsTable = (o: OrderMail) =>
+  `<table style="width:100%;border-collapse:collapse">${o.items
+    .map((i) => `<tr><td style="padding:6px 0;border-bottom:1px solid #eee">${esc(i.name)} <span style="color:#666">(${esc(i.sku)})</span> × ${i.quantity}</td><td style="padding:6px 0;border-bottom:1px solid #eee;text-align:right;white-space:nowrap">${esc(i.lineGel)} ₾</td></tr>`)
+    .join('')}<tr><td style="padding:8px 0;font-weight:700">ჯამი / Total (დღგ-ს ჩათვლით, მიწოდება უფასო)</td><td style="padding:8px 0;text-align:right;font-weight:700">${esc(o.totalGel)} ₾</td></tr></table>`;
+const methodKa = (m: OrderMail['method']) => (m === 'INSTALLMENT' ? 'BOG განვადება' : 'ბარათით გადახდა (BOG)');
+
+export function orderPaidCustomer(o: OrderMail): Rendered {
+  const subject = `ASPOR — შეკვეთა ${o.number} მიღებულია / Order received`;
+  const html = layout(subject, `<p>გამარჯობა, ${esc(o.customerName)}!</p>
+<p>მადლობა შეკვეთისთვის. შეკვეთა <strong>${esc(o.number)}</strong> დადასტურებულია (${esc(methodKa(o.method))}). მიწოდების დეტალების დასაზუსტებლად დაგიკავშირდებით.</p>
+${itemsTable(o)}
+<p style="color:#666">მისამართი: ${esc(o.city)}, ${esc(o.address)} · ${esc(o.phone)}</p>
+<hr style="border:none;border-top:1px solid #eee;margin:24px 0">
+<p>Hello ${esc(o.customerName)}, thank you for your order <strong>${esc(o.number)}</strong>. Payment is confirmed; we will contact you to arrange delivery.</p>`);
+  const text = `შეკვეთა ${o.number} დადასტურებულია. ჯამი: ${o.totalGel} ₾.\n${o.items.map((i) => `${i.name} (${i.sku}) × ${i.quantity} — ${i.lineGel} ₾`).join('\n')}\n\nOrder ${o.number} confirmed. Total ${o.totalGel} GEL.`;
+  return { subject, html, text };
+}
+
+export function orderAdminNotify(o: OrderMail & { adminUrl: string }): Rendered {
+  const subject = `ახალი გადახდილი შეკვეთა ${o.number} — ${o.totalGel} ₾`;
+  const rows = [
+    ['მყიდველი', o.customerName], ...(o.companyName ? [['კომპანია (პარტნიორი)', o.companyName]] : []), ['ტელეფონი', o.phone], ['ელფოსტა', o.email], ['მისამართი', `${o.city}, ${o.address}`],
+    ['გადახდა', methodKa(o.method)], ['ფასი', o.priceType === 'WHOLESALE' ? 'საბითუმო' : 'საცალო'], ...(o.comment ? [['კომენტარი', o.comment]] : []),
+  ].map(([k, v]) => `<tr><td style="padding:4px 12px 4px 0;color:#666">${esc(k)}</td><td>${esc(v)}</td></tr>`).join('');
+  const html = layout(subject, `<table>${rows}</table>${itemsTable(o)}${button(o.adminUrl, 'ადმინ პანელში ნახვა')}`);
+  const text = `შეკვეთა ${o.number}: ${o.totalGel} ₾\n${o.customerName} · ${o.phone} · ${o.email}\n${o.city}, ${o.address}\n${o.adminUrl}`;
+  return { subject, html, text };
+}

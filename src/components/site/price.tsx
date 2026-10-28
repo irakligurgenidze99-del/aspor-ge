@@ -28,3 +28,16 @@ export async function PartnerPriceCta() {
     </div>
   );
 }
+
+/** Public retail price (GEL incl. VAT). */
+export async function RetailPriceTag({ amount, size = 'sm' }: { amount: string | null; size?: 'sm' | 'lg' }) {
+  const t = await getTranslations('product');
+  const locale = (await getLocale()) as 'ka' | 'en';
+  if (!amount) return null;
+  return (
+    <p className={size === 'lg' ? 'flex items-baseline gap-2' : 'flex items-baseline gap-1.5'} data-testid="retail-price">
+      <span className={size === 'lg' ? 'text-[1.75rem] font-extrabold tabular-nums' : 'text-base font-bold tabular-nums'}>{formatGel(amount, locale)}</span>
+      <span className="text-xs text-mute">{t('vatIncluded')}</span>
+    </p>
+  );
+}

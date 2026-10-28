@@ -6,7 +6,7 @@ import { TextArea, TextField, SelectField, Checkbox } from '../ui/field';
 type Cat = { id: string; name: string };
 export type ProductFormData = {
   id?: string; sku: string; slug: string; categoryId: string; nameKa: string; descriptionKa: string; seoTitleKa: string; seoDescKa: string;
-  color: string; modelNumber: string; featured: boolean; sortOrder: number; price: string; specs: string;
+  color: string; modelNumber: string; featured: boolean; sortOrder: number; price: string; retailPrice: string; specs: string;
 };
 
 export function ProductForm({ p, cats }: { p: ProductFormData; cats: Cat[] }) {
@@ -22,9 +22,12 @@ export function ProductForm({ p, cats }: { p: ProductFormData; cats: Cat[] }) {
       </div>
       <TextField label="დასახელება (ქართ.)" name="nameKa" required defaultValue={p.nameKa} />
       <TextArea label="მოკლე აღწერა (ქართ.)" name="descriptionKa" rows={4} defaultValue={p.descriptionKa} />
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2">
         <TextField label="ფერი" name="color" defaultValue={p.color} />
         <TextField label="მოდელის ნომერი" name="modelNumber" defaultValue={p.modelNumber} />
+      </div>
+      <div className="grid gap-4 sm:grid-cols-2">
+        <TextField label="საცალო ფასი ₾ (დღგ-ს ჩათვლით)" name="retailPrice" inputMode="decimal" defaultValue={p.retailPrice} hint="ჩანს ყველას. ცარიელი = ონლაინ არ იყიდება." />
         <TextField label="საბითუმო ფასი ₾ (დღგ-ს ჩათვლით)" name="price" inputMode="decimal" defaultValue={p.price} hint="ცარიელი = ფასი არ არის. ჩანს მხოლოდ აქტიურ პარტნიორებს." />
       </div>
       <TextArea label="ტექნიკური მახასიათებლები" name="specs" rows={8} defaultValue={p.specs} hint="ყოველ ხაზზე: დასახელება: მნიშვნელობა (მაგ. ტევადობა: 10000mAh)" className="font-mono" />

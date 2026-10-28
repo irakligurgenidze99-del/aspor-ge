@@ -18,6 +18,7 @@ const productCardSelect = {
   slug: true,
   color: true,
   modelNumber: true,
+  retailPrice: true,
   attributes: { where: { key: 'color' }, select: { valueEn: true }, take: 1 },
   category: { select: { slug: true, translations: { select: { locale: true, name: true, status: true } } } },
   translations: { select: { locale: true, name: true, description: true, status: true } },
@@ -37,6 +38,8 @@ export type ProductCardDTO = {
   image: { url: string; width: number | null; height: number | null; alt: string } | null;
   /** true when the English request fell back to Georgian (no approved EN translation) */
   fallback: boolean;
+  /** PUBLIC retail price (GEL incl. VAT) or null when not sold online. Never the wholesale price. */
+  retailGel: string | null;
 };
 
 type Tr = { locale: string; status: string; name: string; description?: string | null };
@@ -68,6 +71,7 @@ function toCard(p: CardRow, locale: Locale): ProductCardDTO {
       ? { url: img.asset.url, width: img.asset.width, height: img.asset.height, alt: (locale === 'en' ? img.altEn ?? img.asset.altEn : img.altKa ?? img.asset.altKa) ?? t?.name ?? p.sku }
       : null,
     fallback,
+    retailGel: p.retailPrice ? p.retailPrice.toFixed(2) : null,
   };
 }
 
