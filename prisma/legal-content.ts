@@ -16,6 +16,9 @@ export { LEGAL_UPDATED };
 
 const L = (ka: string, en: string) => ({ ka, en });
 
+const POLICY_LINK_KA = '<a href="/ka/delivery-returns">მიწოდების, დაბრუნებისა და თანხის დაბრუნების პოლიტიკა</a>';
+const POLICY_LINK_EN = '<a href="/en/delivery-returns">Delivery, returns and refund policy</a>';
+
 const CONTROLLER_KA = `<p><strong>{{company.name}}</strong>[[, საიდენტიფიკაციო კოდი: {{company.code}}]][[, მისამართი: {{company.address}}]].<br>[[ელფოსტა: {{contact.email}}<br>]][[ტელეფონი: {{contact.phone}}<br>]]კონტაქტი: <a href="/ka/contact">საკონტაქტო ფორმა</a>.</p>`;
 const CONTROLLER_EN = `<p><strong>{{company.name}}</strong>[[, identification code: {{company.code}}]][[, address: {{company.address}}]].<br>[[Email: {{contact.email}}<br>]][[Phone: {{contact.phone}}<br>]]Contact: <a href="/en/contact">contact form</a>.</p>`;
 
@@ -182,7 +185,8 @@ export const TERMS_SECTIONS = [
 <h2>5. მიწოდება</h2>
 <ul>
 <li>მიწოდება <strong>უფასოა მთელ საქართველოში</strong>.</li>
-<li>მიწოდების დეტალებს დაგიზუსტებთ ტელეფონით ან ელფოსტით. პროდუქცია მოგეწოდებათ გონივრულ ვადაში, არაუგვიანეს 30 კალენდარული დღისა შეკვეთის დადასტურებიდან, თუ სხვა ვადა არ შევთანხმდით.</li>
+<li>ადგილზე (მაღაზიაში) შეძენისას პროდუქცია გადაგეცემათ იმავე დღეს, ხოლო დისტანციურად (ონლაინ) შეძენისას მიწოდება ხორციელდება 1–3 სამუშაო დღეში, გადახდის დადასტურებიდან. მიწოდების დეტალებს დაგიზუსტებთ ტელეფონით ან ელფოსტით.</li>
+<li>დაწვრილებით: ${POLICY_LINK_KA}.</li>
 <li>თუ მიწოდება შეუძლებელი აღმოჩნდა, შეკვეთა უქმდება და გადახდილი თანხა სრულად გიბრუნდებათ.</li>
 <li>პროდუქციის ჩაბარებისას შეამოწმეთ შეფუთვა და ნივთი. ხილული დაზიანების შემთხვევაში აცნობეთ კურიერს და დაგვიკავშირდით.</li>
 </ul>
@@ -261,7 +265,8 @@ export const TERMS_SECTIONS = [
 <h2>5. Delivery</h2>
 <ul>
 <li>Delivery is <strong>free throughout Georgia</strong>.</li>
-<li>We will confirm delivery details by phone or email. Products are delivered within a reasonable time and no later than 30 calendar days after the order is confirmed, unless agreed otherwise.</li>
+<li>Products bought in person (in store) are handed over the same day; products bought remotely (online) are delivered within 1–3 business days of payment confirmation. We will confirm delivery details by phone or email.</li>
+<li>Details: ${POLICY_LINK_EN}.</li>
 <li>If delivery proves impossible, the order is cancelled and the full amount refunded.</li>
 <li>Check the packaging and the product on delivery. If there is visible damage, tell the courier and contact us.</li>
 </ul>
@@ -358,7 +363,110 @@ export const COOKIE_SECTIONS = [
   },
 ];
 
+
+export const DELIVERY_SECTIONS = [
+  {
+    type: 'RichText',
+    data: {
+      heading: L('მიწოდების, დაბრუნების, გაუქმებისა და თანხის დაბრუნების პოლიტიკა', 'Delivery, returns, cancellation and refund policy'),
+      body: L(
+        `<p><em>ბოლო განახლება: ${LEGAL_UPDATED}</em></p>
+<p>ეს პოლიტიკა ვრცელდება {{company.name}}-ის მიერ გაყიდულ პროდუქციაზე და შედგენილია საქართველოს კანონმდებლობის, მათ შორის „მომხმარებლის უფლებების დაცვის შესახებ“ საქართველოს კანონისა და საქართველოს სამოქალაქო კოდექსის შესაბამისად. ის არ ზღუდავს მომხმარებლის კანონით გარანტირებულ უფლებებს.</p>
+<h2>1. მიწოდება</h2>
+<ul>
+<li><strong>ადგილზე შეძენისას</strong> (მაღაზიაში: [[{{company.address}}]]) — პროდუქცია გადაგეცემათ <strong>იმავე დღეს</strong>.</li>
+<li><strong>დისტანციურად შეძენისას</strong> (ონლაინ, aspor.ge-ზე) — მიწოდება ხორციელდება <strong>1–3 სამუშაო დღეში</strong>, გადახდის დადასტურებიდან.</li>
+<li>მიწოდება <strong>უფასოა</strong> მთელ საქართველოში.</li>
+<li>შეკვეთის დადასტურების შემდეგ დაგიკავშირდებით მიწოდების დროისა და მისამართის დასაზუსტებლად. თუ მითითებულ ვადაში მიწოდება ვერ ხერხდება, წინასწარ გაცნობებთ და შეგიძლიათ გააუქმოთ შეკვეთა სრული თანხის დაბრუნებით.</li>
+<li>ჩაბარებისას შეამოწმეთ შეფუთვა და პროდუქცია. ხილული დაზიანების ან შეუსაბამობის შემთხვევაში აცნობეთ კურიერს და დაგვიკავშირდით იმავე დღეს.</li>
+</ul>
+<h2>2. შეკვეთის გაუქმება</h2>
+<ul>
+<li><strong>გაგზავნამდე</strong> შეკვეთის გაუქმება შეგიძლიათ ნებისმიერ დროს, მიზეზის მითითების გარეშე — მოგვწერეთ[[ {{contact.email}}-ზე]][[, დაგვირეკეთ {{contact.phone}}]] ან გამოიყენეთ <a href="/ka/contact">საკონტაქტო ფორმა</a>, შეკვეთის ნომრის მითითებით. გადახდილი თანხა სრულად დაგიბრუნდებათ.</li>
+<li><strong>გაგზავნის შემდეგ</strong> მოქმედებს ხელშეკრულებაზე უარის თქმის წესი (იხ. პუნქტი 3).</li>
+<li>{{company.name}} უფლებას იტოვებს, გააუქმოს შეკვეთა, თუ პროდუქცია აღარ არის მარაგში ან ფასი აშკარა ტექნიკური შეცდომით იყო მითითებული. ასეთ შემთხვევაში დაგიკავშირდებით და თანხას სრულად დაგიბრუნებთ.</li>
+<li>გადაუხდელი ან დაუდასტურებელი შეკვეთა ავტომატურად უქმდება.</li>
+</ul>
+<h2>3. დაბრუნება — ხელშეკრულებაზე უარის თქმა 14 დღის განმავლობაში</h2>
+<ul>
+<li>დისტანციურად (ონლაინ) შეძენილ პროდუქციაზე მომხმარებელს უფლება აქვს, მიზეზის მითითების გარეშე უარი თქვას ხელშეკრულებაზე <strong>14 კალენდარული დღის</strong> განმავლობაში, პროდუქციის მიღებიდან.</li>
+<li>უარის შესახებ შეგვატყობინეთ[[ ელფოსტით ({{contact.email}}),]][[ ტელეფონით ({{contact.phone}})]] ან <a href="/ka/contact">საკონტაქტო ფორმით</a>, შეკვეთის ნომრის მითითებით.</li>
+<li>პროდუქცია დაგვიბრუნეთ შეტყობინებიდან 14 დღის განმავლობაში, სრული კომპლექტაციით (აქსესუარები, ინსტრუქცია, შეფუთვა)[[ — მაღაზიაში: {{company.address}}]] ან კურიერით.</li>
+<li>დაბრუნების პირდაპირ ხარჯს ფარავს მომხმარებელი, გარდა იმ შემთხვევისა, როცა პროდუქცია ნაკლიანია ან მოგეწოდათ არასწორი პროდუქცია.</li>
+<li>მომხმარებელი პასუხისმგებელია პროდუქციის ღირებულების შემცირებაზე, რომელიც გამოწვეულია ისეთი გამოყენებით, რაც საჭირო არ იყო მისი ბუნების, მახასიათებლებისა და ფუნქციონირების შესამოწმებლად.</li>
+<li>ადგილზე (მაღაზიაში) შეძენილი უნაკლო პროდუქციის დაბრუნება შესაძლებელია {{company.name}}-ის თანხმობით; ნაკლიან პროდუქციაზე მოქმედებს პუნქტი 4.</li>
+<li>14-დღიანი უფლება არ ვრცელდება B2B პარტნიორის მიერ სამეწარმეო მიზნით შეძენილ პროდუქციაზე — მას არეგულირებს პარტნიორთან დადებული შეთანხმება.</li>
+</ul>
+<h2>4. ნაკლიანი პროდუქცია და გარანტია</h2>
+<ul>
+<li>თუ ნაკლი გამოვლინდა მიწოდებიდან <strong>2 წლის</strong> განმავლობაში, უფლება გაქვთ, მოითხოვოთ უსასყიდლო შეკეთება ან შეცვლა, ხოლო თუ ეს შეუძლებელია ან გონივრულ ვადაში არ ხორციელდება — ფასის შემცირება ან ხელშეკრულებაზე უარი და თანხის დაბრუნება (უმნიშვნელო ნაკლის გარდა).</li>
+<li>მიწოდებიდან 6 თვის განმავლობაში გამოვლენილი ნაკლი ივარაუდება, რომ არსებობდა მიწოდების მომენტში.</li>
+<li>ნაკლიანი პროდუქციის დაბრუნების ხარჯს ფარავს {{company.name}}.</li>
+<li>გარანტია არ ვრცელდება დაზიანებაზე, რომელიც გამოწვეულია დავარდნით, სითხით, არასწორი გამოყენებით, არაავტორიზებული შეკეთებით ან ბუნებრივი ცვეთით.</li>
+</ul>
+<h2>5. თანხის დაბრუნება</h2>
+<ul>
+<li>თანხას დაგიბრუნებთ არაუგვიანეს <strong>14 კალენდარული დღისა</strong> გაუქმების ან ხელშეკრულებაზე უარის შესახებ შეტყობინების მიღებიდან. თანხის დაბრუნება შეიძლება შეჩერდეს პროდუქციის დაბრუნებამდე ან დაბრუნების დამადასტურებელი დოკუმენტის მიღებამდე.</li>
+<li>ბრუნდება სრული გადახდილი თანხა. მიწოდება უფასოა, ამიტომ დამატებითი მიწოდების ხარჯი არ იქვითება.</li>
+<li><strong>ბარათით გადახდისას</strong> თანხა ბრუნდება იმავე ბარათზე, Bank of Georgia-ს მეშვეობით. ანგარიშზე ასახვის დრო დამოკიდებულია ბარათის გამცემ ბანკზე (ჩვეულებრივ, რამდენიმე სამუშაო დღე).</li>
+<li><strong>BOG განვადებით შეძენისას</strong> თანხა ბრუნდება ბანკის მეშვეობით და განვადება იხურება ან კორექტირდება სს „საქართველოს ბანკის“ წესების შესაბამისად.</li>
+<li><strong>ადგილზე ნაღდი ფულით გადახდისას</strong> თანხა ბრუნდება ნაღდი ფულით ან, თქვენი თანხმობით, საბანკო გადარიცხვით.</li>
+</ul>
+<h2>6. კონტაქტი</h2>
+<p><strong>{{company.name}}</strong><br>[[მისამართი: {{company.address}}<br>]][[ტელეფონი: {{contact.phone}}<br>]][[ელფოსტა: {{contact.email}}<br>]]საკონტაქტო ფორმა: <a href="/ka/contact">aspor.ge/ka/contact</a></p>
+<p>იხილეთ ასევე: <a href="/ka/terms">წესები და პირობები</a>, <a href="/ka/privacy">კონფიდენციალურობის პოლიტიკა</a>.</p>`,
+        `<p><em>Last updated: ${LEGAL_UPDATED}</em></p>
+<p>This policy applies to products sold by {{company.name}} and follows Georgian law, including the Law of Georgia on Consumer Rights Protection and the Civil Code of Georgia. It does not limit consumers’ statutory rights.</p>
+<h2>1. Delivery</h2>
+<ul>
+<li><strong>When buying in person</strong> (in store: [[{{company.address}}]]) — products are handed over <strong>the same day</strong>.</li>
+<li><strong>When buying remotely</strong> (online at aspor.ge) — delivery takes <strong>1–3 business days</strong> from payment confirmation.</li>
+<li>Delivery is <strong>free</strong> throughout Georgia.</li>
+<li>After the order is confirmed we will contact you to agree the delivery time and address. If delivery within the stated time is not possible, we will tell you in advance and you may cancel the order with a full refund.</li>
+<li>Check the packaging and the product on delivery. If there is visible damage or a mismatch, tell the courier and contact us the same day.</li>
+</ul>
+<h2>2. Cancelling an order</h2>
+<ul>
+<li><strong>Before dispatch</strong> you may cancel at any time without giving a reason — email us[[ at {{contact.email}}]][[, call {{contact.phone}}]] or use the <a href="/en/contact">contact form</a>, quoting your order number. The full amount is refunded.</li>
+<li><strong>After dispatch</strong> the right of withdrawal applies (see section 3).</li>
+<li>{{company.name}} may cancel an order if a product is out of stock or its price was shown through an obvious technical error. We will contact you and refund the full amount.</li>
+<li>Unpaid or unconfirmed orders are cancelled automatically.</li>
+</ul>
+<h2>3. Returns — 14-day right of withdrawal</h2>
+<ul>
+<li>For products bought remotely (online), a consumer may withdraw from the contract without giving a reason within <strong>14 calendar days</strong> of receiving the products.</li>
+<li>Notify us[[ by email ({{contact.email}}),]][[ by phone ({{contact.phone}})]] or via the <a href="/en/contact">contact form</a>, quoting your order number.</li>
+<li>Return the products within 14 days of your notice, complete with all accessories, manual and packaging[[ — at our store: {{company.address}}]] or by courier.</li>
+<li>The consumer bears the direct cost of return, unless the product is defective or the wrong product was delivered.</li>
+<li>The consumer is liable for any loss in value caused by handling the product beyond what is needed to establish its nature, characteristics and functioning.</li>
+<li>Non-defective products bought in person (in store) may be returned with {{company.name}}’s agreement; defective products are covered by section 4.</li>
+<li>The 14-day right does not apply to purchases made by a B2B partner for business purposes — those are governed by the partner agreement.</li>
+</ul>
+<h2>4. Defective products and warranty</h2>
+<ul>
+<li>If a defect appears within <strong>2 years</strong> of delivery, you may ask for free repair or replacement and, if that is impossible or not done within a reasonable time, a price reduction or withdrawal with a refund (except for minor defects).</li>
+<li>A defect that appears within 6 months of delivery is presumed to have existed at delivery.</li>
+<li>{{company.name}} bears the cost of returning defective products.</li>
+<li>The warranty does not cover damage caused by drops, liquid, misuse, unauthorised repair or normal wear.</li>
+</ul>
+<h2>5. Refunds</h2>
+<ul>
+<li>We refund you no later than <strong>14 calendar days</strong> after receiving your cancellation or withdrawal notice. The refund may be withheld until the products, or proof of their return, have been received.</li>
+<li>The full amount paid is refunded. Delivery is free, so no delivery cost is deducted.</li>
+<li><strong>Card payments</strong> are refunded to the same card through Bank of Georgia. When the money appears depends on the card-issuing bank (usually a few business days).</li>
+<li><strong>BOG installment purchases</strong> are refunded through the bank, and the installment is closed or adjusted under JSC Bank of Georgia’s rules.</li>
+<li><strong>Cash payments in store</strong> are refunded in cash or, with your agreement, by bank transfer.</li>
+</ul>
+<h2>6. Contact</h2>
+<p><strong>{{company.name}}</strong><br>[[Address: {{company.address}}<br>]][[Phone: {{contact.phone}}<br>]][[Email: {{contact.email}}<br>]]Contact form: <a href="/en/contact">aspor.ge/en/contact</a></p>
+<p>See also: <a href="/en/terms">Terms and conditions</a>, <a href="/en/privacy">Privacy policy</a>.</p>`,
+      ),
+    },
+  },
+];
+
 export const LEGAL_PAGES = [
+  { key: 'delivery', slug: 'delivery-returns', titleKa: 'მიწოდება და დაბრუნება', titleEn: 'Delivery and returns', sections: DELIVERY_SECTIONS, seoKa: 'მიწოდება იმავე დღეს ადგილზე ან 1–3 სამუშაო დღეში ონლაინ, უფასოდ; 14-დღიანი დაბრუნება, შეკვეთის გაუქმება და თანხის დაბრუნება.', seoEn: 'Same-day hand-over in store or 1–3 business days online, free delivery; 14-day returns, cancellation and refunds.' },
   { key: 'privacy', slug: 'privacy', titleKa: 'კონფიდენციალურობის პოლიტიკა', titleEn: 'Privacy policy', sections: PRIVACY_SECTIONS, seoKa: 'როგორ ამუშავებს ASPOR პერსონალურ მონაცემებს: რას ვაგროვებთ, რა მიზნით, ვის ვუზიარებთ და რა უფლებები გაქვთ.', seoEn: 'How ASPOR processes personal data: what we collect, why, who we share it with and your rights.' },
   { key: 'terms', slug: 'terms', titleKa: 'წესები და პირობები', titleEn: 'Terms and conditions', sections: TERMS_SECTIONS, seoKa: 'ონლაინ შეკვეთის, გადახდის, BOG განვადების, უფასო მიწოდების, 14-დღიანი დაბრუნებისა და გარანტიის წესები aspor.ge-ზე.', seoEn: 'Ordering, payment, BOG installments, free delivery, 14-day returns and warranty on aspor.ge.' },
   { key: 'cookies', slug: 'cookies', titleKa: 'Cookie პოლიტიკა', titleEn: 'Cookie policy', sections: COOKIE_SECTIONS, seoKa: 'რომელ cookie-ებს იყენებს aspor.ge და როგორ შეცვალოთ არჩევანი.', seoEn: 'Which cookies aspor.ge uses and how to change your choice.' },

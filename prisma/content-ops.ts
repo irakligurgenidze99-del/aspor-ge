@@ -108,6 +108,40 @@ const OPS: Op[] = [
       return `about sections updated: ${n}`;
     },
   },
+  {
+    // Owner request 14.11.2026 (BOG merchant requirements): company name, email and store address.
+    // Explicit owner values — these overwrite the current settings.
+    id: 'merchant-details-2026-11-14',
+    run: async () => {
+      const values: [string, string, string | null][] = [
+        ['company.name', 'Aspor.ge', 'Aspor.ge'],
+        ['contact.email', 'info@aspor.ge', null],
+        ['company.address', 'თბილისი, დადიანის ქ. 7, სავაჭრო ცენტრი „ქარვასლა“, II სართული, ბ203', 'Tbilisi, 7 Dadiani St, Karvasla Shopping Center, 2nd floor, B203'],
+        ['contact.address', 'თბილისი, დადიანის ქ. 7, სავაჭრო ცენტრი „ქარვასლა“, II სართული, ბ203', 'Tbilisi, 7 Dadiani St, Karvasla Shopping Center, 2nd floor, B203'],
+      ];
+      for (const [key, ka, en] of values) {
+        const data = { valueKa: ka, valueEn: en, enStatus: en ? ('APPROVED' as const) : ('NONE' as const) };
+        await db.siteSetting.upsert({ where: { key }, create: { key, ...data }, update: data });
+      }
+      return `settings: ${values.map((v) => v[0]).join(', ')}`;
+    },
+  },
+  // Delivery / returns / cancellation / refund policy page + terms delivery times (owner request 14.11.2026).
+  { id: 'legal-pages-delivery-2026-11-14', run: applyLegalPages },
+  {
+    // About page: company name + merchant contact block (owner request 14.11.2026). Overwrites the brand text section.
+    id: 'about-merchant-2026-11-14',
+    run: async () => {
+      const page = await db.page.findUnique({ where: { key: 'about' }, include: { sections: true } });
+      if (!page) return 'about page missing';
+      const rich = page.sections.filter((x) => x.type === 'RichText');
+      for (const rev of ['DRAFT', 'PUBLISHED'] as const) {
+        const sec = rich.filter((x) => x.revision === rev).sort((a, b) => a.sortOrder - b.sortOrder)[0];
+        if (sec) await db.pageSection.update({ where: { id: sec.id }, data: { data: { ...(sec.data as object), body: ABOUT_BODY }, enStatus: 'DRAFT_REVIEW' } });
+      }
+      return `about updated (${rich.length} rich-text sections seen)`;
+    },
+  },
 ];
 
 async function main() {

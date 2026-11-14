@@ -28,7 +28,8 @@
     "privacy": "კონფიდენციალურობის პოლიტიკა",
     "cookies": "Cookie პოლიტიკა",
     "cookieSettings": "Cookie პარამეტრები",
-    "rights": "ყველა უფლება დაცულია."
+    "rights": "ყველა უფლება დაცულია.",
+    "delivery": "მიწოდება და დაბრუნება"
   },
   "catalog": {
     "title": "პროდუქცია",
@@ -192,7 +193,7 @@
     "quantity": "რაოდენობა",
     "buy": "ყიდვა",
     "buyInstallment": "განვადებით",
-    "freeDelivery": "მიწოდება უფასოა მთელ საქართველოში",
+    "freeDelivery": "უფასო მიწოდება · ონლაინ შეძენისას 1–3 სამუშაო დღეში",
     "notForSale": "ონლაინ შეძენა ამ პროდუქტზე ჯერ არ არის ხელმისაწვდომი.",
     "whereToBuy": "სად ვიყიდო",
     "paymentsOff": "ონლაინ გადახდა მალე ჩაირთვება.",
@@ -213,7 +214,7 @@
     "payCardHint": "Visa, Mastercard, Apple Pay, Google Pay — Bank of Georgia-ს უსაფრთხო გვერდზე.",
     "payInstallment": "BOG განვადება",
     "payInstallmentHint": "აირჩიეთ ვადა და თვიური შენატანი — განაცხადი ფორმდება ონლაინ, Bank of Georgia-ში.",
-    "consent": "ვეთანხმები <terms>წესებსა და პირობებს</terms> და <privacy>კონფიდენციალურობის პოლიტიკას</privacy>.",
+    "consent": "ვეთანხმები <terms>წესებსა და პირობებს</terms>, <delivery>მიწოდებისა და დაბრუნების პოლიტიკას</delivery> და <privacy>კონფიდენციალურობის პოლიტიკას</privacy>.",
     "submitCard": "გადახდაზე გადასვლა",
     "submitInstallment": "განვადების ვადის არჩევა",
     "submitting": "მიმდინარეობს…",

@@ -9,7 +9,8 @@ export const ABOUT_SUBHEADING = {
 };
 
 export const ABOUT_BODY = {
-  ka: `<h2>ბრენდის შესახებ</h2>
+  ka: `<p><strong>კომპანიის სახელი:</strong> {{company.name}}</p>
+<h2>ბრენდის შესახებ</h2>
 <p>ASPOR არის მობილური აქსესუარების ბრენდი, რომლის მწარმოებელი 2005 წლიდან ქმნის პაუერბანკებს, ყურსასმენებსა და სხვა აქსესუარებს სმარტფონებისა და გაჯეტებისთვის. ბრენდის სლოგანია <strong>„Power your aspiration“</strong> — ენერგია, რომელიც თან დაგყვება სახლში, სამსახურში, მანქანასა და მოგზაურობისას.</p>
 <h2>რას გთავაზობთ</h2>
 <ul>
@@ -22,8 +23,12 @@ export const ABOUT_BODY = {
 <p>მწარმოებლის ქარხანა სერტიფიცირებულია ISO 9001 ხარისხის მართვის სტანდარტით, ხოლო პროდუქცია ატარებს CE, FCC და RoHS ნიშნებს. თითოეულ პროდუქტს თან ახლავს დეტალური ტექნიკური მახასიათებლები, რომ ზუსტად იცოდეთ, რას ყიდულობთ.</p>
 <h2>ASPOR საქართველოში</h2>
 <p>aspor.ge-ზე იპოვით ASPOR-ის სრულ კატალოგს: შეგიძლიათ შეიძინოთ პროდუქცია ონლაინ — ბარათით ან BOG განვადებით, უფასო მიწოდებით მთელ საქართველოში — ან ნახოთ ჩვენი <a href="/ka/where-to-buy">პარტნიორი მაღაზიები</a>.</p>
-<p>საცალო მაღაზიებსა და დისტრიბუტორებს ვთავაზობთ B2B თანამშრომლობას საბითუმო ფასებით. <a href="/ka/partners/apply">გახდით პარტნიორი</a> ან <a href="/ka/contact">დაგვიკავშირდით</a>.</p>`,
-  en: `<h2>About the brand</h2>
+<p>საცალო მაღაზიებსა და დისტრიბუტორებს ვთავაზობთ B2B თანამშრომლობას საბითუმო ფასებით. <a href="/ka/partners/apply">გახდით პარტნიორი</a> ან <a href="/ka/contact">დაგვიკავშირდით</a>.</p>
+<h2>საკონტაქტო ინფორმაცია</h2>
+<p><strong>{{company.name}}</strong><br>[[მისამართი: {{company.address}}<br>]][[ტელეფონი: {{contact.phone}}<br>]][[ელფოსტა: {{contact.email}}<br>]]საკონტაქტო ფორმა: <a href="/ka/contact">aspor.ge/ka/contact</a></p>
+<p>მიწოდება, დაბრუნება და თანხის დაბრუნება: <a href="/ka/delivery-returns">პოლიტიკა</a> · <a href="/ka/terms">წესები და პირობები</a> · <a href="/ka/privacy">კონფიდენციალურობის პოლიტიკა</a></p>`,
+  en: `<p><strong>Company name:</strong> {{company.name}}</p>
+<h2>About the brand</h2>
 <p>ASPOR is a mobile accessories brand whose manufacturer has been making power banks, earphones and other accessories for smartphones and gadgets since 2005. The brand’s slogan is <strong>“Power your aspiration”</strong> — power that keeps up with you at home, at work, in the car and on the road.</p>
 <h2>What we offer</h2>
 <ul>
@@ -36,5 +41,8 @@ export const ABOUT_BODY = {
 <p>The manufacturer’s factory is certified to the ISO 9001 quality management standard, and products carry CE, FCC and RoHS marks. Every product comes with detailed technical specifications so you know exactly what you are buying.</p>
 <h2>ASPOR in Georgia</h2>
 <p>aspor.ge has the full ASPOR catalogue: buy online — by card or with BOG installments, with free delivery across Georgia — or visit one of our <a href="/en/where-to-buy">partner stores</a>.</p>
-<p>We offer retailers and distributors B2B partnership at wholesale prices. <a href="/en/partners/apply">Become a partner</a> or <a href="/en/contact">contact us</a>.</p>`,
+<p>We offer retailers and distributors B2B partnership at wholesale prices. <a href="/en/partners/apply">Become a partner</a> or <a href="/en/contact">contact us</a>.</p>
+<h2>Contact information</h2>
+<p><strong>{{company.name}}</strong><br>[[Address: {{company.address}}<br>]][[Phone: {{contact.phone}}<br>]][[Email: {{contact.email}}<br>]]Contact form: <a href="/en/contact">aspor.ge/en/contact</a></p>
+<p>Delivery, returns and refunds: <a href="/en/delivery-returns">policy</a> · <a href="/en/terms">Terms and conditions</a> · <a href="/en/privacy">Privacy policy</a></p>`,
 };

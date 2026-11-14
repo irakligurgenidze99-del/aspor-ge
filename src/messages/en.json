@@ -28,7 +28,8 @@
     "privacy": "Privacy policy",
     "cookies": "Cookie policy",
     "cookieSettings": "Cookie settings",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "delivery": "Delivery and returns"
   },
   "catalog": {
     "title": "Products",
@@ -192,7 +193,7 @@
     "quantity": "Quantity",
     "buy": "Buy now",
     "buyInstallment": "Installments",
-    "freeDelivery": "Free delivery across Georgia",
+    "freeDelivery": "Free delivery · 1–3 business days for online orders",
     "notForSale": "This product is not available to buy online yet.",
     "whereToBuy": "Where to buy",
     "paymentsOff": "Online payment is coming soon.",
@@ -213,7 +214,7 @@
     "payCardHint": "Visa, Mastercard, Apple Pay, Google Pay — on Bank of Georgia's secure page.",
     "payInstallment": "BOG installments",
     "payInstallmentHint": "Choose a term and monthly payment — the application is made online with Bank of Georgia.",
-    "consent": "I agree to the <terms>terms and conditions</terms> and the <privacy>privacy policy</privacy>.",
+    "consent": "I agree to the <terms>terms and conditions</terms>, the <delivery>delivery and returns policy</delivery> and the <privacy>privacy policy</privacy>.",
     "submitCard": "Continue to payment",
     "submitInstallment": "Choose installment term",
     "submitting": "Processing…",

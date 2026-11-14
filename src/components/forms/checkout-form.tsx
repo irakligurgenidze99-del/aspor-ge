@@ -143,6 +143,7 @@ export function CheckoutForm(props: {
           error={m(f.consent)}
           label={t.rich('consent', {
             terms: (c) => <Link href="/terms" target="_blank" className="font-semibold underline underline-offset-4">{c}</Link>,
+            delivery: (c) => <Link href="/delivery-returns" target="_blank" className="font-semibold underline underline-offset-4">{c}</Link>,
             privacy: (c) => <Link href="/privacy" target="_blank" className="font-semibold underline underline-offset-4">{c}</Link>,
           })}
         />
