@@ -18,7 +18,11 @@ async function main() {
   if (!email || !pw) return console.log('admin-reset: SEED_ADMIN_EMAIL / SEED_ADMIN_PASSWORD not set — skipped');
   const user = await db.user.findUnique({ where: { email } });
   if (!user || user.role !== 'SUPER_ADMIN') return console.log('admin-reset: no admin with that email — skipped (the seed creates it)');
-  if (pw.length < 12 || !/[a-zA-Z]/.test(pw) || !/\d/.test(pw)) throw new Error('admin-reset: SEED_ADMIN_PASSWORD must be ≥12 chars with letters and digits');
+  if (pw.length < 12 || !/[a-zA-Z]/.test(pw) || !/\d/.test(pw)) {
+    // Never block the whole deploy over this: report it and leave the password unchanged.
+    console.warn('⚠ admin-reset: SEED_ADMIN_PASSWORD is too weak (needs ≥12 characters with letters and digits) — password NOT changed');
+    return;
+  }
   if (await verifyPassword(user.passwordHash, pw)) return console.log('admin-reset: password already current — nothing to do');
   const resetMfa = process.env.ADMIN_RESET_MFA === '1';
   await db.$transaction([
