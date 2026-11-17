@@ -10,5 +10,7 @@ fi
 if [ "${VERCEL_ENV:-}" = "production" ]; then
   echo "▶ content-ops (one-time content changes, each runs once)"
   npx tsx --conditions=react-server prisma/content-ops.ts
+  echo "▶ admin-reset (only acts when SEED_ADMIN_PASSWORD differs from the current admin password)"
+  npx tsx --conditions=react-server prisma/admin-reset.ts
 fi
 npx next build
