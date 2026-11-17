@@ -35,6 +35,8 @@ export async function POST(req: Request) {
     return NextResponse.json({ orderId: fresh.providerOrderId, redirectUrl: url });
   } catch (e) {
     console.error('[loan] start failed', e);
+    const reason = e instanceof Error ? e.message.slice(0, 500) : String(e).slice(0, 500);
+    await db.order.update({ where: { id: o.id }, data: { adminNote: `ბანკთან განვადების შექმნა ვერ მოხერხდა: ${reason}` } }).catch(() => {});
     return NextResponse.json({ error: 'provider_error' }, { status: 502 });
   }
 }

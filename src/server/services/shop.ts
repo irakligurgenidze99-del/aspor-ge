@@ -106,7 +106,9 @@ export async function placeOrder(input: CheckoutInput, opts: { useLoanSdk: boole
     return { ok: true, kind: 'redirect', url, token: order.publicToken };
   } catch (e) {
     console.error('[checkout] provider error', e);
-    await db.order.update({ where: { id: order.id }, data: { status: 'FAILED', providerStatus: 'create_failed' } });
+    // Bank error text (HTTP status + BOG response, never credentials) is kept for Admin → Orders.
+    const reason = e instanceof Error ? e.message.slice(0, 500) : String(e).slice(0, 500);
+    await db.order.update({ where: { id: order.id }, data: { status: 'FAILED', providerStatus: 'create_failed', adminNote: `ბანკთან შეკვეთის შექმნა ვერ მოხერხდა: ${reason}` } });
     return { ok: false, error: 'provider_error' };
   }
 }

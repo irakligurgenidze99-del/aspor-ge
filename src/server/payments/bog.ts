@@ -26,7 +26,10 @@ async function token(): Promise<string> {
     body: 'grant_type=client_credentials',
     signal: AbortSignal.timeout(15_000),
   });
-  if (!res.ok) throw new BogError(`token ${res.status}`, res.status);
+  if (!res.ok) {
+    const text = (await res.text().catch(() => '')).slice(0, 200);
+    throw new BogError(`token ${res.status}${res.status === 401 || res.status === 400 ? ' (BOG_CLIENT_ID / BOG_CLIENT_SECRET არასწორია?)' : ''} ${text}`, res.status);
+  }
   const j = (await res.json()) as { access_token?: string; expires_in?: number };
   if (!j.access_token) throw new BogError('token missing');
   // Guard against odd expires_in values: never cache longer than 10 minutes.
